@@ -18,6 +18,7 @@ class HomeState extends State<Home> {
   Widget profileScreen = ProfileScreenMain();
 
   @override
+
   Widget build(BuildContext context) {
     final placeholder= Opacity(opacity :  0,
         child: IconButton(icon: Icon(Icons.cloud_done),onPressed: null));

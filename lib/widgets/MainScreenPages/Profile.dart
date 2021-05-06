@@ -17,6 +17,7 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
       backgroundColor: Colors.black,
       body: Center(child: Padding(
         padding: EdgeInsets.only(left: 20, right: 20),
+        
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: shape,

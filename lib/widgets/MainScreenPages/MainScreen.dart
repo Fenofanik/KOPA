@@ -1,7 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/MoreInfoScreen.dart';
 import 'package:get/get.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:kopamain/widgets/MainScreenPages/ProductsData.dart';
 
@@ -13,60 +13,22 @@ class MainScreen extends StatefulWidget {
 class MainScreenState extends State<MainScreen> {
   List <Products> productsList = [];
 
-  @override
-  void initState() {
-    super.initState();
-    DatabaseReference databaseReference = FirebaseDatabase.instance.reference().child("products");
-    databaseReference.once().then((DataSnapshot dataSnapshot)
-    {
-      var keys = dataSnapshot.value.keys;
-      var data = dataSnapshot.value;
-
-      productsList.clear();
-
-      for (var individualKey in keys)
-      {
-        Products products =  Products(
-          data[individualKey]['image'],
-          data[individualKey]['brand'],
-          data[individualKey]['material'],
-          data[individualKey]['size'],
-          data[individualKey]['length'],
-          data[individualKey]['width'],
-
-        );
-        productsList.add(products);
-      }
-      setState(()
-      {
-        print('Length : $productsList');
-      });
-    }
-
-    );
-  }
   Color favoriteIconColor = Colors.white;
   @override
   Widget build(BuildContext context) {
-    final double radius = 22;
-
     return Scaffold(
       backgroundColor: Colors.black,
-        body: Container(
-          child: productsList.length==0? Text ("Problem"): new ListView.builder(
-            itemCount: productsList.length,
-            itemBuilder: (_, index){
-              return productsUI(productsList[index].image,
-                productsList[index].brand,
-                productsList[index].material,
-                productsList[index].size,
-                productsList[index].length,
-                productsList[index].width,
-              );
-            }
-          )
-
+        body: StreamBuilder(
+          stream: FirebaseFirestore.instance.collection('products').snapshots(),
+          builder: (context, snapshot){
+            if(!snapshot.hasData) return const Text('Loading...');
+            return ListView.builder(
+              itemCount: snapshot.data.docs.length,
+              itemBuilder: (context, index)=>productsUI(context, snapshot.data.docs[index],),
+            );
+          },
         ),
+
         appBar: AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: Colors.black,
@@ -83,7 +45,7 @@ class MainScreenState extends State<MainScreen> {
             })),
         )));
   }
-  Widget productsUI (String image,String brand, String material, String size, String length,String width){
+  Widget productsUI (BuildContext context, DocumentSnapshot docs){
     final double radius = 22;
     return InkWell( onTap: (){
       Get.to(MoreInfo());},
@@ -109,7 +71,7 @@ class MainScreenState extends State<MainScreen> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(radius),
                           child: FittedBox(
-                            child: Image.network(image),
+                            child: Image.network(docs['image']),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -125,7 +87,7 @@ class MainScreenState extends State<MainScreen> {
                                 height: 24,
                                 //color: Colors.blue,
                                 alignment: Alignment.centerLeft,
-                                child: Text(brand,
+                                child: Text(docs['brand'],
                                     style: TextStyle(
                                         fontSize: 22,
                                         color: Colors.white,
@@ -160,7 +122,7 @@ class MainScreenState extends State<MainScreen> {
                                                       alignment:
                                                       Alignment.bottomCenter,
                                                       child: Text(
-                                                        size,
+                                                        docs['size'],
                                                         style: TextStyle(
                                                             fontSize: 25,
                                                             color: Colors
@@ -175,7 +137,7 @@ class MainScreenState extends State<MainScreen> {
                                                           alignment: Alignment
                                                               .bottomCenter,
                                                           child: Text(
-                                                            length,
+                                                            docs['length'],
                                                             style: TextStyle(
                                                                 fontSize: 18,
                                                                 color:
@@ -191,7 +153,7 @@ class MainScreenState extends State<MainScreen> {
                                                           alignment: Alignment
                                                               .bottomCenter,
                                                           child: Text(
-                                                            width,
+                                                            docs['width'],
                                                             style: TextStyle(
                                                                 fontSize: 18,
                                                                 color:
@@ -271,11 +233,15 @@ class MainScreenState extends State<MainScreen> {
                               Container(
                                 height: 16,
                                 alignment: Alignment.bottomLeft,
-                                child: Text(" Матеріал : $material",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w100)),
+                                child: Row(children:<Widget> [
+                                  Text(" Матеріал :",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w100)),
+                                  Text(docs['material'])
+                                ],)
+
                               ),
                             ],
                           ),
