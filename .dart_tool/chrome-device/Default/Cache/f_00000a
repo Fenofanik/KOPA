@@ -1,0 +1,627 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/kopamain/widgets/MainScreenPages/MainScreen.dart', 'packages/kopamain/widgets/MainScreenPages/My%20ads.dart', 'packages/kopamain/widgets/MainScreenPages/Favorites.dart', 'packages/kopamain/widgets/MainScreenPages/Profile.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/widgets/bottom_navigation_bar_item.dart', 'packages/flutter_svg/svg.dart'], (function load__packages__kopamain__widgets__MainScreenPages__Home_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__kopamain__widgets__MainScreenPages__MainScreen$46dart, packages__kopamain__widgets__MainScreenPages__My$3720ads$46dart, packages__kopamain__widgets__MainScreenPages__Favorites$46dart, packages__kopamain__widgets__MainScreenPages__Profile$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__widgets__bottom_navigation_bar_item$46dart, packages__flutter_svg__svg$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const MainScreen = packages__kopamain__widgets__MainScreenPages__MainScreen$46dart.widgets__MainScreenPages__MainScreen;
+  const My$32ads = packages__kopamain__widgets__MainScreenPages__My$3720ads$46dart.widgets__MainScreenPages__My$32ads;
+  const Favorites = packages__kopamain__widgets__MainScreenPages__Favorites$46dart.widgets__MainScreenPages__Favorites;
+  const Profile = packages__kopamain__widgets__MainScreenPages__Profile$46dart.widgets__MainScreenPages__Profile;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const floating_action_button = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button;
+  const floating_action_button_location = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button_location;
+  const bottom_navigation_bar = packages__flutter__src__material__icon_button$46dart.src__material__bottom_navigation_bar;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const bottom_navigation_bar_item = packages__flutter__src__widgets__bottom_navigation_bar_item$46dart.src__widgets__bottom_navigation_bar_item;
+  const svg = packages__flutter_svg__svg$46dart.svg;
+  var Home = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    BottomNavigationBarItemL: () => (T.BottomNavigationBarItemL = dart.constFn(dart.legacy(bottom_navigation_bar_item.BottomNavigationBarItem)))(),
+    JSArrayOfBottomNavigationBarItemL: () => (T.JSArrayOfBottomNavigationBarItemL = dart.constFn(_interceptors.JSArray$(T.BottomNavigationBarItemL())))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    intLToNull: () => (T.intLToNull = dart.constFn(dart.fnType(core.Null, [T.intL()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.constList([], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 18,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 44,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.constList([C[7] || CT.C7], T._LocationL());
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[6] || CT.C6,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 27,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 56,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], T._LocationL());
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "opacity",
+        [_Location_column]: 32,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], T._LocationL());
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 22,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 27,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18], T._LocationL());
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 9,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], T._LocationL());
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "assetName",
+        [_Location_column]: 38,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "assetName",
+        [_Location_column]: 38,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31], T._LocationL());
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 32,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.constList([C[34] || CT.C34, C[35] || CT.C35], T._LocationL());
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[33] || CT.C33,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 32,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39], T._LocationL());
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 51,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "type",
+        [_Location_column]: 9,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "currentIndex",
+        [_Location_column]: 9,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "items",
+        [_Location_column]: 9,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 9,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.constList([C[42] || CT.C42, C[43] || CT.C43, C[44] || CT.C44, C[45] || CT.C45, C[46] || CT.C46], T._LocationL());
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[41] || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "floatingActionButton",
+        [_Location_column]: 7,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "floatingActionButtonLocation",
+        [_Location_column]: 7,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53], T._LocationL());
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///D:/Flutter%20PROJECT%20KOPA/kopamain/lib/widgets/MainScreenPages/Home.dart"
+      });
+    }
+  }, false);
+  var C = Array(54).fill(void 0);
+  var I = ["package:kopamain/widgets/MainScreenPages/Home.dart"];
+  Home.Home = class Home$ extends framework.StatefulWidget {
+    createState() {
+      return new Home.HomeState.new();
+    }
+  };
+  (Home.Home.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    Home.Home.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = Home.Home.prototype;
+  dart.addTypeTests(Home.Home);
+  dart.addTypeCaches(Home.Home);
+  dart.setMethodSignature(Home.Home, () => ({
+    __proto__: dart.getMethods(Home.Home.__proto__),
+    createState: dart.fnType(dart.legacy(Home.HomeState), [])
+  }));
+  dart.setLibraryUri(Home.Home, I[0]);
+  var selectedIndex = dart.privateName(Home, "HomeState.selectedIndex");
+  var mainScreen = dart.privateName(Home, "HomeState.mainScreen");
+  var myScreen = dart.privateName(Home, "HomeState.myScreen");
+  var favoriteScreen = dart.privateName(Home, "HomeState.favoriteScreen");
+  var profileScreen = dart.privateName(Home, "HomeState.profileScreen");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  Home.HomeState = class HomeState extends framework.State$(dart.legacy(Home.Home)) {
+    get selectedIndex() {
+      return this[selectedIndex];
+    }
+    set selectedIndex(value) {
+      this[selectedIndex] = value;
+    }
+    get mainScreen() {
+      return this[mainScreen];
+    }
+    set mainScreen(value) {
+      this[mainScreen] = value;
+    }
+    get myScreen() {
+      return this[myScreen];
+    }
+    set myScreen(value) {
+      this[myScreen] = value;
+    }
+    get favoriteScreen() {
+      return this[favoriteScreen];
+    }
+    set favoriteScreen(value) {
+      this[favoriteScreen] = value;
+    }
+    get profileScreen() {
+      return this[profileScreen];
+    }
+    set profileScreen(value) {
+      this[profileScreen] = value;
+    }
+    build(context) {
+      let placeholder = new basic.Opacity.new({opacity: 0.0, child: new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.cloud_done, {$creationLocationd_0dea112b090073317d4: C[5] || CT.C5}), onPressed: null, $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12});
+      return new scaffold.Scaffold.new({backgroundColor: colors.Colors.black, body: this.getBody(), floatingActionButton: new floating_action_button.FloatingActionButton.new({child: new icon.Icon.new(icons.Icons.add, {$creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), backgroundColor: colors.Colors.lightBlue, onPressed: dart.fn(() => {
+          }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), floatingActionButtonLocation: floating_action_button_location.FloatingActionButtonLocation.centerDocked, bottomNavigationBar: new bottom_navigation_bar.BottomNavigationBar.new({backgroundColor: new ui.Color.new(4283453521), type: bottom_navigation_bar.BottomNavigationBarType.fixed, currentIndex: this.selectedIndex, items: T.JSArrayOfBottomNavigationBarItemL().of([new bottom_navigation_bar_item.BottomNavigationBarItem.new({icon: new svg.SvgPicture.asset("assets/images/MainScreen.svg", {color: this.selectedIndex === 0 ? colors.Colors.blue : colors.Colors.grey, $creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), label: ""}), new bottom_navigation_bar_item.BottomNavigationBarItem.new({icon: new svg.SvgPicture.asset("assets/images/Sneaker.svg", {color: this.selectedIndex === 1 ? colors.Colors.blue : colors.Colors.grey, $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), label: ""}), new bottom_navigation_bar_item.BottomNavigationBarItem.new({icon: new icon.Icon.new(icons.Icons.favorite, {color: this.selectedIndex === 2 ? colors.Colors.blue : colors.Colors.grey, $creationLocationd_0dea112b090073317d4: C[32] || CT.C32}), label: ""}), new bottom_navigation_bar_item.BottomNavigationBarItem.new({icon: new icon.Icon.new(icons.Icons.settings, {color: this.selectedIndex === 3 ? colors.Colors.blue : colors.Colors.grey, $creationLocationd_0dea112b090073317d4: C[36] || CT.C36}), label: ""})]), onTap: dart.fn(index => {
+            this.onTapHandler(index);
+          }, T.intLToNull()), $creationLocationd_0dea112b090073317d4: C[40] || CT.C40}), $creationLocationd_0dea112b090073317d4: C[47] || CT.C47});
+    }
+    getBody() {
+      if (this.selectedIndex === 0) {
+        return this.mainScreen;
+      }
+      if (this.selectedIndex === 1) {
+        return this.myScreen;
+      }
+      if (this.selectedIndex === 2) {
+        return this.favoriteScreen;
+      } else {
+        return this.profileScreen;
+      }
+    }
+    onTapHandler(index) {
+      this.setState(dart.fn(() => {
+        this.selectedIndex = index;
+      }, T.VoidToNull()));
+    }
+  };
+  (Home.HomeState.new = function() {
+    this[selectedIndex] = 0;
+    this[mainScreen] = new MainScreen.MainScreen.new({$creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+    this[myScreen] = new My$32ads.MyScreenMain.new({$creationLocationd_0dea112b090073317d4: C[2] || CT.C2});
+    this[favoriteScreen] = new Favorites.FavoritesScreenMain.new({$creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+    this[profileScreen] = new Profile.ProfileScreenMain.new({$creationLocationd_0dea112b090073317d4: C[4] || CT.C4});
+    Home.HomeState.__proto__.new.call(this);
+    ;
+  }).prototype = Home.HomeState.prototype;
+  dart.addTypeTests(Home.HomeState);
+  dart.addTypeCaches(Home.HomeState);
+  dart.setMethodSignature(Home.HomeState, () => ({
+    __proto__: dart.getMethods(Home.HomeState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    getBody: dart.fnType(dart.legacy(framework.Widget), []),
+    onTapHandler: dart.fnType(dart.void, [dart.legacy(core.int)])
+  }));
+  dart.setLibraryUri(Home.HomeState, I[0]);
+  dart.setFieldSignature(Home.HomeState, () => ({
+    __proto__: dart.getFields(Home.HomeState.__proto__),
+    selectedIndex: dart.fieldType(dart.legacy(core.int)),
+    mainScreen: dart.fieldType(dart.legacy(framework.Widget)),
+    myScreen: dart.fieldType(dart.legacy(framework.Widget)),
+    favoriteScreen: dart.fieldType(dart.legacy(framework.Widget)),
+    profileScreen: dart.fieldType(dart.legacy(framework.Widget))
+  }));
+  dart.trackLibraries("packages/kopamain/widgets/MainScreenPages/Home.dart", {
+    "package:kopamain/widgets/MainScreenPages/Home.dart": Home
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["Home.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAS6B;IAAW;;;;;;EACxC;;;;;;;;;;;;;;;;;;;IAGM;;;;;;IACG;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;UAGmB;AAClB,wBAAa,gCAAmB,YAC3B,sCAAiB,kBAAW,6FAAuB;AAC9D,YAAO,6CACmB,2BAClB,AAAK,sCACW,4DACb,kBAAW,8FACM,oCACb;uHAE8C,gGACtC,oEACF,iBAAM,mBACO,mEACX,2BACZ,0CACL,kEACqB,yBAAM,wCACZ,AAAc,uBAAG,IAAW,qBAAc,sFAC9C,MACX,kEACqB,yBAAM,qCACZ,AAAc,uBAAG,IAAW,qBAAc,sFAC9C,MACX,kEACU,kBAAW,8BACN,AAAc,uBAAG,IAAW,qBAAc,sFAC9C,MACX,kEACU,kBAAW,8BACN,AAAc,uBAAG,IAAW,qBAAc,sFAC9C,eAEN,QAAK;AACc,YAAxB,AAAK,kBAAa,KAAK;;IAI/B;;AAGE,UAAS,AAAc,uBAAG;AACxB,cAAY;;AAEd,UAAS,AAAc,uBAAG;AACxB,cAAY;;AAEd,UAAS,AAAc,uBAAG;AACxB,cAAY;;AAEZ,cAAY;;IAEhB;iBAEsB;AAGlB,MAFF,AAAK,cAAS;AACc,QAArB,qBAAgB,KAAK;;IAE9B;;;IAlEI,sBAAgB;IACb,mBAAa;IACb,iBAAW;IACX,uBAAiB;IACjB,sBAAgB;;;EA+DzB","file":"../../../../../packages/kopamain/widgets/MainScreenPages/Home.dart.lib.js"}');
+  // Exports:
+  return {
+    widgets__MainScreenPages__Home: Home
+  };
+}));
+
+//# sourceMappingURL=Home.dart.lib.js.map
