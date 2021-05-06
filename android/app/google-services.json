@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "167083283267",
+    "project_id": "kopabyoleg",
+    "storage_bucket": "kopabyoleg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167083283267:android:0e3a1b9a9eb31ae8a795f6",
+        "android_client_info": {
+          "package_name": "com.BarakamonOleg.KOPA"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167083283267-p76p6e2jpint7s3f9dgis0rg7flrnv6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6r-9L6XibRt92_G9u_JLpWAgrTsqaRY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167083283267-p76p6e2jpint7s3f9dgis0rg7flrnv6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
