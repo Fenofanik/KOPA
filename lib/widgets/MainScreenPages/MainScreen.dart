@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/MoreInfoScreen.dart';
 import 'package:get/get.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:kopamain/widgets/MainScreenPages/ProductsData.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -8,6 +11,40 @@ class MainScreen extends StatefulWidget {
 }
 
 class MainScreenState extends State<MainScreen> {
+  List <Products> productsList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    DatabaseReference databaseReference = FirebaseDatabase.instance.reference().child("products");
+    databaseReference.once().then((DataSnapshot dataSnapshot)
+    {
+      var keys = dataSnapshot.value.keys;
+      var data = dataSnapshot.value;
+
+      productsList.clear();
+
+      for (var individualKey in keys)
+      {
+        Products products =  Products(
+          data[individualKey]['image'],
+          data[individualKey]['brand'],
+          data[individualKey]['material'],
+          data[individualKey]['size'],
+          data[individualKey]['length'],
+          data[individualKey]['width'],
+
+        );
+        productsList.add(products);
+      }
+      setState(()
+      {
+        print('Length : $productsList');
+      });
+    }
+
+    );
+  }
   Color favoriteIconColor = Colors.white;
   @override
   Widget build(BuildContext context) {
@@ -15,238 +52,21 @@ class MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       backgroundColor: Colors.black,
-        body:
-        InkWell( onTap: (){
-          Get.to(MoreInfo());},
-        child :Stack( children : <Widget>[
-        Container(
-          height: 150,
-          decoration: BoxDecoration(color: Colors.black),
-          child: Padding(
-            padding: EdgeInsets.only(top: 1, left: 10, bottom: 4, right: 10),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(radius),
-              ),
-              clipBehavior: Clip.antiAlias,
-              child: Container(
-                color: Color(0xff343434),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Expanded(
-                      flex: 3,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(radius),
-                        child: FittedBox(
-                          child: Image.asset('assets/images/Sneaker2.png'),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.only(
-                            top: 10, left: 10, bottom: 8, right: 0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: <Widget>[
-                            Container(
-                              height: 24,
-                              //color: Colors.blue,
-                              alignment: Alignment.centerLeft,
-                              child: Text("Nike 992K",
-                                  style: TextStyle(
-                                      fontSize: 22,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w300)),
-                            ),
-                            Container(
-                              height: 16,
-                              //color: Colors.green,
-                              alignment: Alignment.bottomLeft,
-                              child: Text(" Розміри стопи: ",
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w100)),
-                            ),
-                            Expanded(
-                              child: Container(
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                      top: 7, left: 4, bottom: 2, right: 6),
-                                  child: Container(
-                                    child: Column(
-                                      children: <Widget>[
-                                        Expanded(
-                                            flex: 3,
-                                            child: Container(
-                                              alignment: Alignment.bottomLeft,
-                                              child: Row(
-                                                children: <Widget>[
-                                                  Container(
-                                                    width: 40,
-                                                    alignment:
-                                                        Alignment.bottomCenter,
-                                                    child: Text(
-                                                      "40",
-                                                      style: TextStyle(
-                                                          fontSize: 25,
-                                                          color: Colors
-                                                              .blueAccent[100],
-                                                          fontWeight:
-                                                              FontWeight.w100),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                      flex: 8,
-                                                      child: Container(
-                                                        alignment: Alignment
-                                                            .bottomCenter,
-                                                        child: Text(
-                                                          "28.5",
-                                                          style: TextStyle(
-                                                              fontSize: 18,
-                                                              color:
-                                                                  Colors.white,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w100),
-                                                        ),
-                                                      )),
-                                                  Expanded(
-                                                      flex: 6,
-                                                      child: Container(
-                                                        alignment: Alignment
-                                                            .bottomCenter,
-                                                        child: Text(
-                                                          "10",
-                                                          style: TextStyle(
-                                                              fontSize: 18,
-                                                              color:
-                                                                  Colors.white,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w100),
-                                                        ),
-                                                      )),
-                                                ],
-                                              ),
-                                            )),
-                                        Container(
-                                          height: 5,
-                                        ),
-                                        Expanded(
-                                            flex: 3,
-                                            child: Container(
-                                              height: 18,
-                                              alignment: Alignment.topLeft,
-                                              child: Row(
-                                                children: <Widget>[
-                                                  Container(
-                                                    width: 40,
-                                                    alignment:
-                                                        Alignment.topCenter,
-                                                    child: Text(
-                                                      "EU",
-                                                      style: TextStyle(
-                                                          fontSize: 14,
-                                                          color: Colors.white,
-                                                          fontWeight:
-                                                              FontWeight.w100),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                      flex: 8,
-                                                      child: Container(
-                                                        alignment:
-                                                            Alignment.topCenter,
-                                                        child: Text(
-                                                          "Довжина/см",
-                                                          style: TextStyle(
-                                                              fontSize: 14,
-                                                              color:
-                                                                  Colors.white,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w100),
-                                                        ),
-                                                      )),
-                                                  Expanded(
-                                                      flex: 6,
-                                                      child: Container(
-                                                        alignment:
-                                                            Alignment.topCenter,
-                                                        child: Text(
-                                                          "Ширина/см",
-                                                          style: TextStyle(
-                                                              fontSize: 14,
-                                                              color:
-                                                                  Colors.white,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w100),
-                                                        ),
-                                                      )),
-                                                ],
-                                              ),
-                                            )),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              height: 16,
-                              alignment: Alignment.bottomLeft,
-                              child: Text(" Матеріал : шкіра",
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w100)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      flex: 9,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+        body: Container(
+          child: productsList.length==0? Text ("Problem"): new ListView.builder(
+            itemCount: productsList.length,
+            itemBuilder: (_, index){
+              return productsUI(productsList[index].image,
+                productsList[index].brand,
+                productsList[index].material,
+                productsList[index].size,
+                productsList[index].length,
+                productsList[index].width,
+              );
+            }
+          )
+
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: IconButton(icon: Icon(Icons.favorite,color:favoriteIconColor),
-              onPressed: (){
-    setState(() {
-    if(favoriteIconColor == Colors.white){
-    favoriteIconColor = Colors.red;
-    }else{
-    favoriteIconColor = Colors.white;
-    }
-              });}
-        ),),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children :<Widget>[
-                  Padding (
-                      padding: EdgeInsets.only(top:15),
-                      child :Container (
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(22),
-                  color: Color(0xffFFD600)),
-            height: 30,width: 74,
-          child :Padding (
-              padding: EdgeInsets.only(top:7),
-              child: Text('100 \$',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700))),
-              )),]),
-        ])),
         appBar: AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: Colors.black,
@@ -262,6 +82,240 @@ class MainScreenState extends State<MainScreen> {
               filterAddButtonSheet(context);
             })),
         )));
+  }
+  Widget productsUI (String image,String brand, String material, String size, String length,String width){
+    final double radius = 22;
+    return InkWell( onTap: (){
+      Get.to(MoreInfo());},
+        child :Stack( children : <Widget>[
+          Container(
+            height: 150,
+            decoration: BoxDecoration(color: Colors.black),
+            child: Padding(
+              padding: EdgeInsets.only(top: 1, left: 10, bottom: 4, right: 10),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(radius),
+                ),
+                clipBehavior: Clip.antiAlias,
+                child: Container(
+                  color: Color(0xff343434),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisSize: MainAxisSize.max,
+                    children: <Widget>[
+                      Expanded(
+                        flex: 3,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(radius),
+                          child: FittedBox(
+                            child: Image.network(image),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.only(
+                              top: 10, left: 10, bottom: 8, right: 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: <Widget>[
+                              Container(
+                                height: 24,
+                                //color: Colors.blue,
+                                alignment: Alignment.centerLeft,
+                                child: Text(brand,
+                                    style: TextStyle(
+                                        fontSize: 22,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w300)),
+                              ),
+                              Container(
+                                height: 16,
+                                //color: Colors.green,
+                                alignment: Alignment.bottomLeft,
+                                child: Text(" Розміри стопи: ",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w100)),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 7, left: 4, bottom: 2, right: 6),
+                                    child: Container(
+                                      child: Column(
+                                        children: <Widget>[
+                                          Expanded(
+                                              flex: 3,
+                                              child: Container(
+                                                alignment: Alignment.bottomLeft,
+                                                child: Row(
+                                                  children: <Widget>[
+                                                    Container(
+                                                      width: 40,
+                                                      alignment:
+                                                      Alignment.bottomCenter,
+                                                      child: Text(
+                                                        size,
+                                                        style: TextStyle(
+                                                            fontSize: 25,
+                                                            color: Colors
+                                                                .blueAccent[100],
+                                                            fontWeight:
+                                                            FontWeight.w100),
+                                                      ),
+                                                    ),
+                                                    Expanded(
+                                                        flex: 8,
+                                                        child: Container(
+                                                          alignment: Alignment
+                                                              .bottomCenter,
+                                                          child: Text(
+                                                            length,
+                                                            style: TextStyle(
+                                                                fontSize: 18,
+                                                                color:
+                                                                Colors.white,
+                                                                fontWeight:
+                                                                FontWeight
+                                                                    .w100),
+                                                          ),
+                                                        )),
+                                                    Expanded(
+                                                        flex: 6,
+                                                        child: Container(
+                                                          alignment: Alignment
+                                                              .bottomCenter,
+                                                          child: Text(
+                                                            width,
+                                                            style: TextStyle(
+                                                                fontSize: 18,
+                                                                color:
+                                                                Colors.white,
+                                                                fontWeight:
+                                                                FontWeight
+                                                                    .w100),
+                                                          ),
+                                                        )),
+                                                  ],
+                                                ),
+                                              )),
+                                          Container(
+                                            height: 5,
+                                          ),
+                                          Expanded(
+                                              flex: 3,
+                                              child: Container(
+                                                height: 18,
+                                                alignment: Alignment.topLeft,
+                                                child: Row(
+                                                  children: <Widget>[
+                                                    Container(
+                                                      width: 40,
+                                                      alignment:
+                                                      Alignment.topCenter,
+                                                      child: Text(
+                                                        "EU",
+                                                        style: TextStyle(
+                                                            fontSize: 14,
+                                                            color: Colors.white,
+                                                            fontWeight:
+                                                            FontWeight.w100),
+                                                      ),
+                                                    ),
+                                                    Expanded(
+                                                        flex: 8,
+                                                        child: Container(
+                                                          alignment:
+                                                          Alignment.topCenter,
+                                                          child: Text(
+                                                            "Довжина/см",
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                color:
+                                                                Colors.white,
+                                                                fontWeight:
+                                                                FontWeight
+                                                                    .w100),
+                                                          ),
+                                                        )),
+                                                    Expanded(
+                                                        flex: 6,
+                                                        child: Container(
+                                                          alignment:
+                                                          Alignment.topCenter,
+                                                          child: Text(
+                                                            "Ширина/см",
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                color:
+                                                                Colors.white,
+                                                                fontWeight:
+                                                                FontWeight
+                                                                    .w100),
+                                                          ),
+                                                        )),
+                                                  ],
+                                                ),
+                                              )),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 16,
+                                alignment: Alignment.bottomLeft,
+                                child: Text(" Матеріал : $material",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w100)),
+                              ),
+                            ],
+                          ),
+                        ),
+                        flex: 9,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: IconButton(icon: Icon(Icons.favorite,color:favoriteIconColor),
+                onPressed: (){
+                  setState(() {
+                    if(favoriteIconColor == Colors.white){
+                      favoriteIconColor = Colors.red;
+                    }else{
+                      favoriteIconColor = Colors.white;
+                    }
+                  });}
+            ),),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children :<Widget>[
+                Padding (
+                    padding: EdgeInsets.only(top:15),
+                    child :Container (
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(22),
+                          color: Color(0xffFFD600)),
+                      height: 30,width: 74,
+                      child :Padding (
+                          padding: EdgeInsets.only(top:7),
+                          child: Text('100 \$',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700))),
+                    )),]),
+        ]));
   }
   void filterAddButtonSheet (context){
     showModalBottomSheet(
@@ -279,7 +333,7 @@ class MainScreenState extends State<MainScreen> {
                alignment: Alignment.center,
                child: IconButton(icon: Icon(Icons.keyboard_arrow_down,size: 27,color: Colors.black,),
                    onPressed:(){
-                 Navigator.of(context).pop();
+                 Get.back();
                    }),
              ),
              Row(children: <Widget>[

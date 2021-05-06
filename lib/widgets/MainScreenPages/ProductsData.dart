@@ -1,6 +1,6 @@
-class Data {
-  String image, brand, material, size, length, width, uploadId;
+class Products {
+  String image, brand, material, size, length, width;
 
-  Data(this.image, this.brand, this.material, this.size, this.length,
-      this.width, this.uploadId);
+  Products(this.image, this.brand, this.material, this.size, this.length,
+      this.width);
 }

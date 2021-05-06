@@ -11,6 +11,7 @@ class InitializerWidget extends StatefulWidget {
 }
 
 class _InitializerWidgetState extends State<InitializerWidget> {
+  
   FirebaseAuth _auth;
   User _user;
   bool isLoading = true;
