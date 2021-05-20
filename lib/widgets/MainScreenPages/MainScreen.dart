@@ -1,37 +1,49 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
+import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/MoreInfoScreen.dart';
-import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:kopamain/widgets/MainScreenPages/ProductsData.dart';
+import 'package:kopamain/widgets/MainScreenPages/Favorites.dart';
 
 class MainScreen extends StatefulWidget {
+  final productId;
+  MainScreen({this.productId});
   @override
   MainScreenState createState() => MainScreenState();
 }
 
 class MainScreenState extends State<MainScreen> {
-  List <Products> productsList = [];
+  FirebaseServices firebaseServices = FirebaseServices();
 
-  Color favoriteIconColor = Colors.white;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-        body: StreamBuilder(
-          stream: FirebaseFirestore.instance.collection('products').snapshots(),
-          builder: (context, snapshot){
-            if(!snapshot.hasData) return const Text('Loading...');
-            return ListView.builder(
-              itemCount: snapshot.data.docs.length,
-              itemBuilder: (context, index)=>productsUI(context, snapshot.data.docs[index],),
-            );
+      backgroundColor: ThemeManager.background,
+        body: FutureBuilder<QuerySnapshot>(
+          future: firebaseServices.productRef.get(),
+          builder: (context,snapshot){
+            if(snapshot.hasError){return Scaffold(
+                backgroundColor: ThemeManager.background,
+              body: Center(
+              child: Text("Error: ${snapshot.error}"),),);}
+            if(snapshot.connectionState==ConnectionState.done){
+              return ListView(
+                children: snapshot.data.docs.map((document){
+                  return productsUI(context, document);
+                }).toList(),
+              );
+            }
+            return Scaffold(
+              backgroundColor: ThemeManager.background,
+              body: Center(child: CircularProgressIndicator(),),);
           },
+
         ),
 
         appBar: AppBar(
             automaticallyImplyLeading: false,
-            backgroundColor: Colors.black,
+            backgroundColor: ThemeManager.background,
 
     leading: GestureDetector(
     onTap: () { },
@@ -45,14 +57,16 @@ class MainScreenState extends State<MainScreen> {
             })),
         )));
   }
-  Widget productsUI (BuildContext context, DocumentSnapshot docs){
+  Widget productsUI (BuildContext context, DocumentSnapshot document){
     final double radius = 22;
     return InkWell( onTap: (){
-      Get.to(MoreInfo());},
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context)=> MoreInfo(productId: document.id,)));
+    } ,
         child :Stack( children : <Widget>[
           Container(
             height: 150,
-            decoration: BoxDecoration(color: Colors.black),
+            decoration: BoxDecoration(color: ThemeManager.background),
             child: Padding(
               padding: EdgeInsets.only(top: 1, left: 10, bottom: 4, right: 10),
               child: Card(
@@ -71,7 +85,7 @@ class MainScreenState extends State<MainScreen> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(radius),
                           child: FittedBox(
-                            child: Image.network(docs['image']),
+                            child: Image.network(document['image'][0]),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -85,9 +99,8 @@ class MainScreenState extends State<MainScreen> {
                             children: <Widget>[
                               Container(
                                 height: 24,
-                                //color: Colors.blue,
                                 alignment: Alignment.centerLeft,
-                                child: Text(docs['brand'],
+                                child: Text(document['brand'],
                                     style: TextStyle(
                                         fontSize: 22,
                                         color: Colors.white,
@@ -95,7 +108,6 @@ class MainScreenState extends State<MainScreen> {
                               ),
                               Container(
                                 height: 16,
-                                //color: Colors.green,
                                 alignment: Alignment.bottomLeft,
                                 child: Text(" Розміри стопи: ",
                                     style: TextStyle(
@@ -122,7 +134,7 @@ class MainScreenState extends State<MainScreen> {
                                                       alignment:
                                                       Alignment.bottomCenter,
                                                       child: Text(
-                                                        docs['size'],
+                                                        document['size'],
                                                         style: TextStyle(
                                                             fontSize: 25,
                                                             color: Colors
@@ -137,7 +149,7 @@ class MainScreenState extends State<MainScreen> {
                                                           alignment: Alignment
                                                               .bottomCenter,
                                                           child: Text(
-                                                            docs['length'],
+                                                            document['length'],
                                                             style: TextStyle(
                                                                 fontSize: 18,
                                                                 color:
@@ -153,7 +165,7 @@ class MainScreenState extends State<MainScreen> {
                                                           alignment: Alignment
                                                               .bottomCenter,
                                                           child: Text(
-                                                            docs['width'],
+                                                            document['width'],
                                                             style: TextStyle(
                                                                 fontSize: 18,
                                                                 color:
@@ -166,62 +178,62 @@ class MainScreenState extends State<MainScreen> {
                                                   ],
                                                 ),
                                               )),
-                                          Container(
-                                            height: 5,
-                                          ),
                                           Expanded(
                                               flex: 3,
-                                              child: Container(
-                                                height: 18,
-                                                alignment: Alignment.topLeft,
-                                                child: Row(
-                                                  children: <Widget>[
-                                                    Container(
-                                                      width: 40,
-                                                      alignment:
-                                                      Alignment.topCenter,
-                                                      child: Text(
-                                                        "EU",
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            color: Colors.white,
-                                                            fontWeight:
-                                                            FontWeight.w100),
+                                              child: Padding(
+                                                padding:  EdgeInsets.only(top: 5),
+                                                child: Container(
+                                                  height: 18,
+                                                  alignment: Alignment.topLeft,
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Container(
+                                                        width: 40,
+                                                        alignment:
+                                                        Alignment.topCenter,
+                                                        child: Text(
+                                                          "EU",
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              color: Colors.white,
+                                                              fontWeight:
+                                                              FontWeight.w100),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Expanded(
-                                                        flex: 8,
-                                                        child: Container(
-                                                          alignment:
-                                                          Alignment.topCenter,
-                                                          child: Text(
-                                                            "Довжина/см",
-                                                            style: TextStyle(
-                                                                fontSize: 14,
-                                                                color:
-                                                                Colors.white,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w100),
-                                                          ),
-                                                        )),
-                                                    Expanded(
-                                                        flex: 6,
-                                                        child: Container(
-                                                          alignment:
-                                                          Alignment.topCenter,
-                                                          child: Text(
-                                                            "Ширина/см",
-                                                            style: TextStyle(
-                                                                fontSize: 14,
-                                                                color:
-                                                                Colors.white,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w100),
-                                                          ),
-                                                        )),
-                                                  ],
+                                                      Expanded(
+                                                          flex: 8,
+                                                          child: Container(
+                                                            alignment:
+                                                            Alignment.topCenter,
+                                                            child: Text(
+                                                              "Довжина/см",
+                                                              style: TextStyle(
+                                                                  fontSize: 14,
+                                                                  color:
+                                                                  Colors.white,
+                                                                  fontWeight:
+                                                                  FontWeight
+                                                                      .w100),
+                                                            ),
+                                                          )),
+                                                      Expanded(
+                                                          flex: 6,
+                                                          child: Container(
+                                                            alignment:
+                                                            Alignment.topCenter,
+                                                            child: Text(
+                                                              "Ширина/см",
+                                                              style: TextStyle(
+                                                                  fontSize: 14,
+                                                                  color:
+                                                                  Colors.white,
+                                                                  fontWeight:
+                                                                  FontWeight
+                                                                      .w100),
+                                                            ),
+                                                          )),
+                                                    ],
+                                                  ),
                                                 ),
                                               )),
                                         ],
@@ -234,12 +246,12 @@ class MainScreenState extends State<MainScreen> {
                                 height: 16,
                                 alignment: Alignment.bottomLeft,
                                 child: Row(children:<Widget> [
-                                  Text(" Матеріал :",
+                                  Text(" Матеріал : ",
                                       style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.white,
+                                          fontSize: 10,
+                                          color: Color(0xff9A9A9A),
                                           fontWeight: FontWeight.w100)),
-                                  Text(docs['material'])
+                                  Text(document['material'],style: TextStyle(fontSize: 10,color: Color(0xff9A9A9A)),)
                                 ],)
 
                               ),
@@ -254,18 +266,15 @@ class MainScreenState extends State<MainScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(icon: Icon(Icons.favorite,color:favoriteIconColor),
-                onPressed: (){
-                  setState(() {
-                    if(favoriteIconColor == Colors.white){
-                      favoriteIconColor = Colors.red;
-                    }else{
-                      favoriteIconColor = Colors.white;
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: IconButton(icon: Icon(Icons.favorite,color:Colors.white),
+                    onPressed: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context)=> FavoritesScreenMain(productId: document.id,)));
                     }
-                  });}
-            ),),
+                )),
+
           Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children :<Widget>[
@@ -299,7 +308,7 @@ class MainScreenState extends State<MainScreen> {
                alignment: Alignment.center,
                child: IconButton(icon: Icon(Icons.keyboard_arrow_down,size: 27,color: Colors.black,),
                    onPressed:(){
-                 Get.back();
+                     Navigator.of(context).pop();
                    }),
              ),
              Row(children: <Widget>[
@@ -326,39 +335,44 @@ class MainScreenState extends State<MainScreen> {
                        prefixIcon: Icon(Icons.circle,size: 9,color: Colors.blue,),),
                          style: TextStyle(
                              fontSize: (14), color: Colors.white)
-                     ),flex:5),
-                     Spacer(flex: 1),
+                     ),flex:7),
+                     Spacer(flex: 1,),
                      Expanded(child :TextField(style: TextStyle(
-                         fontSize: (14), color: Colors.white)),flex:5),
-                     Expanded(child: Container(),flex:9)
+                         fontSize: (14), color: Colors.white)),flex:7),
+                     Expanded(child: Container(),flex:8)
                    ],)
                    )],),
                  Row(children: <Widget>[
-                   Expanded (child:Row(children: <Widget>[
+                   Expanded (
+                       child:Row(children: <Widget>[
                      Expanded(child : TextField(decoration: InputDecoration(
                        labelText: "Ціна",
                        labelStyle: TextStyle(fontSize: 14,color: Colors.white),
                        prefixIcon: Icon(Icons.circle,size: 9,color: Colors.blue,),
-                     ), style: TextStyle(
-                             fontSize: (14), color: Colors.white)
-                     ),flex:5),
+                     ),
+                         style: TextStyle(fontSize: (14), color: Colors.white)),flex:7),
                      Spacer(flex: 1),
                      Expanded(child :TextField(style: TextStyle(
-                         fontSize: (14), color: Colors.white)),flex:5),
-                     Expanded(child: Container(),flex:9)
+                         fontSize: (14), color: Colors.white)),flex:7),
+                     Expanded(child: Container(),flex:8)
                    ],)
                    )],),
              Row (
                mainAxisAlignment: MainAxisAlignment.end,
                children :<Widget>[
-               TextButton(onPressed: (){},
-                 child: Text('СКИНУТИ',
-                   style: TextStyle(fontSize: 12,color: Colors.blue),)),
-                 Container(height: 50,width: 50,),
-                 Container (
-                     margin: EdgeInsets.only(right: 15),
-                     child :TextButton(onPressed: (){},
-                     child: Text('ЗАСТОСУВАТИ',style: TextStyle(fontSize: 12,color: Colors.blue),)))
+               Padding(
+                 padding: EdgeInsets.only(top: 30, left: 20),
+                 child: TextButton(onPressed: (){},
+                   child: Text('СКИНУТИ',
+                     style: TextStyle(fontSize: 12,color: Colors.blue),)),
+               ),
+                 Padding(
+                   padding: EdgeInsets.only(top: 30, left: 20),
+                   child: Container(
+                       margin: EdgeInsets.only(right: 15),
+                       child :TextButton(onPressed: (){},
+                       child: Text('ЗАСТОСУВАТИ',style: TextStyle(fontSize: 12,color: Colors.blue),))),
+                 )
                ],),
           ],),]),
            )),

@@ -1,9 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kopamain/widgets/LogIn/Verification3.dart';
-import 'package:get/get.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
 
 enum MobileVerificationState{
   Verification,
@@ -24,20 +24,29 @@ class VerificationState extends State<Verification> {
   FirebaseAuth _auth = FirebaseAuth.instance;
   String verificationId;
   bool showLoading = false;
+
   void signInWithPhoneAuthCredential(PhoneAuthCredential phoneAuthCredential) async{
     setState(() {
       showLoading = true;
     });
     try {
-      final authCredential = await _auth.signInWithCredential(phoneAuthCredential);
+      final authCredential = await _auth.signInWithCredential(phoneAuthCredential)
+          .then((result){
+            String _userId = result.user.uid;
+            String phoneNumber = result.user.phoneNumber;
+            FirebaseFirestore.instance.collection('users').doc(_userId).set({
+                "id":_userId,
+              "phoneNumber": phoneNumber,
+            });
+      });
       setState(() {
         showLoading = false;
       });
       if (authCredential?.user!=null){
-        Get.to(Verification3());
-
+        Navigator.pushNamed(context, '/Home');
       }
-    } on FirebaseAuthException catch (e) {
+    }
+    on FirebaseAuthException catch (e) {
       showLoading = false;
     }
   }
@@ -107,6 +116,7 @@ class VerificationState extends State<Verification> {
                             onPressed: () async{
                               setState(() async{
                                 if (formKey.currentState.validate()) {
+
                                   setState(() {
                                     showLoading = true;
                                   });
@@ -213,7 +223,9 @@ class VerificationState extends State<Verification> {
                                 setState(() async{
                                   if (formKey.currentState.validate()) {
                                     PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(verificationId: verificationId, smsCode: otpController.text);
+
                                     signInWithPhoneAuthCredential(phoneAuthCredential);
+                                    Navigator.pushNamed(context, '/Verification3');
                                   }
                                 });
                               }))
@@ -224,10 +236,10 @@ class VerificationState extends State<Verification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            resizeToAvoidBottomInset: false,
-            backgroundColor: Colors.black,
-            body: Container (
-                child :showLoading?Center(child: CircularProgressIndicator(),): currentState == MobileVerificationState.Verification ?
+        resizeToAvoidBottomInset: false,
+        backgroundColor: ThemeManager.background,
+        body: Container (
+            child :showLoading?Center(child: CircularProgressIndicator(),): currentState == MobileVerificationState.Verification ?
             getMobileFormWidget(context) : getOtpFormWidget(context))
     );
   }

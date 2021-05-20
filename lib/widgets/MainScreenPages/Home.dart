@@ -23,12 +23,14 @@ class HomeState extends State<Home> {
     final placeholder= Opacity(opacity :  0,
         child: IconButton(icon: Icon(Icons.cloud_done),onPressed: null));
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xff232326),
       body: this.getBody(),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         backgroundColor: Colors.lightBlue,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/UserCreate');
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(

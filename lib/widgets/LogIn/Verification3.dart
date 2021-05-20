@@ -1,9 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
+import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/LogIn/ImageLogIn.dart';
-import 'package:kopamain/widgets/MainScreenPages/Home.dart';
-import 'package:get/get.dart';
 
 class Verification3 extends StatefulWidget {
   @override
@@ -11,7 +11,7 @@ class Verification3 extends StatefulWidget {
 }
 
 class Verification3State extends State<Verification3> {
-  final _auth = FirebaseAuth.instance;
+
   TextEditingController nameController = TextEditingController();
   TextEditingController surNameController = TextEditingController();
   TextEditingController cityController = TextEditingController();
@@ -23,7 +23,7 @@ class Verification3State extends State<Verification3> {
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(30));
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.black,
+        backgroundColor: ThemeManager.background,
         body: Form(
             key: formKey,
         child:Padding(
@@ -148,7 +148,21 @@ class Verification3State extends State<Verification3> {
                       onPressed: () {
                         setState(() {
                           if (formKey.currentState.validate()) {
-                            Get.to(Home());
+                            FirebaseServices firebaseServices = FirebaseServices();
+                              String _userId = firebaseServices.getUserId();
+                              String userPhoneNumber = firebaseServices.getUserPhone();
+                            String name = nameController.text;
+                            String secondName = surNameController.text;
+                            String city = cityController.text;
+                            FirebaseFirestore.instance.collection('users').doc(_userId).update({
+                              "id":_userId,
+                              "phoneNumber" :userPhoneNumber,
+                              "name":name,
+                              "secondName":secondName,
+                              "city":city
+                            });
+
+                            Navigator.pushNamed(context, '/Home');
                           }
                         });
                       }))

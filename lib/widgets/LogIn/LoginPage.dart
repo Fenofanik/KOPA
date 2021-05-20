@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/widgets/LogIn/LogInPageImage.dart';
 import 'package:kopamain/widgets/LogIn/ButtonLogIn.dart';
 
@@ -12,7 +13,7 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: ThemeManager.background,
         body: Padding(
             padding: EdgeInsets.all(20),
             child: Column(

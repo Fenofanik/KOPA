@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
 
 class MyScreenMain extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class MyScreenMainState extends State<MyScreenMain>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: ThemeManager.background,
       body:  Padding(
         padding: const EdgeInsets.only(left: 20,right:20),
         child: Column(
@@ -64,14 +65,14 @@ class MyScreenMainState extends State<MyScreenMain>
                 controller: _tabController,
                 children: [
                   Center(
-                    child: Text(
-                      'Активні',
+                    child: ConstrainedBox(
+                        constraints: BoxConstraints.tightFor(width: 160, height: 100),
+                        child:Text(
+                       '   У вас поки немає активних оголошень',
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
+                       fontSize: 16,
+                      fontWeight: FontWeight.w600,color: Colors.white)
+                        ))),
 
                   Center(
                     child: Text(
@@ -89,7 +90,7 @@ class MyScreenMainState extends State<MyScreenMain>
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: ThemeManager.background,
         automaticallyImplyLeading: false,
       ),
     );
