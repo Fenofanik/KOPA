@@ -1,11 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 
 import 'MoreInfo/MoreInfoScreen.dart';
 
 class FavoritesScreenMain extends StatefulWidget {
   final productId;
-  FavoritesScreenMain({this.productId});
+  final bool isFavorite;
+  FavoritesScreenMain({this.productId,this.isFavorite});
   @override
   FavoritesScreenMainState createState() => FavoritesScreenMainState();
 }
@@ -17,47 +20,45 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body:
-      FutureBuilder(
+      body: FutureBuilder(
         future: firebaseServices.productRef.doc(widget.productId).get(),
         builder: (context,snapshot){
           if(snapshot.hasError){return Scaffold(
-            backgroundColor: Color(0xff232326),
+            backgroundColor: ThemeManager.background,
             body: Center(
               child: Text("Error: ${snapshot.error}"),),);}
           if(snapshot.connectionState==ConnectionState.done){
-            Map<String, dynamic> documentData = snapshot.data.data();
-            return ListView(
-                children:[
-                  productsUI(context,documentData)
-                ]
-            );
+            return widget.isFavorite!=true?ListView(
+              children: snapshot.data.data().docs(widget.productId).map((document){
+                return productsUI(context, document);
+              }).toList(),
+            ):Container(child: Center(child: Text("ABOBA")),);
           }
           return Scaffold(
-            backgroundColor: Color(0xff232326),
+            backgroundColor: ThemeManager.background,
             body: Center(child: CircularProgressIndicator(),),);
         },
 
       ),
-      backgroundColor: Color(0xff232326),
+      backgroundColor: ThemeManager.background,
       appBar: AppBar(
-        backgroundColor: Color(0xff232326),
+        backgroundColor: ThemeManager.background,
         automaticallyImplyLeading: false,
       ),
     );
   }
 
-  Widget productsUI(BuildContext context, documentData) {
+  Widget productsUI(BuildContext context, DocumentSnapshot document) {
     final double radius = 22;
     return InkWell(onTap: () {
       Navigator.push(context,
           MaterialPageRoute(
-              builder: (context) => MoreInfo(productId: documentData,)));
+              builder: (context) => MoreInfo(productId: document.id,)));
     },
         child: Stack(children: <Widget>[
           Container(
             height: 150,
-            decoration: BoxDecoration(color: Color(0xff232326)),
+            decoration: BoxDecoration(color: ThemeManager.background),
             child: Padding(
               padding: EdgeInsets.only(top: 1, left: 10, bottom: 4, right: 10),
               child: Card(
@@ -76,7 +77,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(radius),
                           child: FittedBox(
-                            child: Image.network(documentData['image'][0]),
+                            child: Image.network(document['image'][0]),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -91,7 +92,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
                               Container(
                                 height: 24,
                                 alignment: Alignment.centerLeft,
-                                child: Text(documentData['brand'],
+                                child: Text(document['brand'],
                                     style: TextStyle(
                                         fontSize: 22,
                                         color: Colors.white,
@@ -125,7 +126,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
                                                       alignment:
                                                       Alignment.bottomCenter,
                                                       child: Text(
-                                                        documentData['size'],
+                                                        document['size'],
                                                         style: TextStyle(
                                                             fontSize: 25,
                                                             color: Colors
@@ -140,7 +141,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
                                                           alignment: Alignment
                                                               .bottomCenter,
                                                           child: Text(
-                                                            documentData['length'],
+                                                            document['length'],
                                                             style: TextStyle(
                                                                 fontSize: 18,
                                                                 color:
@@ -156,7 +157,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
                                                           alignment: Alignment
                                                               .bottomCenter,
                                                           child: Text(
-                                                            documentData['width'],
+                                                            document['width'],
                                                             style: TextStyle(
                                                                 fontSize: 18,
                                                                 color:
@@ -244,7 +245,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
                                             fontSize: 10,
                                             color: Color(0xff9A9A9A),
                                             fontWeight: FontWeight.w100)),
-                                    Text(documentData['material'], style: TextStyle(
+                                    Text(document['material'], style: TextStyle(
                                         fontSize: 10,
                                         color: Color(0xff9A9A9A)),)
                                   ],)

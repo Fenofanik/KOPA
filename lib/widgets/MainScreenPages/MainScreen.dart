@@ -8,7 +8,8 @@ import 'package:kopamain/widgets/MainScreenPages/Favorites.dart';
 
 class MainScreen extends StatefulWidget {
   final productId;
-  MainScreen({this.productId});
+  final bool isFavorite;
+  MainScreen({this.productId,this.isFavorite});
   @override
   MainScreenState createState() => MainScreenState();
 }
@@ -59,6 +60,7 @@ class MainScreenState extends State<MainScreen> {
   }
   Widget productsUI (BuildContext context, DocumentSnapshot document){
     final double radius = 22;
+    bool isFavorite;
     return InkWell( onTap: (){
       Navigator.push(context,
           MaterialPageRoute(builder: (context)=> MoreInfo(productId: document.id,)));
@@ -270,8 +272,10 @@ class MainScreenState extends State<MainScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: IconButton(icon: Icon(Icons.favorite,color:Colors.white),
                     onPressed: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> FavoritesScreenMain(productId: document.id,)));
+                  setState(() {
+                    FavoritesScreenMain(isFavorite :isFavorite=true);
+                  });
+
                     }
                 )),
 

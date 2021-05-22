@@ -17,11 +17,15 @@ class _UserCreateState extends State<UserCreate> {
     return Scaffold(
       backgroundColor: ThemeManager.background,
       body: Container(
-        height:  MediaQuery.of(context).size.height*45,
+        height:  MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         child: userCreateUI(context),
       ),
       appBar: AppBar(
         backgroundColor: ThemeManager.background,
+        actions: [
+          TextButton(onPressed: null, child: Text("Зберегти",style: TextStyle(fontSize: 10,color: Colors.blue),))
+        ],
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
@@ -93,6 +97,9 @@ class _UserCreateState extends State<UserCreate> {
                   ],),
                   Expanded(
                     child: Container(color: Color(0xff343434),
+                      height:  MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+
                       child: Column(children:<Widget> [
                          Row(children: <Widget>[
                             Expanded(
@@ -117,8 +124,26 @@ class _UserCreateState extends State<UserCreate> {
                                     child: Text("Eu",style: TextStyle(fontSize: 10,color: Colors.white),),
                                   ),
                                 ],),
-                                Row(children:<Widget> [],),
-                                Row(children:<Widget> [],)
+                                Row(children:<Widget> [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text("Довжина/см",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text("39",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                  ),
+                                ],),
+                                Row(children:<Widget> [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text("Ширина/см",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text("10,5",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                  ),
+                                ],)
                               ],),
                             )
 
@@ -163,7 +188,7 @@ class _UserCreateState extends State<UserCreate> {
                       fontSize: (14), color: Colors.white)
               ),)],),
           )),
-          Expanded(child: Container(color: ThemeManager.background,
+          Expanded(child: Container(color: Color(0xff343434),
             child: Row(children: <Widget>[
               Expanded (child:TextField(decoration: InputDecoration(
                 labelText: "Ціна",
