@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
@@ -19,26 +20,46 @@ class MoreInfoState extends State<MoreInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ThemeManager.background,
-      body: FutureBuilder(
-        future: firebaseServices.productRef.doc(widget.productId).get(),
-        builder: (context,snapshot){
-          if(snapshot.hasError){return Scaffold(
-            backgroundColor: ThemeManager.background,
-            body: Center(
-              child: Text("Error: ${snapshot.error}"),),);}
-          if(snapshot.connectionState==ConnectionState.done){
-            Map<String, dynamic> documentData = snapshot.data.data();
-            return ListView(
-              children:[
-                moreInfoUI(context,documentData)
-              ]
-            );
-          }
-          return Scaffold(
-            backgroundColor: ThemeManager.background,
-            body: Center(child: CircularProgressIndicator(),),);
-        },
+      body: FutureBuilder<QuerySnapshot>(
+        future: firebaseServices.productRef.get(),
+        builder: (context, productsSnapshot) {
+          return StreamBuilder<QuerySnapshot>(
+              stream: firebaseServices.userRef.snapshots(),
+              builder: (context, userSnapshot) {
+                if (userSnapshot.hasError) {
+                  return Scaffold(
+                    backgroundColor: ThemeManager.background,
+                    body: Center(
+                      child: Text("Error: ${userSnapshot.error}"),
+                    ),
+                  );
+                }
+                if (userSnapshot.connectionState == ConnectionState.active &&
+                    productsSnapshot.connectionState ==
+                        ConnectionState.done) {
+                  final userId = firebaseServices.getUserId();
+                  final user = userSnapshot.data.docs.firstWhere((element) {
+                    return element['id'] == userId;
+                  });
+                  final userFavs = List<String>.from(user['favs']);
 
+                  final prodData = productsSnapshot.data.docs
+                    .where((element) => element['id'] == widget.productId);
+
+                  return ListView(
+                    children: prodData.map((document) {
+                      return moreInfoUI(context, document, userFavs);
+                    }).toList(),
+                  );
+                }
+                return Scaffold(
+                  backgroundColor: ThemeManager.background,
+                  body: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              });
+        },
       ),
       appBar: AppBar(
         backgroundColor: ThemeManager.background,
@@ -55,8 +76,8 @@ class MoreInfoState extends State<MoreInfo> {
       ),
     );
   }
-  Widget moreInfoUI (BuildContext context,  documentData){
-    List imageList = documentData['image'];
+  Widget moreInfoUI (BuildContext context, DocumentSnapshot document,List<String>favs){
+    List imageList = document['image'];
     final double radius = 22;
     return SingleChildScrollView(child :Container (
               decoration: BoxDecoration(color:ThemeManager.background),
@@ -103,13 +124,14 @@ class MoreInfoState extends State<MoreInfo> {
                                       children: <Widget>[
                                         Padding(
                                           padding: const EdgeInsets.only(top : 10,left: 190),
-                                          child: IconButton(icon: Icon(Icons.favorite,color:favoriteIconColor,size: 42,),
-                                              onPressed: (){
-                                                setState(() {
-                                                  favoriteIconColor = Colors.red;
-                                                });
-                                                }
-                                          ),),
+                                          child: IconButton(
+                                              icon: Icon(Icons.favorite,
+                                                  color: favs.contains(document.id)
+                                                      ? Colors.red
+                                                      : Colors.white),
+                                              onPressed: () async {
+                                                await firebaseServices.updateUserFavs(document.id, favs);
+                                              })),
                                       ],),
                                   ],),
                                   Padding(
@@ -117,7 +139,7 @@ class MoreInfoState extends State<MoreInfo> {
                                     child: Container(
                                       height: 24,
                                       alignment: Alignment.centerLeft,
-                                      child: Text(documentData['brand'],
+                                      child: Text(document['brand'],
                                           style: TextStyle(
                                               fontSize: 22,
                                               color: Colors.white,
@@ -153,7 +175,7 @@ class MoreInfoState extends State<MoreInfo> {
                                                     alignment:
                                                     Alignment.bottomCenter,
                                                     child: Text(
-                                                      documentData['size'],
+                                                      document['size'],
                                                       style: TextStyle(
                                                           fontSize: 22,
                                                           color: Colors
@@ -167,7 +189,7 @@ class MoreInfoState extends State<MoreInfo> {
                                                     alignment: Alignment
                                                         .bottomCenter,
                                                     child: Text(
-                                                      documentData['length'],
+                                                      document['length'],
                                                       style: TextStyle(
                                                           fontSize: 14,
                                                           color:
@@ -182,7 +204,7 @@ class MoreInfoState extends State<MoreInfo> {
                                                     alignment: Alignment
                                                         .bottomCenter,
                                                     child: Text(
-                                                      documentData['width'],
+                                                      document['width'],
                                                       style: TextStyle(
                                                           fontSize: 14,
                                                           color:
@@ -269,7 +291,7 @@ class MoreInfoState extends State<MoreInfo> {
                                                   fontWeight: FontWeight.w100)),
                                           Padding(
                                             padding: EdgeInsets.only(left: 5),
-                                            child: Text(documentData['material'],style: TextStyle(fontSize: 10,color: Color(0xff9A9A9A)),),
+                                            child: Text(document['material'],style: TextStyle(fontSize: 10,color: Color(0xff9A9A9A)),),
                                           )
                                         ],)
                                     ),

@@ -12,9 +12,9 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
   int selectedIndex = 0;
-  Widget mainScreen = MainScreen();
+  Widget mainScreen = MainScreen(productId: 1, isFavorite: false,);
   Widget myScreen = MyScreenMain();
-  Widget favoriteScreen = FavoritesScreenMain();
+  Widget favoriteScreen = MainScreen(productId: 1, isFavorite: true,);
   Widget profileScreen = ProfileScreenMain();
 
   @override

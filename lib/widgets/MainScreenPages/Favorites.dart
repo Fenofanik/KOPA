@@ -20,25 +20,50 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: FutureBuilder(
-        future: firebaseServices.productRef.doc(widget.productId).get(),
-        builder: (context,snapshot){
-          if(snapshot.hasError){return Scaffold(
-            backgroundColor: ThemeManager.background,
-            body: Center(
-              child: Text("Error: ${snapshot.error}"),),);}
-          if(snapshot.connectionState==ConnectionState.done){
-            return widget.isFavorite!=true?ListView(
-              children: snapshot.data.data().docs(widget.productId).map((document){
-                return productsUI(context, document);
-              }).toList(),
-            ):Container(child: Center(child: Text("ABOBA")),);
-          }
-          return Scaffold(
-            backgroundColor: ThemeManager.background,
-            body: Center(child: CircularProgressIndicator(),),);
-        },
+      body: FutureBuilder<QuerySnapshot>(
+        future: firebaseServices.productRef.get(),
+        builder: (context, productsSnapshot) {
+          return StreamBuilder<QuerySnapshot>(
+              stream: firebaseServices.userRef.snapshots(),
+              builder: (context, userSnapshot) {
+                if (userSnapshot.hasError) {
+                  return Scaffold(
+                    backgroundColor: ThemeManager.background,
+                    body: Center(
+                      child: Text("Error: ${userSnapshot.error}"),
+                    ),
+                  );
+                }
+                if (userSnapshot.connectionState == ConnectionState.active &&
+                    productsSnapshot.connectionState ==
+                        ConnectionState.done) {
+                  final userId = firebaseServices.getUserId();
+                  final user = userSnapshot.data.docs.firstWhere((element) {
+                    return element['id'] == userId;
+                  });
+                  final userFavs = List<String>.from(user['favs']);
 
+                  final poductsData = widget.isFavorite
+                      ? productsSnapshot.data.docs.where((element) {
+                    final id = element['id'].toString().trim();
+                    return userFavs.contains(id);
+                  })
+                      : productsSnapshot.data.docs;
+
+                  return ListView(
+                    children: poductsData.map((document) {
+                      return productsUI(context, document, userFavs);
+                    }).toList(),
+                  );
+                }
+                return Scaffold(
+                  backgroundColor: ThemeManager.background,
+                  body: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              });
+        },
       ),
       backgroundColor: ThemeManager.background,
       appBar: AppBar(
@@ -48,7 +73,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
     );
   }
 
-  Widget productsUI(BuildContext context, DocumentSnapshot document) {
+  Widget productsUI(BuildContext context, DocumentSnapshot document,List<String> favs) {
     final double radius = 22;
     return InkWell(onTap: () {
       Navigator.push(context,
@@ -264,11 +289,14 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
           ),
           Padding(
               padding: const EdgeInsets.all(8.0),
-              child: IconButton(icon: Icon(Icons.favorite, color: Colors.white),
-                  onPressed: () {
-
-                  }
-              )),
+              child: IconButton(
+                  icon: Icon(Icons.favorite,
+                      color: favs.contains(document.id)
+                          ? Colors.red
+                          : Colors.white),
+                  onPressed: () async {
+                    await firebaseServices.updateUserFavs(document.id, favs);
+                  })),
           Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
