@@ -43,7 +43,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
                   });
                   final userFavs = List<String>.from(user['favs']);
 
-                  final poductsData = widget.isFavorite
+                  final productsData = widget.isFavorite
                       ? productsSnapshot.data.docs.where((element) {
                     final id = element['id'].toString().trim();
                     return userFavs.contains(id);
@@ -51,7 +51,7 @@ class FavoritesScreenMainState extends State<FavoritesScreenMain> {
                       : productsSnapshot.data.docs;
 
                   return ListView(
-                    children: poductsData.map((document) {
+                    children: productsData.map((document) {
                       return productsUI(context, document, userFavs);
                     }).toList(),
                   );

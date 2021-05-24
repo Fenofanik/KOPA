@@ -46,7 +46,7 @@ class MainScreenState extends State<MainScreen> {
                     });
                     final userFavs = List<String>.from(user['favs']);
 
-                    final poductsData = widget.isFavorite
+                    final productsData = widget.isFavorite
                         ? productsSnapshot.data.docs.where((element) {
                             final id = element['id'].toString().trim();
                             return userFavs.contains(id);
@@ -54,7 +54,7 @@ class MainScreenState extends State<MainScreen> {
                         : productsSnapshot.data.docs;
 
                     return ListView(
-                      children: poductsData.map((document) {
+                      children: productsData.map((document) {
                         return productsUI(context, document, userFavs);
                       }).toList(),
                     );
@@ -73,30 +73,30 @@ class MainScreenState extends State<MainScreen> {
             backgroundColor: ThemeManager.background,
             leading: GestureDetector(
               onTap: () {},
-              child: Container(
-                  alignment: Alignment.bottomLeft,
-                  child: IconButton(
-                      icon: Icon(Icons.filter_list_alt, size: 16),
-                      color: Colors.white,
-                      onPressed: () {
-                        filterAddButtonSheet(context);
-                      })),
+              child: widget.isFavorite
+                  ? Container()
+                  : Container(
+                      alignment: Alignment.bottomLeft,
+                      child: IconButton(
+                          icon: Icon(Icons.filter_list_alt, size: 16),
+                          color: Colors.white,
+                          onPressed: () {
+                            filterAddButtonSheet(context);
+                          })),
             )));
   }
 
   Widget productsUI(
       BuildContext context, DocumentSnapshot document, List<String> favs) {
     final double radius = 22;
-    final isFavorite = favs.contains(document.id);
+    final isFavorite = favs.contains(document.id.trim());
 
     return InkWell(
         onTap: () {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => MoreInfo(
-                        productId: document.id
-                      )));
+                  builder: (context) => MoreInfo(productId: document.id.trim())));
         },
         child: Stack(children: <Widget>[
           Container(
@@ -315,9 +315,7 @@ class MainScreenState extends State<MainScreen> {
               padding: const EdgeInsets.all(8.0),
               child: IconButton(
                   icon: Icon(Icons.favorite,
-                      color: isFavorite
-                          ? Colors.red
-                          : Colors.white),
+                      color: isFavorite ? Colors.red : Colors.white),
                   onPressed: () async {
                     await firebaseServices.updateUserFavs(document.id, favs);
                   })),
@@ -332,7 +330,7 @@ class MainScreenState extends State<MainScreen> {
                   width: 74,
                   child: Padding(
                       padding: EdgeInsets.only(top: 7),
-                      child: Text('100 \$',
+                      child: Text(document['price'],
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w700))),

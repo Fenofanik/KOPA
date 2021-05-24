@@ -42,7 +42,9 @@ class _UserCreateState extends State<UserCreate> {
   Widget userCreateUI(BuildContext context){
     return SingleChildScrollView(
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
+        constraints: BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
         child: Column(children:<Widget> [
           Expanded(
             flex: 3,
@@ -101,53 +103,59 @@ class _UserCreateState extends State<UserCreate> {
                       width: MediaQuery.of(context).size.width,
 
                       child: Column(children:<Widget> [
-                         Row(children: <Widget>[
-                            Expanded(
-                              child: Padding(padding: EdgeInsets.all(15),
-                                child: Container(height: MediaQuery.of(context).size.height/4,
-                                    child: Image.asset( "assets/images/Kek.png")),
+                         Expanded(
+                           child: Row(children: <Widget>[
+                              Expanded(
+                                child: Padding(padding: EdgeInsets.all(15),
+                                  child: Container(height: MediaQuery.of(context).size.height/4,
+                                      child: Image.asset( "assets/images/Kek.png")),
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              child: Column(children:<Widget>[
-                                Row(children:<Widget> [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("Розмір",style: TextStyle(fontSize: 10,color: Colors.white),),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("39",style: TextStyle(fontSize: 10,color: Colors.white),),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("Eu",style: TextStyle(fontSize: 10,color: Colors.white),),
-                                  ),
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children:<Widget>[
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children:<Widget> [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text("Розмір      EU",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text("39",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                    ),
+                                  ],),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children:<Widget> [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text("Довжина/см",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text("39",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                    ),
+                                  ],),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children:<Widget> [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text("Ширина/см",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text("10,5",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                    ),
+                                  ],)
                                 ],),
-                                Row(children:<Widget> [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("Довжина/см",style: TextStyle(fontSize: 10,color: Colors.white),),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("39",style: TextStyle(fontSize: 10,color: Colors.white),),
-                                  ),
-                                ],),
-                                Row(children:<Widget> [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("Ширина/см",style: TextStyle(fontSize: 10,color: Colors.white),),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("10,5",style: TextStyle(fontSize: 10,color: Colors.white),),
-                                  ),
-                                ],)
-                              ],),
-                            )
+                              )
 
-                          ],),
+                            ],),
+                         ),
 
                       ],),
                     ),
