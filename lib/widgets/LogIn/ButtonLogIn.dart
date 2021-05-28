@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/widgets/LogIn/Verification.dart';
 
 class ButtonLogIn extends StatefulWidget {
@@ -13,7 +14,7 @@ class ButtonLogInState extends State<ButtonLogIn> {
   @override
   Widget build(BuildContext context) {
     return showTextField == 1
-        ? Padding(padding: EdgeInsets.only(bottom: 30),
+        ? Padding(padding: const EdgeInsets.only(bottom: 30),
         child :Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
@@ -21,7 +22,7 @@ class ButtonLogInState extends State<ButtonLogIn> {
             children: <Widget>[
                 Container(
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.lightGreenAccent),
+                        shape: BoxShape.circle, color: ThemeManager.phoneButton),
                     child: IconButton(
                       iconSize: 25.0,
                       onPressed: () {
@@ -29,23 +30,26 @@ class ButtonLogInState extends State<ButtonLogIn> {
                           showTextField = 2;
                         });
                       },
-                      icon: Icon(Icons.phone, color: Colors.white),
+                      icon: Icon(Icons.phone, color: ThemeManager.whiteThings),
                     )),
                 Container(
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.blue[900]),
+                        shape: BoxShape.circle, color: ThemeManager.faceBookButton),
                     child: IconButton(
-                        color: Colors.white,
+                        color: ThemeManager.whiteThings,
                         iconSize: 25.0,
-                        icon: new Center(
-                            child: new Icon(FontAwesomeIcons.facebook)),
+                        icon: Padding(
+                          padding: const EdgeInsets.only(bottom:2,left: 1),
+                          child: new Center(
+                              child: new Icon(FontAwesomeIcons.facebook)),
+                        ),
                         alignment: Alignment.center,
                         onPressed: () {})),
                 Container(
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.red),
+                        shape: BoxShape.circle, color: ThemeManager.googleButton),
                     child: IconButton(
-                        color: Colors.white,
+                        color: ThemeManager.whiteThings,
                         iconSize: 25.0,
                         icon: Center(child: new Icon(FontAwesomeIcons.google)),
                         alignment: Alignment.center,

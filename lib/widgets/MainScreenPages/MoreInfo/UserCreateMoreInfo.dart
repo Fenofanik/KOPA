@@ -1,30 +1,29 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/ImageSwipe.dart';
 
-class MoreInfo extends StatefulWidget {
+class UserCreateMoreInfo extends StatefulWidget {
   final productId;
 
-  MoreInfo({this.productId});
+  UserCreateMoreInfo({this.productId});
 
   @override
-  MoreInfoState createState() => MoreInfoState();
+  UserCreateMoreInfoState createState() => UserCreateMoreInfoState();
 }
 
-class MoreInfoState extends State<MoreInfo> {
+class UserCreateMoreInfoState extends State<UserCreateMoreInfo> {
   FirebaseServices firebaseServices = FirebaseServices();
+  Color favoriteIconColor = Colors.white;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ThemeManager.background,
-      body: FutureBuilder<QuerySnapshot>(
-        future: firebaseServices.productRef.get(),
-        builder: (context, productsSnapshot) {
-          return StreamBuilder<QuerySnapshot>(
+      body: StreamBuilder<QuerySnapshot>(
               stream: firebaseServices.userRef.snapshots(),
               builder: (context, userSnapshot) {
                 if (userSnapshot.hasError) {
@@ -35,20 +34,11 @@ class MoreInfoState extends State<MoreInfo> {
                     ),
                   );
                 }
-                if (userSnapshot.connectionState == ConnectionState.active &&
-                    productsSnapshot.connectionState == ConnectionState.done) {
+                if (userSnapshot.connectionState == ConnectionState.active) {
                   final userId = firebaseServices.getUserId();
-                  final user = userSnapshot.data.docs.firstWhere((element) {
-                    return element['id'] == userId;
-                  });
-                  final userFavs = List<String>.from(user['favs']);
-
-                  final prodData = productsSnapshot.data.docs
-                      .where((element) => element['id'].toString().trim() == widget.productId);
-
                   return ListView(
-                    children: prodData.map((document) {
-                      return moreInfoUI(context, document, userFavs);
+                    children: userSnapshot.data.docs.map((document) {
+                      return userCreateMoreInfoUI(context, document);
                     }).toList(),
                   );
                 }
@@ -58,15 +48,15 @@ class MoreInfoState extends State<MoreInfo> {
                     child: CircularProgressIndicator(),
                   ),
                 );
-              });
-        },
+              }
       ),
+
       appBar: AppBar(
         backgroundColor: ThemeManager.background,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
-            color: ThemeManager.whiteThings,
+            color: Colors.white,
             size: 14,
           ),
           onPressed: () {
@@ -77,9 +67,9 @@ class MoreInfoState extends State<MoreInfo> {
     );
   }
 
-  Widget moreInfoUI(
-      BuildContext context, DocumentSnapshot document, List<String> favs) {
-    List imageList = document['image'];
+  Widget userCreateMoreInfoUI(
+      BuildContext context, DocumentSnapshot document) {
+    List imageList = document['userCreate'];
     final double radius = 22;
     return SingleChildScrollView(
         child: Container(
@@ -94,7 +84,7 @@ class MoreInfoState extends State<MoreInfo> {
                   ),
                   clipBehavior: Clip.antiAlias,
                   child: Container(
-                    color: ThemeManager.containerColor,
+                    color: Color(0xff343434),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       mainAxisSize: MainAxisSize.max,
@@ -121,18 +111,18 @@ class MoreInfoState extends State<MoreInfo> {
                                             child: Container(
                                               decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(22),
-                                                  color: ThemeManager.boxPriceColor),
+                                                  BorderRadius.circular(22),
+                                                  color: Color(0xffFFD600)),
                                               height: 30,
                                               width: 74,
                                               child: Padding(
                                                   padding:
-                                                      EdgeInsets.only(top: 7),
-                                                  child: Text(document['price'],
+                                                  EdgeInsets.only(top: 7),
+                                                  child: Text(document['"userAddPrice"'],
                                                       textAlign:
-                                                          TextAlign.center,
+                                                      TextAlign.center,
                                                       style: TextStyle(
-                                                          fontSize: 16,color: ThemeManager.textPrice,
+                                                          fontSize: 16,
                                                           fontWeight: FontWeight
                                                               .w700))),
                                             )),
@@ -145,17 +135,13 @@ class MoreInfoState extends State<MoreInfo> {
                                             padding: const EdgeInsets.only(
                                                 top: 10, left: 190),
                                             child: IconButton(
-                                                icon: Icon(Icons.favorite,
-                                                    size: 42,
-                                                    color: favs.contains(
-                                                            document.id)
-                                                        ? ThemeManager.redThings
-                                                        : ThemeManager.whiteThings),
-                                                onPressed: () async {
-                                                  await firebaseServices
-                                                      .updateUserFavs(
-                                                          document.id, favs);
-                                                })),
+                                                icon:  SvgPicture.asset('assets/images/pencil.svg',
+                                                    height: 42,
+                                                    color: Colors.white),
+                                              onPressed: (){
+                                                Navigator.of(context).pop();
+                                              },
+                                                )),
                                       ],
                                     ),
                                   ],
@@ -165,21 +151,23 @@ class MoreInfoState extends State<MoreInfo> {
                                   child: Container(
                                     height: 24,
                                     alignment: Alignment.centerLeft,
-                                    child: Text(document['brand'],
+                                    child: Text(document['userAddModel'],
                                         style: TextStyle(
                                             fontSize: 22,
-                                            color: ThemeManager.whiteThings,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.w300)),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(top: 5, left: 10),
                                   child: Container(
+                                    height: 16,
+                                    //color: Colors.green,
                                     alignment: Alignment.bottomLeft,
                                     child: Text(" Розміри стопи: ",
                                         style: TextStyle(
                                             fontSize: 10,
-                                            color: ThemeManager.whiteThings,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.w100)),
                                   ),
                                 ),
@@ -197,40 +185,41 @@ class MoreInfoState extends State<MoreInfo> {
                                                 Container(
                                                   width: 40,
                                                   alignment:
-                                                      Alignment.bottomCenter,
+                                                  Alignment.bottomCenter,
                                                   child: Text(
-                                                    document['size'],
+                                                    document['userAddSize'],
                                                     style: TextStyle(
                                                         fontSize: 22,
-                                                        color: ThemeManager.textSize,
+                                                        color: Colors
+                                                            .blueAccent[100],
                                                         fontWeight:
-                                                            FontWeight.w100),
+                                                        FontWeight.w100),
                                                   ),
                                                 ),
                                                 Container(
                                                   width: 100,
                                                   alignment:
-                                                      Alignment.bottomCenter,
+                                                  Alignment.bottomCenter,
                                                   child: Text(
-                                                    document['length'],
+                                                    document['userAddSizeLength'],
                                                     style: TextStyle(
                                                         fontSize: 14,
-                                                        color: ThemeManager.whiteThings,
+                                                        color: Colors.white,
                                                         fontWeight:
-                                                            FontWeight.w100),
+                                                        FontWeight.w100),
                                                   ),
                                                 ),
                                                 Container(
                                                   width: 100,
                                                   alignment:
-                                                      Alignment.bottomCenter,
+                                                  Alignment.bottomCenter,
                                                   child: Text(
-                                                    document['width'],
+                                                    document['userAddSizeWidth'],
                                                     style: TextStyle(
                                                         fontSize: 14,
-                                                        color: ThemeManager.whiteThings,
+                                                        color: Colors.white,
                                                         fontWeight:
-                                                            FontWeight.w100),
+                                                        FontWeight.w100),
                                                   ),
                                                 ),
                                               ],
@@ -243,45 +232,45 @@ class MoreInfoState extends State<MoreInfo> {
                                               alignment: Alignment.topLeft,
                                               child: Row(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.start,
+                                                MainAxisAlignment.start,
                                                 children: <Widget>[
                                                   Container(
                                                     width: 40,
                                                     alignment:
-                                                        Alignment.topCenter,
+                                                    Alignment.topCenter,
                                                     child: Text(
                                                       "EU",
                                                       style: TextStyle(
                                                           fontSize: 10,
-                                                          color: ThemeManager.whiteThings,
+                                                          color: Colors.white,
                                                           fontWeight:
-                                                              FontWeight.w100),
+                                                          FontWeight.w100),
                                                     ),
                                                   ),
                                                   Container(
                                                     width: 100,
                                                     alignment:
-                                                        Alignment.topCenter,
+                                                    Alignment.topCenter,
                                                     child: Text(
                                                       "Довжина/см",
                                                       style: TextStyle(
                                                           fontSize: 10,
-                                                          color: ThemeManager.whiteThings,
+                                                          color: Colors.white,
                                                           fontWeight:
-                                                              FontWeight.w100),
+                                                          FontWeight.w100),
                                                     ),
                                                   ),
                                                   Container(
                                                     width: 100,
                                                     alignment:
-                                                        Alignment.topCenter,
+                                                    Alignment.topCenter,
                                                     child: Text(
                                                       "Ширина/см",
                                                       style: TextStyle(
                                                           fontSize: 10,
-                                                          color: ThemeManager.whiteThings,
+                                                          color: Colors.white,
                                                           fontWeight:
-                                                              FontWeight.w100),
+                                                          FontWeight.w100),
                                                     ),
                                                   ),
                                                 ],
@@ -303,15 +292,15 @@ class MoreInfoState extends State<MoreInfo> {
                                           Text(" Матеріал : ",
                                               style: TextStyle(
                                                   fontSize: 10,
-                                                  color: ThemeManager.textMaterial,
+                                                  color: Color(0xff9A9A9A),
                                                   fontWeight: FontWeight.w100)),
                                           Padding(
                                             padding: EdgeInsets.only(left: 5),
                                             child: Text(
-                                              document['material'],
+                                              document['userAddMaterial'],
                                               style: TextStyle(
                                                   fontSize: 10,
-                                                  color: ThemeManager.textMaterial),
+                                                  color: Color(0xff9A9A9A)),
                                             ),
                                           )
                                         ],
@@ -321,10 +310,10 @@ class MoreInfoState extends State<MoreInfo> {
                                   padding: EdgeInsets.only(top: 16, left: 10),
                                   child: Container(
                                     child: Text(
-                                        "Опис про товар і як довго носив кросівки чи специфічні деталі взуття. натирало чи ні. чи дуло задувало. на широку ногу чи сайз не відповідає зязвленому. хвалиш взуття щоб точно купили. бо подарували дві пари, а ти за літо ще ні одної не зносив.",
+                                        document ['userAddAbout'],
                                         style: TextStyle(
                                             fontSize: 12,
-                                            color: ThemeManager.forTextAbout)),
+                                            color: Color(0xffABB4BD))),
                                   ),
                                 )
                               ],
@@ -334,62 +323,15 @@ class MoreInfoState extends State<MoreInfo> {
                         ),
                         Expanded(
                             flex: 1,
-                            child: Container(
-                                height: 100,
-                                color: ThemeManager.background,
-                                child: Row(
-                                  children: <Widget>[
-                                    Container(
-                                        alignment: Alignment.centerLeft,
-                                        height: 61,
-                                        child:
-                                            Image.asset('assets/images/4.png')),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 13),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: <Widget>[
-                                          Text(
-                                            "Продавець",
-                                            style: TextStyle(
-                                                fontSize: 22,
-                                                color: ThemeManager.whiteThings),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.only(right: 30),
-                                            child: Text(
-                                              "Ukraine, Vinnytsia",
-                                              style: TextStyle(
-                                                  fontSize: 10,
-                                                  color: ThemeManager.whiteThings),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(left: 70),
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: <Widget>[
-                                              Container(
-                                                  alignment:
-                                                      Alignment.centerRight,
-                                                  child: FloatingActionButton(
-                                                    onPressed: () {},
-                                                    backgroundColor:
-                                                        ThemeManager.phoneButtonSell,
-                                                    child: Icon(
-                                                      Icons.phone,
-                                                      color: ThemeManager.blackThings,
-                                                      size: 28,
-                                                    ),
-                                                  ))
-                                            ])),
-                                  ],
-                                ))),
+                            child: ElevatedButton(
+                              child: Text("Видалити оголошення",
+                                style: TextStyle(fontSize: 16,color: Colors.white),),
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                                primary: Color(0xff0CCDE6),
+                              ),
+                              onPressed: (){},
+                            )),
                       ],
                     ),
                   ),

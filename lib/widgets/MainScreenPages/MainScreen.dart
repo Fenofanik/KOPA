@@ -4,7 +4,6 @@ import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/MoreInfoScreen.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:kopamain/widgets/MainScreenPages/Favorites.dart';
 
 class MainScreen extends StatefulWidget {
   final productId;
@@ -110,7 +109,7 @@ class MainScreenState extends State<MainScreen> {
                 ),
                 clipBehavior: Clip.antiAlias,
                 child: Container(
-                  color: Color(0xff343434),
+                  color: ThemeManager.containerColor,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.max,
@@ -138,7 +137,7 @@ class MainScreenState extends State<MainScreen> {
                                 child: Text(document['brand'],
                                     style: TextStyle(
                                         fontSize: 22,
-                                        color: Colors.white,
+                                        color: ThemeManager.whiteThings,
                                         fontWeight: FontWeight.w300)),
                               ),
                               Container(
@@ -147,7 +146,7 @@ class MainScreenState extends State<MainScreen> {
                                 child: Text(" Розміри стопи: ",
                                     style: TextStyle(
                                         fontSize: 14,
-                                        color: Colors.white,
+                                        color: ThemeManager.whiteThings,
                                         fontWeight: FontWeight.w100)),
                               ),
                               Expanded(
@@ -172,9 +171,7 @@ class MainScreenState extends State<MainScreen> {
                                                         document['size'],
                                                         style: TextStyle(
                                                             fontSize: 25,
-                                                            color: Colors
-                                                                    .blueAccent[
-                                                                100],
+                                                            color: ThemeManager.textSize,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .w100),
@@ -189,8 +186,7 @@ class MainScreenState extends State<MainScreen> {
                                                             document['length'],
                                                             style: TextStyle(
                                                                 fontSize: 18,
-                                                                color: Colors
-                                                                    .white,
+                                                                color: ThemeManager.whiteThings,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w100),
@@ -205,8 +201,7 @@ class MainScreenState extends State<MainScreen> {
                                                             document['width'],
                                                             style: TextStyle(
                                                                 fontSize: 18,
-                                                                color: Colors
-                                                                    .white,
+                                                                color: ThemeManager.whiteThings,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w100),
@@ -233,8 +228,7 @@ class MainScreenState extends State<MainScreen> {
                                                           "EU",
                                                           style: TextStyle(
                                                               fontSize: 14,
-                                                              color:
-                                                                  Colors.white,
+                                                              color: ThemeManager.whiteThings,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w100),
@@ -249,8 +243,7 @@ class MainScreenState extends State<MainScreen> {
                                                               "Довжина/см",
                                                               style: TextStyle(
                                                                   fontSize: 14,
-                                                                  color: Colors
-                                                                      .white,
+                                                                  color: ThemeManager.whiteThings,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w100),
@@ -265,11 +258,8 @@ class MainScreenState extends State<MainScreen> {
                                                               "Ширина/см",
                                                               style: TextStyle(
                                                                   fontSize: 14,
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w100),
+                                                                  color: ThemeManager.whiteThings,
+                                                                  fontWeight: FontWeight.w100),
                                                             ),
                                                           )),
                                                     ],
@@ -290,13 +280,13 @@ class MainScreenState extends State<MainScreen> {
                                       Text(" Матеріал : ",
                                           style: TextStyle(
                                               fontSize: 10,
-                                              color: Color(0xff9A9A9A),
+                                              color: ThemeManager.textMaterial,
                                               fontWeight: FontWeight.w100)),
                                       Text(
                                         document['material'],
                                         style: TextStyle(
                                             fontSize: 10,
-                                            color: Color(0xff9A9A9A)),
+                                            color: ThemeManager.textMaterial),
                                       )
                                     ],
                                   )),
@@ -315,7 +305,7 @@ class MainScreenState extends State<MainScreen> {
               padding: const EdgeInsets.all(8.0),
               child: IconButton(
                   icon: Icon(Icons.favorite,
-                      color: isFavorite ? Colors.red : Colors.white),
+                      color: isFavorite ? ThemeManager.redThings: ThemeManager.whiteThings),
                   onPressed: () async {
                     await firebaseServices.updateUserFavs(document.id, favs);
                   })),
@@ -325,7 +315,7 @@ class MainScreenState extends State<MainScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(22),
-                      color: Color(0xffFFD600)),
+                      color: ThemeManager.boxPriceColor),
                   height: 30,
                   width: 74,
                   child: Padding(
@@ -333,7 +323,7 @@ class MainScreenState extends State<MainScreen> {
                       child: Text(document['price'],
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w700))),
+                              fontSize: 16, fontWeight: FontWeight.w700,color: ThemeManager.textPrice))),
                 )),
           ]),
         ]));
@@ -344,7 +334,7 @@ class MainScreenState extends State<MainScreen> {
         context: context,
         builder: (BuildContext bc) {
           return Container(
-            color: Color(0xff4E4E53),
+            color: ThemeManager.filterBack,
             height: MediaQuery.of(context).size.height * 45,
             child: SingleChildScrollView(
                 child: Padding(
@@ -359,7 +349,7 @@ class MainScreenState extends State<MainScreen> {
                           icon: Icon(
                             Icons.keyboard_arrow_down,
                             size: 27,
-                            color: Colors.black,
+                            color: ThemeManager.blackThings,
                           ),
                           onPressed: () {
                             Navigator.of(context).pop();
@@ -372,15 +362,15 @@ class MainScreenState extends State<MainScreen> {
                               decoration: InputDecoration(
                                 labelText: "Модель",
                                 labelStyle: TextStyle(
-                                    fontSize: 14, color: Colors.white),
+                                    fontSize: 14, color: ThemeManager.whiteThings),
                                 prefixIcon: Icon(
                                   Icons.circle,
                                   size: 9,
-                                  color: Colors.blue,
+                                  color: ThemeManager.forButtons,
                                 ),
                               ),
                               style: TextStyle(
-                                  fontSize: (14), color: Colors.white)),
+                                  fontSize: (14), color: ThemeManager.whiteThings)),
                         )
                       ],
                     ),
@@ -391,15 +381,15 @@ class MainScreenState extends State<MainScreen> {
                               decoration: InputDecoration(
                                 labelText: "Матеріал",
                                 labelStyle: TextStyle(
-                                    fontSize: 14, color: Colors.white),
+                                    fontSize: 14, color: ThemeManager.whiteThings),
                                 prefixIcon: Icon(
                                   Icons.circle,
                                   size: 9,
-                                  color: Colors.blue,
+                                  color: ThemeManager.forButtons,
                                 ),
                               ),
                               style: TextStyle(
-                                  fontSize: (14), color: Colors.white)),
+                                  fontSize: (14), color: ThemeManager.whiteThings)),
                         )
                       ],
                     ),
@@ -413,15 +403,15 @@ class MainScreenState extends State<MainScreen> {
                                     decoration: InputDecoration(
                                       labelText: "Розмір",
                                       labelStyle: TextStyle(
-                                          fontSize: 14, color: Colors.white),
+                                          fontSize: 14, color: ThemeManager.whiteThings),
                                       prefixIcon: Icon(
                                         Icons.circle,
                                         size: 9,
-                                        color: Colors.blue,
+                                        color: ThemeManager.forButtons,
                                       ),
                                     ),
                                     style: TextStyle(
-                                        fontSize: (14), color: Colors.white)),
+                                        fontSize: (14), color: ThemeManager.whiteThings)),
                                 flex: 7),
                             Spacer(
                               flex: 1,
@@ -429,7 +419,7 @@ class MainScreenState extends State<MainScreen> {
                             Expanded(
                                 child: TextField(
                                     style: TextStyle(
-                                        fontSize: (14), color: Colors.white)),
+                                        fontSize: (14), color: ThemeManager.whiteThings)),
                                 flex: 7),
                             Expanded(child: Container(), flex: 8)
                           ],
@@ -446,21 +436,21 @@ class MainScreenState extends State<MainScreen> {
                                     decoration: InputDecoration(
                                       labelText: "Ціна",
                                       labelStyle: TextStyle(
-                                          fontSize: 14, color: Colors.white),
+                                          fontSize: 14, color: ThemeManager.whiteThings),
                                       prefixIcon: Icon(
                                         Icons.circle,
                                         size: 9,
-                                        color: Colors.blue,
+                                        color: ThemeManager.forButtons,
                                       ),
                                     ),
                                     style: TextStyle(
-                                        fontSize: (14), color: Colors.white)),
+                                        fontSize: (14), color: ThemeManager.whiteThings)),
                                 flex: 7),
                             Spacer(flex: 1),
                             Expanded(
                                 child: TextField(
                                     style: TextStyle(
-                                        fontSize: (14), color: Colors.white)),
+                                        fontSize: (14), color: ThemeManager.whiteThings)),
                                 flex: 7),
                             Expanded(child: Container(), flex: 8)
                           ],
@@ -477,7 +467,7 @@ class MainScreenState extends State<MainScreen> {
                               child: Text(
                                 'СКИНУТИ',
                                 style:
-                                    TextStyle(fontSize: 12, color: Colors.blue),
+                                    TextStyle(fontSize: 12, color: ThemeManager.forButtons),
                               )),
                         ),
                         Padding(
@@ -489,7 +479,7 @@ class MainScreenState extends State<MainScreen> {
                                   child: Text(
                                     'ЗАСТОСУВАТИ',
                                     style: TextStyle(
-                                        fontSize: 12, color: Colors.blue),
+                                        fontSize: 12, color: ThemeManager.forButtons),
                                   ))),
                         )
                       ],

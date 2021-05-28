@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
 
 class ImageLogIn extends StatelessWidget {
   @override
@@ -15,7 +16,7 @@ class ImageLogIn extends StatelessWidget {
 
           ),
           Container(
-              child:Text("Вхід",style: TextStyle(fontSize: 18,color: Colors.white))
+              child:Text("Вхід",style: TextStyle(fontSize: 28 ,color: ThemeManager.whiteThings))
           )
         ]);
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
 
 class ImageSwipe extends StatefulWidget {
   final List imageList;
@@ -46,7 +47,7 @@ class _ImageSwipeState extends State<ImageSwipe> {
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: _selectedPage==i? Colors.white:Color(0xffB6B6B6)),
+                      shape: BoxShape.circle, color: _selectedPage==i? ThemeManager.whiteThings:ThemeManager.foreImgSwipe),
                   height: 8,
                   width: 8,
                 ),

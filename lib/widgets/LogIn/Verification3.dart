@@ -46,28 +46,28 @@ class Verification3State extends State<Verification3> {
                       decoration: InputDecoration(
                         errorStyle: TextStyle(fontSize: 7),
                         hintText: "Ім'я",
-                        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+                        hintStyle: TextStyle(fontSize: 14, color: ThemeManager.whiteThings),
                         contentPadding: EdgeInsets.only(left: 10),
                         enabledBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(width: 2, color: Colors.grey[800]),
+                                BorderSide(width: 2, color: ThemeManager.borderColorLog),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(width: 2, color: Colors.grey[800]),
+                                BorderSide(width: 2, color: ThemeManager.borderColorLog),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 2, color: Colors.red),
+                            borderSide: BorderSide(width: 2, color: ThemeManager.redThings),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 2, color: Colors.red),
+                            borderSide: BorderSide(width: 2, color: ThemeManager.redThings),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                       ),
-                      style: TextStyle(fontSize: (14), color: Colors.white))),
+                      style: TextStyle(fontSize: (14), color: ThemeManager.whiteThings))),
                   TextFormField(
                       controller: surNameController,
                       maxLength: 20,
@@ -80,28 +80,28 @@ class Verification3State extends State<Verification3> {
                       decoration: InputDecoration(
                         errorStyle: TextStyle(fontSize: 7),
                         hintText: "Прізвище",
-                        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+                        hintStyle: TextStyle(fontSize: 14, color: ThemeManager.whiteThings),
                         contentPadding: EdgeInsets.only(left: 10),
                         enabledBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(width: 2, color: Colors.grey[800]),
+                                BorderSide(width: 2, color: ThemeManager.borderColorLog),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(width: 2, color: Colors.grey[800]),
+                                BorderSide(width: 2, color:ThemeManager.borderColorLog),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 2, color: Colors.red),
+                            borderSide: BorderSide(width: 2, color:ThemeManager.redThings),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 2, color: Colors.red),
+                            borderSide: BorderSide(width: 2, color:ThemeManager.redThings),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                       ),
-                      style: TextStyle(fontSize: (14), color: Colors.white)),
+                      style: TextStyle(fontSize: (14), color:ThemeManager.whiteThings)),
                   TextFormField(
                     controller: cityController,
                       maxLength: 20,
@@ -114,49 +114,46 @@ class Verification3State extends State<Verification3> {
                       decoration: InputDecoration(
                         errorStyle: TextStyle(fontSize: 7),
                         hintText: "Місто",
-                        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+                        hintStyle: TextStyle(fontSize: 14, color: ThemeManager.whiteThings),
                         contentPadding: EdgeInsets.only(left: 10),
                         enabledBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(width: 2, color: Colors.grey[800]),
+                                BorderSide(width: 2, color: ThemeManager.borderColorLog),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(width: 2, color: Colors.grey[800]),
+                                BorderSide(width: 2, color:ThemeManager.borderColorLog),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 2, color: Colors.red),
+                            borderSide: BorderSide(width: 2, color:ThemeManager.redThings),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 2, color: Colors.red),
+                            borderSide: BorderSide(width: 2, color: ThemeManager.redThings),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                       ),
-                      style: TextStyle(fontSize: (14), color: Colors.white)),
+                      style: TextStyle(fontSize: (14), color:ThemeManager.whiteThings)),
                   Padding(padding:EdgeInsets.only(top:100,bottom: 30,left: 45,right: 45),
                   child :ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         shape: shape,
                         minimumSize: Size(290, 40),
-                        primary: Colors.lightBlueAccent,
+                        primary: ThemeManager.forButtons,
                       ),
                       child: Text("Готово",
-                          style: TextStyle(fontSize: 14, color: Colors.white)),
+                          style: TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
                       onPressed: () {
                         setState(() {
                           if (formKey.currentState.validate()) {
                             FirebaseServices firebaseServices = FirebaseServices();
                               String _userId = firebaseServices.getUserId();
-                              String userPhoneNumber = firebaseServices.getUserPhone();
                             String name = nameController.text;
                             String secondName = surNameController.text;
                             String city = cityController.text;
                             FirebaseFirestore.instance.collection('users').doc(_userId).update({
-                              "id":_userId,
-                              "phoneNumber" :userPhoneNumber,
                               "name":name,
                               "secondName":secondName,
                               "city":city

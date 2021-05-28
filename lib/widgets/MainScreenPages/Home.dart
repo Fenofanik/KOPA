@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/widgets/MainScreenPages/MainScreen.dart';
 import 'package:kopamain/widgets/MainScreenPages/My ads.dart';
-import 'package:kopamain/widgets/MainScreenPages/Favorites.dart';
 import 'package:kopamain/widgets/MainScreenPages/Profile.dart';
 
 class Home extends StatefulWidget {
@@ -20,39 +20,46 @@ class HomeState extends State<Home> {
   @override
 
   Widget build(BuildContext context) {
-    final placeholder= Opacity(opacity :  0,
-        child: IconButton(icon: Icon(Icons.cloud_done),onPressed: null));
     return Scaffold(
-      backgroundColor: Color(0xff232326),
+      backgroundColor: ThemeManager.background,
       body: this.getBody(),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: Colors.lightBlue,
+        child: Stack(
+          children: [
+            SvgPicture.asset('assets/images/PlusButton.svg',color: ThemeManager.forButtons),
+            Positioned(
+              left: 5,
+                right: 5,
+                top: 15,
+                child: Icon(Icons.add)),
+          ],
+        ),
+        backgroundColor: ThemeManager.bottomBarBack,
         onPressed: () {
           Navigator.pushNamed(context, '/UserCreate');
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xff505051),
+        backgroundColor:ThemeManager.bottomBarBack,
         type: BottomNavigationBarType.fixed,
         currentIndex: this.selectedIndex,
         items: [
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/images/MainScreen.svg',
-                  color: selectedIndex == 0 ? Colors.blue : Colors.grey),
+                  color: selectedIndex == 0 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
               label: ""),
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/images/Sneaker.svg',
-                  color: selectedIndex == 1 ? Colors.blue : Colors.grey),
+                  color: selectedIndex == 1 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
               label: ""),
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite,
-                  color: selectedIndex == 2 ? Colors.blue : Colors.grey),
+                  color: selectedIndex == 2 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
               label: ""),
           BottomNavigationBarItem(
               icon: Icon(Icons.settings,
-                  color: selectedIndex == 3 ? Colors.blue : Colors.grey),
+                  color: selectedIndex == 3 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
               label: "")
         ],
         onTap: (int index) {
