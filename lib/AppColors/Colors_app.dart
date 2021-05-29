@@ -23,6 +23,7 @@ class ThemeManager {
   static Color foreImgSwipe = Color(0xffB6B6B6);
   static Color forTextAbout = Color(0xffABB4BD);
   static Color myAddBorder = Color(0xff4B4B4B);
+  static Color forSold = Colors.black45;
 
   final int logInText = 28;
 static Color background = Color(0xff232326);

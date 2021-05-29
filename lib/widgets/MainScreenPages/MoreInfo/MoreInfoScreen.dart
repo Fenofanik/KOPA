@@ -8,6 +8,8 @@ import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/ImageSwipe.dart';
 import 'package:kopamain/widgets/MainScreenPages/UserCreate.dart';
 
+import '../MainScreen.dart';
+
 class MoreInfo extends StatefulWidget {
   final productId;
 
@@ -170,7 +172,7 @@ class MoreInfoState extends State<MoreInfo> {
                                                               author: document["author"].toString(),
                                                             brand:document["brand"].toString(),
                                                             id:document["id"].toString(),
-                                                            image: <String>[],
+                                                            image: List<String>.from(imageList),
                                                             length:document["length"].toString(),
                                                             material:document["material"].toString(),
                                                             price:document["price"].toString(),
@@ -340,7 +342,7 @@ class MoreInfoState extends State<MoreInfo> {
                                 Padding(
                                   padding: EdgeInsets.only(left: 10),
                                   child: Container(
-                                      height: 16,
+                                    
                                       alignment: Alignment.bottomLeft,
                                       child: Row(
                                         children: <Widget>[
@@ -390,7 +392,13 @@ class MoreInfoState extends State<MoreInfo> {
                             Padding(
                               padding: const EdgeInsets.only(left: 45,right: 45),
                               child: Container(
-                                child: ElevatedButton(
+                                child: document['sold'] ? Container(): ElevatedButton(
+                                  onPressed: ()async{
+                                    await firebaseServices.productRef.doc(document['id']).update({
+                                      "sold":true
+                                    });
+
+                                  },
                                   style: ElevatedButton.styleFrom(
                                     shape:  shape,
                                     primary: ThemeManager.forButtons,

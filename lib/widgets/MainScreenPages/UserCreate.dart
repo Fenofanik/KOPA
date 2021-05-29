@@ -21,15 +21,32 @@ class UserCreate extends StatefulWidget {
 
 class _UserCreateState extends State<UserCreate> {
   FirebaseServices firebaseServices = FirebaseServices();
-  TextEditingController theSize = TextEditingController();
-  TextEditingController sizeLength = TextEditingController();
-  TextEditingController sizeWidth = TextEditingController();
-  TextEditingController model = TextEditingController();
-  TextEditingController material = TextEditingController();
-  TextEditingController aboutSneaker = TextEditingController();
-  TextEditingController price = TextEditingController();
-
+  TextEditingController theSize;
+  TextEditingController sizeLength;
+  TextEditingController sizeWidth;
+  TextEditingController model;
+  TextEditingController material;
+  TextEditingController aboutSneaker;
+  TextEditingController price;
   final List<String> imgUrls = <String>["", "", "", "", "", "", "", ""];
+
+  @override
+  void initState() {
+    super.initState();
+    theSize = TextEditingController(text: widget.product?.size);
+    sizeLength = TextEditingController(text: widget.product?.length);
+    sizeWidth = TextEditingController(text: widget.product?.width);
+    model = TextEditingController(text: widget.product?.brand);
+    material = TextEditingController(text: widget.product?.material);
+    aboutSneaker = TextEditingController(text: widget.product?.userAddAbout);
+    price = TextEditingController(text: widget.product?.price);
+    final imgs = widget.product?.image ?? <String>[];
+    for(var i = 0; i < imgs.length; i++){
+      imgUrls[i] = imgs[i];
+    }
+  }
+
+
   final double radius = 7;
   PickedFile _imageFile;
   int stamp = 0;
@@ -253,7 +270,7 @@ class _UserCreateState extends State<UserCreate> {
                                                                   keyboardType:
                                                                       TextInputType
                                                                           .phone,
-                                                                  initialValue: widget.product?.size,
+
                                                                   controller:
                                                                       theSize,
                                                                   validator:
@@ -365,7 +382,7 @@ class _UserCreateState extends State<UserCreate> {
                                                                   keyboardType:
                                                                       TextInputType
                                                                           .phone,
-                                                                      initialValue: widget.product?.length,
+
                                                                   controller:
                                                                       sizeLength,
                                                                   validator:
@@ -477,7 +494,7 @@ class _UserCreateState extends State<UserCreate> {
                                                                   keyboardType:
                                                                       TextInputType
                                                                           .phone,
-                                                                      initialValue: widget.product?.width,
+
                                                                   controller:
                                                                       sizeWidth,
                                                                   validator:
@@ -544,7 +561,7 @@ class _UserCreateState extends State<UserCreate> {
                   Expanded(
                     child: TextFormField(
                         controller: model,
-                        initialValue: widget.product?.brand,
+
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Поле не повинне бути порожнім";
@@ -575,7 +592,7 @@ class _UserCreateState extends State<UserCreate> {
                   Expanded(
                     child: TextFormField(
                         controller: material,
-                        initialValue: widget.product?.material,
+
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Поле не повинне бути порожнім";
@@ -606,7 +623,7 @@ class _UserCreateState extends State<UserCreate> {
                   Expanded(
                     child: TextFormField(
                         controller: aboutSneaker,
-                        initialValue: widget.product?.userAddAbout,
+
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Поле не повинне бути порожнім";
@@ -638,7 +655,7 @@ class _UserCreateState extends State<UserCreate> {
                     child: TextFormField(
                         keyboardType: TextInputType.phone,
                         controller: price,
-                        initialValue: widget.product?.price,
+
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Поле не повинне бути порожнім";
@@ -739,7 +756,8 @@ class _UserCreateState extends State<UserCreate> {
     String userAddAbout = aboutSneaker.text;
     String userAddPrice = price.text;
     List<String> userAddImg = imgUrls.where((x) => x != "").toList();
-    final obj = await firebaseServices.productRef.add({
+
+    final data = {
       "author": _userId,
       "sold": false,
       "image": userAddImg,
@@ -750,10 +768,17 @@ class _UserCreateState extends State<UserCreate> {
       "material": userAddMaterial,
       "userAddAbout": userAddAbout,
       "price": "$userAddPrice \$",
-      "isFav": false
-    });
+    };
 
-    await firebaseServices.productRef.doc(obj.id).update({"id": obj.id});
-    return obj.id;
+    if(widget.product?.id == null) {
+      final obj = await firebaseServices.productRef.add(data);
+
+      await firebaseServices.productRef.doc(obj.id).update({"id": obj.id});
+      return obj.id;
+    } else {
+      await firebaseServices.productRef.doc(widget.product?.id).update(data);
+
+      return widget.product?.id;
+    }
   }
 }

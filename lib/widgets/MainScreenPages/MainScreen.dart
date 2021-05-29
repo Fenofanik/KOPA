@@ -311,7 +311,24 @@ class MainScreenState extends State<MainScreen> {
           ),
           Padding(
               padding: const EdgeInsets.all(8.0),
-              child: IconButton(
+              child: document['sold']?
+                   Padding(
+                     padding: const EdgeInsets.only(left: 10,top:20),
+                     child: Container(
+                       alignment: Alignment.center,
+                       height: MediaQuery.of(context).size.height/19,
+                       width: MediaQuery.of(context).size.width/5,
+                       decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(14),
+                           color: ThemeManager.forSold),
+                      child: Text("Продано",textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 11,
+                            color: ThemeManager.whiteThings
+                        ),
+                      ),),
+                   ):
+              IconButton(
                   icon: Icon(Icons.favorite,
                       color: isFavorite ? ThemeManager.redThings: ThemeManager.whiteThings),
                   onPressed: () async {
