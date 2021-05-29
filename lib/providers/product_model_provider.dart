@@ -19,9 +19,4 @@ class Product with ChangeNotifier {
     @override this.material,
     this.isFavorite = false,
   });
-
-  void changeFavoriteStatus() {
-    isFavorite = !isFavorite;
-    notifyListeners();
-  }
 }

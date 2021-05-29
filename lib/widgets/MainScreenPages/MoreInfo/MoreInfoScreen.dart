@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
+import 'package:kopamain/Models/ProductModel.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/ImageSwipe.dart';
+import 'package:kopamain/widgets/MainScreenPages/UserCreate.dart';
 
 class MoreInfo extends StatefulWidget {
   final productId;
@@ -82,15 +84,11 @@ class MoreInfoState extends State<MoreInfo> {
       List<String> favs, String userId) {
     List imageList = document['image'];
 
-    String authorId = "";
-    String addAbout = "";
-    try {
-      authorId = document["author"];
-      addAbout = document["userAddAbout"];
-    } catch(Ex){
-    }
+    String authorId = document["author"];
+    String addAbout = document["userAddAbout"];
 
     final double radius = 22;
+    final shape =  RoundedRectangleBorder(borderRadius: BorderRadius.circular(30));
     return SingleChildScrollView(
         child: Container(
             decoration: BoxDecoration(color: ThemeManager.background),
@@ -157,27 +155,45 @@ class MoreInfoState extends State<MoreInfo> {
                                         Padding(
                                             padding: const EdgeInsets.only(
                                                 top: 10, left: 190),
-                                            child: IconButton(
-                                                icon: authorId == userId
-                                                    ? Icon(
+                                            child: authorId == userId?IconButton(
+                                                icon: Icon(
                                                   Icons.create_outlined,
                                                   size: 42,
-                                                        color: ThemeManager
-                                                            .whiteThings,
-                                                      )
-                                                    : Icon(Icons.favorite,
-                                                        size: 42,
-                                                        color: favs.contains(
-                                                                document.id)
-                                                            ? ThemeManager
-                                                                .redThings
-                                                            : ThemeManager
-                                                                .whiteThings),
+                                                  color: ThemeManager
+                                                      .whiteThings,
+                                                ),
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) => UserCreate(product: ProductModel(
+                                                              author: document["author"].toString(),
+                                                            brand:document["brand"].toString(),
+                                                            id:document["id"].toString(),
+                                                            image: <String>[],
+                                                            length:document["length"].toString(),
+                                                            material:document["material"].toString(),
+                                                            price:document["price"].toString(),
+                                                            size:document["size"].toString(),
+                                                            sold:document["sold"],
+                                                            width:document["width"].toString(),
+                                                              userAddAbout:document["userAddAbout"].toString(),
+                                                          ))));
+                                                }):IconButton(
+                                                icon:Icon(Icons.favorite,
+                                                    size: 42,
+                                                    color: favs.contains(
+                                                        document.id)
+                                                        ? ThemeManager
+                                                        .redThings
+                                                        : ThemeManager
+                                                        .whiteThings),
                                                 onPressed: () async {
                                                   await firebaseServices
                                                       .updateUserFavs(
-                                                          document.id, favs);
-                                                })),
+                                                      document.id, favs);
+                                                }),),
+
                                       ],
                                     ),
                                   ],
@@ -369,8 +385,21 @@ class MoreInfoState extends State<MoreInfo> {
                         ),
                         Expanded(
                             flex: 1,
-                            child: Container(
-                                height: 100,
+                            child:
+                            authorId==userId?
+                            Padding(
+                              padding: const EdgeInsets.only(left: 45,right: 45),
+                              child: Container(
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    shape:  shape,
+                                    primary: ThemeManager.forButtons,
+                                  ),
+                                  child: Text("Видалити оголошення",style: TextStyle(fontSize: 16,color: ThemeManager.whiteThings),),
+                                ),
+                              ),
+                            ):
+                            Container(
                                 color: ThemeManager.background,
                                 child: Row(
                                   children: <Widget>[

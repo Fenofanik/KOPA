@@ -5,17 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
+import 'package:kopamain/Models/ProductModel.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/MoreInfoScreen.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class UserCreate extends StatefulWidget {
+  final ProductModel product;
+
+  UserCreate({this.product});
+
   @override
   _UserCreateState createState() => _UserCreateState();
 }
 
 class _UserCreateState extends State<UserCreate> {
-
   FirebaseServices firebaseServices = FirebaseServices();
   TextEditingController theSize = TextEditingController();
   TextEditingController sizeLength = TextEditingController();
@@ -25,9 +29,11 @@ class _UserCreateState extends State<UserCreate> {
   TextEditingController aboutSneaker = TextEditingController();
   TextEditingController price = TextEditingController();
 
+  final List<String> imgUrls = <String>["", "", "", "", "", "", "", ""];
   final double radius = 7;
   PickedFile _imageFile;
-  String imageUrl;
+  int stamp = 0;
+
   final ImagePicker _picker = ImagePicker();
 
   @override
@@ -82,98 +88,13 @@ class _UserCreateState extends State<UserCreate> {
               child: Container(
                 color: ThemeManager.containerColor,
                 child: Padding(
-                  padding: const EdgeInsets.only(top:10,bottom: 5,left: 5,right: 5),
+                  padding: const EdgeInsets.only(
+                      top: 10, bottom: 5, left: 5, right: 5),
                   child: GridView.count(
                     crossAxisCount: 4,
                     mainAxisSpacing: 5,
                     crossAxisSpacing: 5,
-                    children: [
-                      InkWell(onTap:() {
-                        uploadImage();
-                      },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(radius),
-                          ),
-                          color: ThemeManager.forButtons,
-                          child: Icon(
-                            Icons.camera_alt_outlined,
-                            color: ThemeManager.whiteThings,
-                            size: 30,
-                          ),
-                        ),
-                      ),
-                      InkWell(onTap:() {
-                        uploadImage();
-                      },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(radius),
-                          ),
-                          color: ThemeManager.whiteThings,
-                        ),
-                      ),
-                      InkWell(onTap:() {
-                        uploadImage();
-                      },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(radius),
-                          ),
-                          color: ThemeManager.whiteThings,
-                        ),
-                      ),
-                      InkWell(onTap:() {
-                        uploadImage();
-                      },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(radius),
-                          ),
-                          color: ThemeManager.whiteThings,
-                        ),
-                      ),
-                      InkWell(onTap:() {
-                        uploadImage();
-                      },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(radius),
-                          ),
-                          color: ThemeManager.whiteThings,
-                        ),
-                      ),
-                      InkWell(onTap:() {
-                        uploadImage();
-                      },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(radius),
-                          ),
-                          color: ThemeManager.whiteThings,
-                        ),
-                      ),
-                      InkWell(onTap:() {
-                        uploadImage();
-                      },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(radius),
-                          ),
-                          color: ThemeManager.whiteThings,
-                        ),
-                      ),
-                      InkWell(onTap:() {
-                        uploadImage();
-                      },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(radius),
-                          ),
-                          color: ThemeManager.whiteThings,
-                        ),
-                      ),
-                    ],
+                    children: <Widget>[...(getPhotos().values.toList())],
                   ),
                 ),
               ),
@@ -253,19 +174,24 @@ class _UserCreateState extends State<UserCreate> {
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsets.only(
-                                                            top: 20,bottom:15,right:13 ,left: 10),
+                                                            top: 20,
+                                                            bottom: 15,
+                                                            right: 13,
+                                                            left: 10),
                                                     child: Container(
                                                         decoration:
                                                             BoxDecoration(
                                                                 border: Border(
                                                           bottom: BorderSide(
                                                             width: 1,
-                                                            color: ThemeManager.myAddBorder,
+                                                            color: ThemeManager
+                                                                .myAddBorder,
                                                           ),
                                                         )),
                                                         child: Row(
                                                           children: <Widget>[
-                                                            Expanded(flex: 3,
+                                                            Expanded(
+                                                              flex: 3,
                                                               child: Padding(
                                                                 padding:
                                                                     const EdgeInsets
@@ -280,28 +206,35 @@ class _UserCreateState extends State<UserCreate> {
                                                                     right:
                                                                         BorderSide(
                                                                       width: 1,
-                                                                      color: ThemeManager.myAddBorder,
+                                                                      color: ThemeManager
+                                                                          .myAddBorder,
                                                                     ),
                                                                   )),
                                                                   child: Row(
-                                                                    children: <Widget>[
+                                                                    children: <
+                                                                        Widget>[
                                                                       Padding(
-                                                                        padding: const EdgeInsets.only(left: 1,),
-                                                                        child: Text(
+                                                                        padding:
+                                                                            const EdgeInsets.only(
+                                                                          left:
+                                                                              1,
+                                                                        ),
+                                                                        child:
+                                                                            Text(
                                                                           "Розмір",
                                                                           style: TextStyle(
-                                                                              fontSize:
-                                                                                  16,
+                                                                              fontSize: 16,
                                                                               color: ThemeManager.whiteThings),
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsets.only(left: 25),
-                                                                        child: Text(
+                                                                        padding:
+                                                                            const EdgeInsets.only(left: 25),
+                                                                        child:
+                                                                            Text(
                                                                           "EU",
                                                                           style: TextStyle(
-                                                                              fontSize:
-                                                                              16,
+                                                                              fontSize: 16,
                                                                               color: ThemeManager.whiteThings),
                                                                         ),
                                                                       ),
@@ -317,19 +250,29 @@ class _UserCreateState extends State<UserCreate> {
                                                                         .all(0),
                                                                 child:
                                                                     TextFormField(
-                                                                      keyboardType: TextInputType.phone,
-                                                                      controller: theSize,
-                                                                        validator: (String value) {
-                                                                          if (value.isEmpty) {
-                                                                            return "Поле не повинне бути порожнім";
-                                                                          }
-                                                                          return null;
-                                                                        },
+                                                                  keyboardType:
+                                                                      TextInputType
+                                                                          .phone,
+                                                                  initialValue: widget.product?.size,
+                                                                  controller:
+                                                                      theSize,
+                                                                  validator:
+                                                                      (String
+                                                                          value) {
+                                                                    if (value
+                                                                        .isEmpty) {
+                                                                      return "Поле не повинне бути порожнім";
+                                                                    }
+                                                                    return null;
+                                                                  },
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    contentPadding:
-                                                                    const EdgeInsets.only(
-                                                                            bottom: 13,left: 5),
+                                                                    contentPadding: const EdgeInsets
+                                                                            .only(
+                                                                        bottom:
+                                                                            13,
+                                                                        left:
+                                                                            5),
                                                                     enabledBorder:
                                                                         InputBorder
                                                                             .none,
@@ -337,13 +280,15 @@ class _UserCreateState extends State<UserCreate> {
                                                                         "...",
                                                                     hintStyle: TextStyle(
                                                                         fontSize:
-                                                                        16,
-                                                                        color: ThemeManager.whiteThings),
+                                                                            16,
+                                                                        color: ThemeManager
+                                                                            .whiteThings),
                                                                   ),
                                                                   style: TextStyle(
                                                                       fontSize:
-                                                                      16,
-                                                                      color: ThemeManager.whiteThings),
+                                                                          16,
+                                                                      color: ThemeManager
+                                                                          .whiteThings),
                                                                 ),
                                                               ),
                                                             ),
@@ -363,19 +308,24 @@ class _UserCreateState extends State<UserCreate> {
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsets.only(
-                                                            top: 20,bottom:15,right:13 ,left: 10),
+                                                            top: 20,
+                                                            bottom: 15,
+                                                            right: 13,
+                                                            left: 10),
                                                     child: Container(
                                                         decoration:
                                                             BoxDecoration(
                                                                 border: Border(
                                                           bottom: BorderSide(
                                                             width: 1,
-                                                            color: ThemeManager.myAddBorder,
+                                                            color: ThemeManager
+                                                                .myAddBorder,
                                                           ),
                                                         )),
                                                         child: Row(
                                                           children: <Widget>[
-                                                            Expanded(flex: 3,
+                                                            Expanded(
+                                                              flex: 3,
                                                               child: Padding(
                                                                 padding:
                                                                     const EdgeInsets
@@ -390,15 +340,17 @@ class _UserCreateState extends State<UserCreate> {
                                                                     right:
                                                                         BorderSide(
                                                                       width: 1,
-                                                                      color: ThemeManager.myAddBorder,
+                                                                      color: ThemeManager
+                                                                          .myAddBorder,
                                                                     ),
                                                                   )),
                                                                   child: Text(
                                                                     "Довжина/см",
                                                                     style: TextStyle(
                                                                         fontSize:
-                                                                        16,
-                                                                        color: ThemeManager.whiteThings),
+                                                                            16,
+                                                                        color: ThemeManager
+                                                                            .whiteThings),
                                                                   ),
                                                                 ),
                                                               ),
@@ -410,19 +362,29 @@ class _UserCreateState extends State<UserCreate> {
                                                                         .all(0),
                                                                 child:
                                                                     TextFormField(
-                                                                      keyboardType: TextInputType.phone,
-                                                                      controller: sizeLength,
-                                                                      validator: (String value) {
-                                                                        if (value.isEmpty) {
-                                                                          return "Поле не повинне бути порожнім";
-                                                                        }
-                                                                        return null;
-                                                                      },
+                                                                  keyboardType:
+                                                                      TextInputType
+                                                                          .phone,
+                                                                      initialValue: widget.product?.length,
+                                                                  controller:
+                                                                      sizeLength,
+                                                                  validator:
+                                                                      (String
+                                                                          value) {
+                                                                    if (value
+                                                                        .isEmpty) {
+                                                                      return "Поле не повинне бути порожнім";
+                                                                    }
+                                                                    return null;
+                                                                  },
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    contentPadding:
-                                                                    const EdgeInsets.only(
-                                                                        bottom: 13, left: 5),
+                                                                    contentPadding: const EdgeInsets
+                                                                            .only(
+                                                                        bottom:
+                                                                            13,
+                                                                        left:
+                                                                            5),
                                                                     enabledBorder:
                                                                         InputBorder
                                                                             .none,
@@ -430,13 +392,15 @@ class _UserCreateState extends State<UserCreate> {
                                                                         "...",
                                                                     hintStyle: TextStyle(
                                                                         fontSize:
-                                                                        16,
-                                                                        color: ThemeManager.whiteThings),
+                                                                            16,
+                                                                        color: ThemeManager
+                                                                            .whiteThings),
                                                                   ),
                                                                   style: TextStyle(
                                                                       fontSize:
-                                                                      16,
-                                                                      color: ThemeManager.whiteThings),
+                                                                          16,
+                                                                      color: ThemeManager
+                                                                          .whiteThings),
                                                                 ),
                                                               ),
                                                             ),
@@ -456,19 +420,24 @@ class _UserCreateState extends State<UserCreate> {
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsets.only(
-                                                            top: 20,bottom:15,right:13 ,left: 10),
+                                                            top: 20,
+                                                            bottom: 15,
+                                                            right: 13,
+                                                            left: 10),
                                                     child: Container(
                                                         decoration:
                                                             BoxDecoration(
                                                                 border: Border(
                                                           bottom: BorderSide(
                                                             width: 1,
-                                                            color: ThemeManager.myAddBorder,
+                                                            color: ThemeManager
+                                                                .myAddBorder,
                                                           ),
                                                         )),
                                                         child: Row(
                                                           children: <Widget>[
-                                                            Expanded(flex: 3,
+                                                            Expanded(
+                                                              flex: 3,
                                                               child: Padding(
                                                                 padding:
                                                                     const EdgeInsets
@@ -483,15 +452,17 @@ class _UserCreateState extends State<UserCreate> {
                                                                     right:
                                                                         BorderSide(
                                                                       width: 1,
-                                                                      color: ThemeManager.myAddBorder,
+                                                                      color: ThemeManager
+                                                                          .myAddBorder,
                                                                     ),
                                                                   )),
                                                                   child: Text(
                                                                     "Ширина/см",
                                                                     style: TextStyle(
                                                                         fontSize:
-                                                                        16,
-                                                                        color: ThemeManager.whiteThings),
+                                                                            16,
+                                                                        color: ThemeManager
+                                                                            .whiteThings),
                                                                   ),
                                                                 ),
                                                               ),
@@ -503,19 +474,29 @@ class _UserCreateState extends State<UserCreate> {
                                                                         .all(0),
                                                                 child:
                                                                     TextFormField(
-                                                                      keyboardType: TextInputType.phone,
-                                                                      controller: sizeWidth,
-                                                                      validator: (String value) {
-                                                                        if (value.isEmpty) {
-                                                                          return "Поле не повинне бути порожнім";
-                                                                        }
-                                                                        return null;
-                                                                      },
+                                                                  keyboardType:
+                                                                      TextInputType
+                                                                          .phone,
+                                                                      initialValue: widget.product?.width,
+                                                                  controller:
+                                                                      sizeWidth,
+                                                                  validator:
+                                                                      (String
+                                                                          value) {
+                                                                    if (value
+                                                                        .isEmpty) {
+                                                                      return "Поле не повинне бути порожнім";
+                                                                    }
+                                                                    return null;
+                                                                  },
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    contentPadding:
-                                                                    const EdgeInsets.only(
-                                                                        bottom: 13, left: 5),
+                                                                    contentPadding: const EdgeInsets
+                                                                            .only(
+                                                                        bottom:
+                                                                            13,
+                                                                        left:
+                                                                            5),
                                                                     enabledBorder:
                                                                         InputBorder
                                                                             .none,
@@ -523,13 +504,15 @@ class _UserCreateState extends State<UserCreate> {
                                                                         "...",
                                                                     hintStyle: TextStyle(
                                                                         fontSize:
-                                                                        16,
-                                                                        color: ThemeManager.whiteThings),
+                                                                            16,
+                                                                        color: ThemeManager
+                                                                            .whiteThings),
                                                                   ),
                                                                   style: TextStyle(
                                                                       fontSize:
-                                                                      16,
-                                                                      color: ThemeManager.whiteThings),
+                                                                          16,
+                                                                      color: ThemeManager
+                                                                          .whiteThings),
                                                                 ),
                                                               ),
                                                             ),
@@ -561,6 +544,7 @@ class _UserCreateState extends State<UserCreate> {
                   Expanded(
                     child: TextFormField(
                         controller: model,
+                        initialValue: widget.product?.brand,
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Поле не повинне бути порожнім";
@@ -569,15 +553,16 @@ class _UserCreateState extends State<UserCreate> {
                         },
                         decoration: InputDecoration(
                           labelText: "Модель",
-                          labelStyle:
-                              TextStyle(fontSize: 14, color: ThemeManager.whiteThings),
+                          labelStyle: TextStyle(
+                              fontSize: 14, color: ThemeManager.whiteThings),
                           prefixIcon: Icon(
                             Icons.circle,
                             size: 9,
                             color: ThemeManager.forButtons,
                           ),
                         ),
-                        style: TextStyle(fontSize: (18), color: ThemeManager.whiteThings)),
+                        style: TextStyle(
+                            fontSize: (18), color: ThemeManager.whiteThings)),
                   )
                 ],
               ),
@@ -590,6 +575,7 @@ class _UserCreateState extends State<UserCreate> {
                   Expanded(
                     child: TextFormField(
                         controller: material,
+                        initialValue: widget.product?.material,
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Поле не повинне бути порожнім";
@@ -598,15 +584,16 @@ class _UserCreateState extends State<UserCreate> {
                         },
                         decoration: InputDecoration(
                           labelText: "Матеріал",
-                          labelStyle:
-                              TextStyle(fontSize: 14, color: ThemeManager.whiteThings),
+                          labelStyle: TextStyle(
+                              fontSize: 14, color: ThemeManager.whiteThings),
                           prefixIcon: Icon(
                             Icons.circle,
                             size: 9,
                             color: ThemeManager.forButtons,
                           ),
                         ),
-                        style: TextStyle(fontSize: (18), color: ThemeManager.whiteThings)),
+                        style: TextStyle(
+                            fontSize: (18), color: ThemeManager.whiteThings)),
                   ),
                 ],
               ),
@@ -619,6 +606,7 @@ class _UserCreateState extends State<UserCreate> {
                   Expanded(
                     child: TextFormField(
                         controller: aboutSneaker,
+                        initialValue: widget.product?.userAddAbout,
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Поле не повинне бути порожнім";
@@ -627,15 +615,16 @@ class _UserCreateState extends State<UserCreate> {
                         },
                         decoration: InputDecoration(
                           labelText: "Опис",
-                          labelStyle:
-                              TextStyle(fontSize: 14, color: ThemeManager.whiteThings),
+                          labelStyle: TextStyle(
+                              fontSize: 14, color: ThemeManager.whiteThings),
                           prefixIcon: Icon(
                             Icons.circle,
                             size: 9,
                             color: ThemeManager.forButtons,
                           ),
                         ),
-                        style: TextStyle(fontSize: (18), color: ThemeManager.whiteThings)),
+                        style: TextStyle(
+                            fontSize: (18), color: ThemeManager.whiteThings)),
                   )
                 ],
               ),
@@ -649,6 +638,7 @@ class _UserCreateState extends State<UserCreate> {
                     child: TextFormField(
                         keyboardType: TextInputType.phone,
                         controller: price,
+                        initialValue: widget.product?.price,
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Поле не повинне бути порожнім";
@@ -657,15 +647,16 @@ class _UserCreateState extends State<UserCreate> {
                         },
                         decoration: InputDecoration(
                           labelText: "Ціна",
-                          labelStyle:
-                              TextStyle(fontSize: 14, color: ThemeManager.whiteThings),
+                          labelStyle: TextStyle(
+                              fontSize: 14, color: ThemeManager.whiteThings),
                           prefixIcon: Icon(
                             Icons.circle,
                             size: 9,
                             color: ThemeManager.forButtons,
                           ),
                         ),
-                        style: TextStyle(fontSize: (18), color: ThemeManager.whiteThings)),
+                        style: TextStyle(
+                            fontSize: (18), color: ThemeManager.whiteThings)),
                   )
                 ],
               ),
@@ -676,7 +667,39 @@ class _UserCreateState extends State<UserCreate> {
     );
   }
 
-  uploadImage() async {
+  getPhotos() {
+    return imgUrls.asMap().map((key, value) {
+      final isPhoto = (key == 0 && imgUrls[0] == "") ||
+          (key > 0 && imgUrls[key - 1] != "");
+      final isImage = value != "";
+      return MapEntry(
+          key,
+          InkWell(
+            onTap: () {
+              uploadImage(key);
+            },
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(radius),
+              ),
+              color: (isPhoto || isImage)
+                  ? ThemeManager.forButtons
+                  : ThemeManager.whiteThings,
+              child: isImage
+                  ? Image.network(value,fit: BoxFit.fill)
+                  : isPhoto
+                      ? Icon(
+                          Icons.camera_alt_outlined,
+                          color: ThemeManager.whiteThings,
+                          size: 30,
+                        )
+                      : Container(),
+            ),
+          ));
+    });
+  }
+
+  uploadImage(key) async {
     final _storage = FirebaseStorage.instance;
 
     await Permission.photos.request();
@@ -689,15 +712,14 @@ class _UserCreateState extends State<UserCreate> {
 
       if (_imageFile != null) {
         var snapshot =
-        await _storage.ref().child('UserAdd/filename').putFile(file);
+            await _storage.ref().child('UserAdd/filename-${DateTime.now().millisecondsSinceEpoch}').putFile(file);
 
         var downloadUrl = await snapshot.ref.getDownloadURL();
-
+        print("sd $downloadUrl");
         setState(() {
-          imageUrl = downloadUrl;
-
+          imgUrls[key] = downloadUrl;
+          stamp++;
         });
-
       } else {
         print('No path received');
       }
@@ -706,7 +728,7 @@ class _UserCreateState extends State<UserCreate> {
     }
   }
 
-  addToCollection() async  {
+  addToCollection() async {
     FirebaseServices firebaseServices = FirebaseServices();
     String _userId = firebaseServices.getUserId();
     String userAddSize = theSize.text;
@@ -716,7 +738,7 @@ class _UserCreateState extends State<UserCreate> {
     String userAddMaterial = material.text;
     String userAddAbout = aboutSneaker.text;
     String userAddPrice = price.text;
-    List<String> userAddImg = [imageUrl];
+    List<String> userAddImg = imgUrls.where((x) => x != "").toList();
     final obj = await firebaseServices.productRef.add({
       "author": _userId,
       "sold": false,
