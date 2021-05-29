@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/services/Firebase_services.dart';
+import 'package:kopamain/widgets/MainScreenPages/MainScreen.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/UserCreateMoreInfo.dart';
 
 class MyScreenMain extends StatefulWidget {
@@ -70,42 +71,9 @@ class MyScreenMainState extends State<MyScreenMain>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  FutureBuilder<QuerySnapshot>(
-                    future: firebaseServices.userRef.doc(userId).collection("userAdd").get(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Scaffold(
-                          backgroundColor: ThemeManager.background,
-                          body: Center(
-                            child: Text("Error: ${snapshot.error}"),
-                          ),
-                        );
-                      }
-                      if (snapshot.connectionState == ConnectionState.done) {
-                        return  ListView(
-                          children: snapshot.data.docs.map((document) {
-                            return myProductsUI(context, document);
-                          }).toList(),
-                        );
-                      }
-                      return Scaffold(
-                        backgroundColor: ThemeManager.background,
-                        body: Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                      );
-                    },
-                  ),
+                  MainScreen(productId: 1,isFavorite: false,isMyProduct: true,isSold: false),
+                  MainScreen(productId: 1,isFavorite: false,isMyProduct: true,isSold: true),
 
-                  Center(
-                    child: Text(
-                      'Архів',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

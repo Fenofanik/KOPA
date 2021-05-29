@@ -27,7 +27,7 @@ class _ImageSwipeState extends State<ImageSwipe> {
             });
           },
           children: [
-            for (var i = 0; i < 4; i++)
+            for (var i = 0; i < widget.imageList.length; i++)
               ClipRRect(
                 borderRadius: BorderRadius.circular(widget.radius),
                 child: FittedBox(
@@ -43,7 +43,7 @@ class _ImageSwipeState extends State<ImageSwipe> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              for (var i = 0; i < 4; i++)
+              for (var i = 0; i < widget.imageList.length; i++)
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(

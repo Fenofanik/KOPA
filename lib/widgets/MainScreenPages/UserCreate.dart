@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/services/Firebase_services.dart';
+import 'package:kopamain/widgets/MainScreenPages/MoreInfo/MoreInfoScreen.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class UserCreate extends StatefulWidget {
@@ -42,8 +43,12 @@ class _UserCreateState extends State<UserCreate> {
         backgroundColor: ThemeManager.background,
         actions: [
           TextButton(
-              onPressed: () {
-                addToCollection();
+              onPressed: () async {
+                final id = await addToCollection();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MoreInfo(productId: id)));
               },
               child: Text(
                 "Зберегти",
@@ -701,7 +706,7 @@ class _UserCreateState extends State<UserCreate> {
     }
   }
 
-  addToCollection(){
+  addToCollection() async  {
     FirebaseServices firebaseServices = FirebaseServices();
     String _userId = firebaseServices.getUserId();
     String userAddSize = theSize.text;
@@ -712,16 +717,21 @@ class _UserCreateState extends State<UserCreate> {
     String userAddAbout = aboutSneaker.text;
     String userAddPrice = price.text;
     List<String> userAddImg = [imageUrl];
-    firebaseServices.userRef.doc(_userId).collection("userAdd").add({
-      "userAddImg": userAddImg,
-      "userAddSize": userAddSize,
-      "userAddSizeLength": userAddSizeLength,
-      "userAddSizeWidth": userAddSizeWidth,
-      "userAddModel": userAddModel,
-      "userAddMaterial": userAddMaterial,
+    final obj = await firebaseServices.productRef.add({
+      "author": _userId,
+      "sold": false,
+      "image": userAddImg,
+      "size": userAddSize,
+      "length": userAddSizeLength,
+      "width": userAddSizeWidth,
+      "brand": userAddModel,
+      "material": userAddMaterial,
       "userAddAbout": userAddAbout,
-      "userAddPrice": userAddPrice,
+      "price": "$userAddPrice \$",
+      "isFav": false
     });
 
+    await firebaseServices.productRef.doc(obj.id).update({"id": obj.id});
+    return obj.id;
   }
 }

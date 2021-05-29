@@ -34,54 +34,55 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
   @override
   Widget build(BuildContext context) {
     return //signOutButton();
-      Scaffold(
-        backgroundColor: ThemeManager.background,
-        body: StreamBuilder<QuerySnapshot>(
-          stream: firebaseServices.userRef.snapshots(),
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
-              return Scaffold(
-                backgroundColor: ThemeManager.background,
-                body: Center(
-                  child: Text("Error: ${snapshot.error}"),
-                ),
-              );
-            }
-            if (snapshot.connectionState == ConnectionState.active) {
-              return ListView(
-                children: snapshot.data.docs.map((document) {
-                  return SingleChildScrollView(
-                      child: Column(children: <Widget>[
-                        imageNameAndIcon(document),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        phoneText(document),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        cityText(document),
-                        SizedBox(
-                          height: 50,
-                        ),
-                        signOutButton()
-                      ]));
-                }).toList(),
-              );
-            }
+        Scaffold(
+      backgroundColor: ThemeManager.background,
+      body: StreamBuilder<QuerySnapshot>(
+        stream: firebaseServices.userRef.snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
             return Scaffold(
               backgroundColor: ThemeManager.background,
               body: Center(
-                child: CircularProgressIndicator(),
+                child: Text("Error: ${snapshot.error}"),
               ),
             );
-          },
-        ),
-        appBar: AppBar(
-          backgroundColor: ThemeManager.background,
-          automaticallyImplyLeading: false,
-        ),
-      );
+          }
+          if (snapshot.connectionState == ConnectionState.active) {
+            final userId = firebaseServices.getUserId();
+            final user = snapshot.data.docs.firstWhere((element) {
+              return element['id'] == userId;
+            });
+
+            return SingleChildScrollView(
+                child: Column(children: <Widget>[
+              imageNameAndIcon(user),
+              SizedBox(
+                height: 20,
+              ),
+              phoneText(user),
+              SizedBox(
+                height: 20,
+              ),
+              cityText(user),
+              SizedBox(
+                height: 50,
+              ),
+              signOutButton()
+            ]));
+          }
+          return Scaffold(
+            backgroundColor: ThemeManager.background,
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        },
+      ),
+      appBar: AppBar(
+        backgroundColor: ThemeManager.background,
+        automaticallyImplyLeading: false,
+      ),
+    );
   }
 
   uploadImage() async {
@@ -97,7 +98,7 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
 
       if (_imageFile != null) {
         var snapshot =
-        await _storage.ref().child('folderName/imageName').putFile(file);
+            await _storage.ref().child('folderName/imageName').putFile(file);
 
         var downloadUrl = await snapshot.ref.getDownloadURL();
 
@@ -108,7 +109,6 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
             "imageUrl": imageUrl,
           });
         });
-
       } else {
         print('No path received');
       }
@@ -120,50 +120,49 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
   Widget imageNameAndIcon(document) {
     return Center(
         child: Row(children: [
-          Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  backgroundImage:
-                  document.data()['imageUrl']==null?
-                  AssetImage("assets/images/2.png"):
-                  NetworkImage(document.data()['imageUrl']),
-                  radius: 70,
-                ),
-              ),
-              Positioned(
-                  bottom: 0,
-                  right: 2,
-                  child: Container(
-                      alignment: Alignment.bottomRight,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: ThemeManager.forButtons),
-                      child: IconButton(
-                        iconSize: 25.0,
-                        onPressed: () {
-                          uploadImage();
-                        },
-                        icon: Icon(Icons.add, color: ThemeManager.whiteThings),
-                      ))),
-            ],
+      Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: document.data()['imageUrl'] == null
+                  ? AssetImage("assets/images/2.png")
+                  : NetworkImage(document.data()['imageUrl']),
+              radius: 70,
+            ),
           ),
-          SizedBox(
-            width: 10,
+          Positioned(
+              bottom: 0,
+              right: 2,
+              child: Container(
+                  alignment: Alignment.bottomRight,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: ThemeManager.forButtons),
+                  child: IconButton(
+                    iconSize: 25.0,
+                    onPressed: () {
+                      uploadImage();
+                    },
+                    icon: Icon(Icons.add, color: ThemeManager.whiteThings),
+                  ))),
+        ],
+      ),
+      SizedBox(
+        width: 10,
+      ),
+      Row(
+        children: [
+          Text(
+            document['name'],
+            style: TextStyle(fontSize: 18, color: ThemeManager.whiteThings),
           ),
-          Row(
-            children: [
-              Text(
-                document['name'],
-                style: TextStyle(fontSize: 18, color: ThemeManager.whiteThings),
-              ),
-              Text(
-                document['secondName'],
-                style: TextStyle(fontSize: 18, color: ThemeManager.whiteThings),
-              )
-            ],
-          ),
-        ]));
+          Text(
+            document['secondName'],
+            style: TextStyle(fontSize: 18, color: ThemeManager.whiteThings),
+          )
+        ],
+      ),
+    ]));
   }
 
   Widget phoneText(document) {
@@ -177,7 +176,8 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
             width: 320,
             decoration: BoxDecoration(
                 border: Border(
-                    bottom: BorderSide(color: ThemeManager.myAddBorder, width: 1))),
+                    bottom:
+                        BorderSide(color: ThemeManager.myAddBorder, width: 1))),
             child: Text(
               document['phoneNumber'],
               style: TextStyle(fontSize: 18, color: ThemeManager.whiteThings),
@@ -190,13 +190,15 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
     return Padding(
         padding: EdgeInsets.only(left: 15, right: 15),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text("Місто", style: TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
+          Text("Місто",
+              style: TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
           SizedBox(height: 5),
           Container(
             width: 320,
             decoration: BoxDecoration(
                 border: Border(
-                    bottom: BorderSide(color: ThemeManager.myAddBorder, width: 1))),
+                    bottom:
+                        BorderSide(color: ThemeManager.myAddBorder, width: 1))),
             child: Text(
               document['city'],
               style: TextStyle(fontSize: 18, color: ThemeManager.whiteThings),
@@ -217,7 +219,8 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
                 primary: ThemeManager.forButtons,
               ),
               child: Text("Вийти",
-                  style: TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
+                  style:
+                      TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
               onPressed: () async {
                 await _auth.signOut();
                 Navigator.pushNamed(context, '/LoginPage');

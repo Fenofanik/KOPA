@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/ImageSwipe.dart';
@@ -43,12 +44,12 @@ class MoreInfoState extends State<MoreInfo> {
                   });
                   final userFavs = List<String>.from(user['favs']);
 
-                  final prodData = productsSnapshot.data.docs
-                      .where((element) => element['id'].toString().trim() == widget.productId);
+                  final prodData = productsSnapshot.data.docs.where((element) =>
+                      element['id'].toString().trim() == widget.productId);
 
                   return ListView(
                     children: prodData.map((document) {
-                      return moreInfoUI(context, document, userFavs);
+                      return moreInfoUI(context, document, userFavs, userId);
                     }).toList(),
                   );
                 }
@@ -77,9 +78,18 @@ class MoreInfoState extends State<MoreInfo> {
     );
   }
 
-  Widget moreInfoUI(
-      BuildContext context, DocumentSnapshot document, List<String> favs) {
+  Widget moreInfoUI(BuildContext context, DocumentSnapshot document,
+      List<String> favs, String userId) {
     List imageList = document['image'];
+
+    String authorId = "";
+    String addAbout = "";
+    try {
+      authorId = document["author"];
+      addAbout = document["userAddAbout"];
+    } catch(Ex){
+    }
+
     final double radius = 22;
     return SingleChildScrollView(
         child: Container(
@@ -122,7 +132,8 @@ class MoreInfoState extends State<MoreInfo> {
                                               decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(22),
-                                                  color: ThemeManager.boxPriceColor),
+                                                  color: ThemeManager
+                                                      .boxPriceColor),
                                               height: 30,
                                               width: 74,
                                               child: Padding(
@@ -132,7 +143,9 @@ class MoreInfoState extends State<MoreInfo> {
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: TextStyle(
-                                                          fontSize: 16,color: ThemeManager.textPrice,
+                                                          fontSize: 16,
+                                                          color: ThemeManager
+                                                              .textPrice,
                                                           fontWeight: FontWeight
                                                               .w700))),
                                             )),
@@ -145,12 +158,21 @@ class MoreInfoState extends State<MoreInfo> {
                                             padding: const EdgeInsets.only(
                                                 top: 10, left: 190),
                                             child: IconButton(
-                                                icon: Icon(Icons.favorite,
-                                                    size: 42,
-                                                    color: favs.contains(
-                                                            document.id)
-                                                        ? ThemeManager.redThings
-                                                        : ThemeManager.whiteThings),
+                                                icon: authorId == userId
+                                                    ? Icon(
+                                                  Icons.create_outlined,
+                                                  size: 42,
+                                                        color: ThemeManager
+                                                            .whiteThings,
+                                                      )
+                                                    : Icon(Icons.favorite,
+                                                        size: 42,
+                                                        color: favs.contains(
+                                                                document.id)
+                                                            ? ThemeManager
+                                                                .redThings
+                                                            : ThemeManager
+                                                                .whiteThings),
                                                 onPressed: () async {
                                                   await firebaseServices
                                                       .updateUserFavs(
@@ -202,7 +224,8 @@ class MoreInfoState extends State<MoreInfo> {
                                                     document['size'],
                                                     style: TextStyle(
                                                         fontSize: 22,
-                                                        color: ThemeManager.textSize,
+                                                        color: ThemeManager
+                                                            .textSize,
                                                         fontWeight:
                                                             FontWeight.w100),
                                                   ),
@@ -215,7 +238,8 @@ class MoreInfoState extends State<MoreInfo> {
                                                     document['length'],
                                                     style: TextStyle(
                                                         fontSize: 14,
-                                                        color: ThemeManager.whiteThings,
+                                                        color: ThemeManager
+                                                            .whiteThings,
                                                         fontWeight:
                                                             FontWeight.w100),
                                                   ),
@@ -228,7 +252,8 @@ class MoreInfoState extends State<MoreInfo> {
                                                     document['width'],
                                                     style: TextStyle(
                                                         fontSize: 14,
-                                                        color: ThemeManager.whiteThings,
+                                                        color: ThemeManager
+                                                            .whiteThings,
                                                         fontWeight:
                                                             FontWeight.w100),
                                                   ),
@@ -253,7 +278,8 @@ class MoreInfoState extends State<MoreInfo> {
                                                       "EU",
                                                       style: TextStyle(
                                                           fontSize: 10,
-                                                          color: ThemeManager.whiteThings,
+                                                          color: ThemeManager
+                                                              .whiteThings,
                                                           fontWeight:
                                                               FontWeight.w100),
                                                     ),
@@ -266,7 +292,8 @@ class MoreInfoState extends State<MoreInfo> {
                                                       "Довжина/см",
                                                       style: TextStyle(
                                                           fontSize: 10,
-                                                          color: ThemeManager.whiteThings,
+                                                          color: ThemeManager
+                                                              .whiteThings,
                                                           fontWeight:
                                                               FontWeight.w100),
                                                     ),
@@ -279,7 +306,8 @@ class MoreInfoState extends State<MoreInfo> {
                                                       "Ширина/см",
                                                       style: TextStyle(
                                                           fontSize: 10,
-                                                          color: ThemeManager.whiteThings,
+                                                          color: ThemeManager
+                                                              .whiteThings,
                                                           fontWeight:
                                                               FontWeight.w100),
                                                     ),
@@ -303,7 +331,8 @@ class MoreInfoState extends State<MoreInfo> {
                                           Text(" Матеріал : ",
                                               style: TextStyle(
                                                   fontSize: 10,
-                                                  color: ThemeManager.textMaterial,
+                                                  color:
+                                                      ThemeManager.textMaterial,
                                                   fontWeight: FontWeight.w100)),
                                           Padding(
                                             padding: EdgeInsets.only(left: 5),
@@ -311,7 +340,8 @@ class MoreInfoState extends State<MoreInfo> {
                                               document['material'],
                                               style: TextStyle(
                                                   fontSize: 10,
-                                                  color: ThemeManager.textMaterial),
+                                                  color: ThemeManager
+                                                      .textMaterial),
                                             ),
                                           )
                                         ],
@@ -320,11 +350,16 @@ class MoreInfoState extends State<MoreInfo> {
                                 Padding(
                                   padding: EdgeInsets.only(top: 16, left: 10),
                                   child: Container(
-                                    child: Text(
+                                    child:
+                                    addAbout==""?
+                                    Text(
                                         "Опис про товар і як довго носив кросівки чи специфічні деталі взуття. натирало чи ні. чи дуло задувало. на широку ногу чи сайз не відповідає зязвленому. хвалиш взуття щоб точно купили. бо подарували дві пари, а ти за літо ще ні одної не зносив.",
                                         style: TextStyle(
                                             fontSize: 12,
-                                            color: ThemeManager.forTextAbout)),
+                                            color: ThemeManager.forTextAbout)):
+                                    Text(document["userAddAbout"],style: TextStyle(
+                                        fontSize: 12,
+                                        color: ThemeManager.forTextAbout)),
                                   ),
                                 )
                               ],
@@ -354,7 +389,8 @@ class MoreInfoState extends State<MoreInfo> {
                                             "Продавець",
                                             style: TextStyle(
                                                 fontSize: 22,
-                                                color: ThemeManager.whiteThings),
+                                                color:
+                                                    ThemeManager.whiteThings),
                                           ),
                                           Padding(
                                             padding: EdgeInsets.only(right: 30),
@@ -362,7 +398,8 @@ class MoreInfoState extends State<MoreInfo> {
                                               "Ukraine, Vinnytsia",
                                               style: TextStyle(
                                                   fontSize: 10,
-                                                  color: ThemeManager.whiteThings),
+                                                  color:
+                                                      ThemeManager.whiteThings),
                                             ),
                                           ),
                                         ],
@@ -380,10 +417,12 @@ class MoreInfoState extends State<MoreInfo> {
                                                   child: FloatingActionButton(
                                                     onPressed: () {},
                                                     backgroundColor:
-                                                        ThemeManager.phoneButtonSell,
+                                                        ThemeManager
+                                                            .phoneButtonSell,
                                                     child: Icon(
                                                       Icons.phone,
-                                                      color: ThemeManager.blackThings,
+                                                      color: ThemeManager
+                                                          .blackThings,
                                                       size: 28,
                                                     ),
                                                   ))

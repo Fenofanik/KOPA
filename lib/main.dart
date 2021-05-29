@@ -28,7 +28,7 @@ class FirstScreen extends StatelessWidget {
         '/Verification3': (context) => Verification3(),
         '/Home': (context) => Home(),
         '/MoreInfo': (context) => MoreInfo(),
-        '/MainScreen': (context) => MainScreen(),
+        '/MainScreen': (context) => MainScreen(isFavorite: false,isMyProduct: false,isSold: false,),
         '/UserCreate' : (context)=> UserCreate(),
         '/LoginPage': (context)=> LoginPage()
       },

@@ -8,8 +8,10 @@ import 'package:flutter/cupertino.dart';
 class MainScreen extends StatefulWidget {
   final productId;
   final bool isFavorite;
+  final bool isSold;
+  final bool isMyProduct;
 
-  MainScreen({this.productId, this.isFavorite});
+  MainScreen({this.productId, this.isFavorite,this.isSold,this.isMyProduct});
 
   @override
   MainScreenState createState() => MainScreenState();
@@ -50,7 +52,13 @@ class MainScreenState extends State<MainScreen> {
                             final id = element['id'].toString().trim();
                             return userFavs.contains(id);
                           })
-                        : productsSnapshot.data.docs;
+                        :
+                    widget.isMyProduct == true ?
+                    productsSnapshot.data.docs.where((element) {
+                      final author = element['author'].toString().trim();
+                      return author == userId && widget.isSold == element['sold'];
+                    })
+                    : productsSnapshot.data.docs;
 
                     return ListView(
                       children: productsData.map((document) {
@@ -72,7 +80,7 @@ class MainScreenState extends State<MainScreen> {
             backgroundColor: ThemeManager.background,
             leading: GestureDetector(
               onTap: () {},
-              child: widget.isFavorite
+              child: (widget.isFavorite || widget.isSold == true || widget.isMyProduct == true)
                   ? Container()
                   : Container(
                       alignment: Alignment.bottomLeft,
