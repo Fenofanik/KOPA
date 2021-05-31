@@ -10,8 +10,9 @@ class MainScreen extends StatefulWidget {
   final bool isFavorite;
   final bool isSold;
   final bool isMyProduct;
+  final bool filter;
 
-  MainScreen({this.productId, this.isFavorite,this.isSold,this.isMyProduct});
+  MainScreen({this.productId, this.isFavorite,this.isSold,this.isMyProduct,this.filter});
 
   @override
   MainScreenState createState() => MainScreenState();
@@ -19,6 +20,18 @@ class MainScreen extends StatefulWidget {
 
 class MainScreenState extends State<MainScreen> {
   FirebaseServices firebaseServices = FirebaseServices();
+  TextEditingController filterBrand = TextEditingController();
+  TextEditingController filterMaterial = TextEditingController();
+  TextEditingController filterSize = TextEditingController();
+  TextEditingController filterPrice = TextEditingController();
+  @override
+  void dispose() {
+    filterBrand.dispose();
+    filterMaterial.dispose();
+    filterSize.dispose();
+    filterPrice.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,11 +71,50 @@ class MainScreenState extends State<MainScreen> {
                       final author = element['author'].toString().trim();
                       return author == userId && widget.isSold == element['sold'];
                     })
-                    : productsSnapshot.data.docs;
+                    : productsSnapshot.data.docs
+                    .where((element) {
+                      if (filterBrand.text != null || filterBrand.text != "") {
+                        return element["brand"].toString().trim().startsWith(filterBrand.text);
+
+                      } else {
+                        return true;
+                      }
+                    }
+                    )
+                        .where((element) {
+                      if (filterMaterial.text != null || filterMaterial.text != "") {
+                        return element["material"].toString().trim().startsWith(filterMaterial.text);
+
+                      } else {
+                        return true;
+                      }
+                    }
+                    )
+                        .where((element) {
+                      if (filterSize.text != null || filterSize.text != "") {
+                        return element["size"].toString().trim().startsWith(filterSize.text);
+
+
+                      } else {
+                        return true;
+                      }
+                    }
+                    )
+                        .where((element) {
+                      if (filterPrice.text != null || filterPrice.text != "") {
+                        return element["price"].toString().trim().startsWith(filterPrice.text);
+
+                      } else {
+                        return true;
+                      }
+                    }
+                    );
+
 
                     return ListView(
                       children: productsData.map((document) {
-                        return productsUI(context, document, userFavs);
+                        return
+                          productsUI(context, document, userFavs);
                       }).toList(),
                     );
                   }
@@ -75,7 +127,8 @@ class MainScreenState extends State<MainScreen> {
                 });
           },
         ),
-        appBar: AppBar(
+        appBar: ( widget.isSold == true || widget.isMyProduct == true)?
+        PreferredSize(preferredSize: Size(0.0, 0.0),child: Container(),):AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: ThemeManager.background,
             leading: GestureDetector(
@@ -384,6 +437,7 @@ class MainScreenState extends State<MainScreen> {
                       children: <Widget>[
                         Expanded(
                           child: TextField(
+                            controller: filterBrand,
                               decoration: InputDecoration(
                                 labelText: "Модель",
                                 labelStyle: TextStyle(
@@ -403,6 +457,7 @@ class MainScreenState extends State<MainScreen> {
                       children: <Widget>[
                         Expanded(
                           child: TextField(
+                            controller: filterMaterial,
                               decoration: InputDecoration(
                                 labelText: "Матеріал",
                                 labelStyle: TextStyle(
@@ -424,29 +479,24 @@ class MainScreenState extends State<MainScreen> {
                             child: Row(
                           children: <Widget>[
                             Expanded(
-                                child: TextField(
-                                    decoration: InputDecoration(
-                                      labelText: "Розмір",
-                                      labelStyle: TextStyle(
-                                          fontSize: 14, color: ThemeManager.whiteThings),
-                                      prefixIcon: Icon(
-                                        Icons.circle,
-                                        size: 9,
-                                        color: ThemeManager.forButtons,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 250),
+                                  child: TextField(
+                                    controller: filterSize,
+                                      decoration: InputDecoration(
+                                        labelText: "Розмір",
+                                        labelStyle: TextStyle(
+                                            fontSize: 14, color: ThemeManager.whiteThings),
+                                        prefixIcon: Icon(
+                                          Icons.circle,
+                                          size: 9,
+                                          color: ThemeManager.forButtons,
+                                        ),
                                       ),
-                                    ),
-                                    style: TextStyle(
-                                        fontSize: (14), color: ThemeManager.whiteThings)),
+                                      style: TextStyle(
+                                          fontSize: (14), color: ThemeManager.whiteThings)),
+                                ),
                                 flex: 7),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                                child: TextField(
-                                    style: TextStyle(
-                                        fontSize: (14), color: ThemeManager.whiteThings)),
-                                flex: 7),
-                            Expanded(child: Container(), flex: 8)
                           ],
                         ))
                       ],
@@ -457,27 +507,24 @@ class MainScreenState extends State<MainScreen> {
                             child: Row(
                           children: <Widget>[
                             Expanded(
-                                child: TextField(
-                                    decoration: InputDecoration(
-                                      labelText: "Ціна",
-                                      labelStyle: TextStyle(
-                                          fontSize: 14, color: ThemeManager.whiteThings),
-                                      prefixIcon: Icon(
-                                        Icons.circle,
-                                        size: 9,
-                                        color: ThemeManager.forButtons,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 250),
+                                  child: TextField(
+                                    controller: filterPrice,
+                                      decoration: InputDecoration(
+                                        labelText: "Ціна",
+                                        labelStyle: TextStyle(
+                                            fontSize: 14, color: ThemeManager.whiteThings),
+                                        prefixIcon: Icon(
+                                          Icons.circle,
+                                          size: 9,
+                                          color: ThemeManager.forButtons,
+                                        ),
                                       ),
-                                    ),
-                                    style: TextStyle(
-                                        fontSize: (14), color: ThemeManager.whiteThings)),
+                                      style: TextStyle(
+                                          fontSize: (14), color: ThemeManager.whiteThings)),
+                                ),
                                 flex: 7),
-                            Spacer(flex: 1),
-                            Expanded(
-                                child: TextField(
-                                    style: TextStyle(
-                                        fontSize: (14), color: ThemeManager.whiteThings)),
-                                flex: 7),
-                            Expanded(child: Container(), flex: 8)
                           ],
                         ))
                       ],
@@ -488,7 +535,8 @@ class MainScreenState extends State<MainScreen> {
                         Padding(
                           padding: EdgeInsets.only(top: 30, left: 20),
                           child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                              },
                               child: Text(
                                 'СКИНУТИ',
                                 style:
@@ -500,7 +548,11 @@ class MainScreenState extends State<MainScreen> {
                           child: Container(
                               margin: EdgeInsets.only(right: 15),
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    setState(() {
+
+                                    });
+                                  },
                                   child: Text(
                                     'ЗАСТОСУВАТИ',
                                     style: TextStyle(

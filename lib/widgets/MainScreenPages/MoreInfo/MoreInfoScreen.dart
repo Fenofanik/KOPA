@@ -342,7 +342,7 @@ class MoreInfoState extends State<MoreInfo> {
                                 Padding(
                                   padding: EdgeInsets.only(left: 10),
                                   child: Container(
-                                    
+
                                       alignment: Alignment.bottomLeft,
                                       child: Row(
                                         children: <Widget>[

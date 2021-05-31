@@ -174,7 +174,7 @@ class VerificationState extends State<Verification> {
                               maxLength: 6,
                               obscureText: secureText,
                               validator: (String value) {
-                                if (value.isEmpty || value.length <6||value!=otpController.text) {
+                                if (value.isEmpty || value.length <6) {
                                   return "Код верифікації введено невірно ";
                                 }
                                 return null;

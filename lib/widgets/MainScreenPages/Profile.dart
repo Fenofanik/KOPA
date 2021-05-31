@@ -98,7 +98,7 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
 
       if (_imageFile != null) {
         var snapshot =
-            await _storage.ref().child('folderName/imageName').putFile(file);
+            await _storage.ref().child('folderName/imageName-${DateTime.now().millisecondsSinceEpoch}').putFile(file);
 
         var downloadUrl = await snapshot.ref.getDownloadURL();
 
