@@ -389,21 +389,24 @@ class MoreInfoState extends State<MoreInfo> {
                             flex: 1,
                             child:
                             authorId==userId?
-                            Padding(
-                              padding: const EdgeInsets.only(left: 45,right: 45),
-                              child: Container(
-                                child: document['sold'] ? Container(): ElevatedButton(
-                                  onPressed: ()async{
-                                    await firebaseServices.productRef.doc(document['id']).update({
-                                      "sold":true
-                                    });
+                            Container(
+                              color: ThemeManager.background,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 45,right: 45),
+                                child: Container(
+                                  child: document['sold'] ? Container(): ElevatedButton(
+                                    onPressed: ()async{
+                                      await firebaseServices.productRef.doc(document['id']).update({
+                                        "sold":true
+                                      });
 
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    shape:  shape,
-                                    primary: ThemeManager.forButtons,
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      shape:  shape,
+                                      primary: ThemeManager.forButtons,
+                                    ),
+                                    child: Text("Видалити оголошення",style: TextStyle(fontSize: 16,color: ThemeManager.whiteThings),),
                                   ),
-                                  child: Text("Видалити оголошення",style: TextStyle(fontSize: 16,color: ThemeManager.whiteThings),),
                                 ),
                               ),
                             ):

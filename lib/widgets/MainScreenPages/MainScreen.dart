@@ -10,9 +10,8 @@ class MainScreen extends StatefulWidget {
   final bool isFavorite;
   final bool isSold;
   final bool isMyProduct;
-  final bool filter;
 
-  MainScreen({this.productId, this.isFavorite,this.isSold,this.isMyProduct,this.filter});
+  MainScreen({this.productId, this.isFavorite,this.isSold,this.isMyProduct});
 
   @override
   MainScreenState createState() => MainScreenState();
@@ -24,6 +23,7 @@ class MainScreenState extends State<MainScreen> {
   TextEditingController filterMaterial = TextEditingController();
   TextEditingController filterSize = TextEditingController();
   TextEditingController filterPrice = TextEditingController();
+
   @override
   void dispose() {
     filterBrand.dispose();
@@ -536,6 +536,10 @@ class MainScreenState extends State<MainScreen> {
                           padding: EdgeInsets.only(top: 30, left: 20),
                           child: TextButton(
                               onPressed: () {
+                                filterBrand.clear();
+                                filterMaterial.clear();
+                                filterSize.clear();
+                                filterPrice.clear();
                               },
                               child: Text(
                                 'СКИНУТИ',
