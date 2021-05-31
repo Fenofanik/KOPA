@@ -21,6 +21,13 @@ class VerificationState extends State<Verification> {
   MobileVerificationState currentState = MobileVerificationState.Verification;
   TextEditingController phoneController = TextEditingController();
   TextEditingController otpController = TextEditingController();
+  @override
+  void dispose() {
+    phoneController.dispose();
+    otpController.dispose();
+    super.dispose();
+  }
+
   final formKey = GlobalKey<FormState>();
   FirebaseAuth _auth = FirebaseAuth.instance;
   String verificationId;

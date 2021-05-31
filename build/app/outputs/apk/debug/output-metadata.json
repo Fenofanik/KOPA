@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "com.BarakamonOleg.KOPA",
-  "variantName": "processDebugResources",
+  "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",

@@ -15,6 +15,13 @@ class Verification3State extends State<Verification3> {
   TextEditingController nameController = TextEditingController();
   TextEditingController surNameController = TextEditingController();
   TextEditingController cityController = TextEditingController();
+  @override
+  void dispose() {
+    nameController.dispose();
+    surNameController.dispose();
+    cityController.dispose();
+    super.dispose();
+  }
   final formKey = GlobalKey<FormState>();
 
   @override

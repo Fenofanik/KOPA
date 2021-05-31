@@ -483,6 +483,7 @@ class MainScreenState extends State<MainScreen> {
                                   padding: const EdgeInsets.only(right: 250),
                                   child: TextField(
                                     controller: filterSize,
+                                      keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
                                         labelText: "Розмір",
                                         labelStyle: TextStyle(
@@ -511,6 +512,7 @@ class MainScreenState extends State<MainScreen> {
                                   padding: const EdgeInsets.only(right: 250),
                                   child: TextField(
                                     controller: filterPrice,
+                                      keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
                                         labelText: "Ціна",
                                         labelStyle: TextStyle(
