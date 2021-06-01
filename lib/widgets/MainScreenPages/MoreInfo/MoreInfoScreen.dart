@@ -392,14 +392,11 @@ class MoreInfoState extends State<MoreInfo> {
                             Container(
                               color: ThemeManager.background,
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 45,right: 45),
+                                padding: const EdgeInsets.only(left: 45,right: 45,top: 10,bottom: 10),
                                 child: Container(
                                   child: document['sold'] ? Container(): ElevatedButton(
-                                    onPressed: ()async{
-                                      await firebaseServices.productRef.doc(document['id']).update({
-                                        "sold":true
-                                      });
-
+                                    onPressed: (){
+                                      _showMyDialog(document);
                                     },
                                     style: ElevatedButton.styleFrom(
                                       shape:  shape,
@@ -455,7 +452,9 @@ class MoreInfoState extends State<MoreInfo> {
                                                   alignment:
                                                       Alignment.centerRight,
                                                   child: FloatingActionButton(
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      _showSellerPhone();
+                                                    },
                                                     backgroundColor:
                                                         ThemeManager
                                                             .phoneButtonSell,
@@ -473,5 +472,95 @@ class MoreInfoState extends State<MoreInfo> {
                     ),
                   ),
                 ))));
+  }
+
+  Future<void> _showMyDialog(DocumentSnapshot document) async {
+    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(30));
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: shape,
+          backgroundColor: ThemeManager.containerColor,
+          content: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Text('Ви впевнені, що',style: TextStyle(fontSize: 24,color: ThemeManager.whiteThings),),
+                Text('хочете видалити?',style: TextStyle(fontSize: 24,color: ThemeManager.whiteThings)),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: shape,
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      primary: ThemeManager.forButtons,
+                    ),
+                    child: Text("Ні",
+                        style:
+                        TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
+                    onPressed: ()  {
+                      Navigator.of(context).pop();
+                    }),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 5),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: shape,
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      primary: ThemeManager.forButtons,
+                    ),
+                    child: Text("Так",
+                        style:
+                        TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
+                  onPressed: ()async{
+                    await firebaseServices.productRef.doc(document['id']).update({
+                      "sold":true
+                    });
+                    Navigator.pushNamed(context, '/Home');
+
+                  },),
+              ),
+            ],)
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _showSellerPhone() async {
+    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(30));
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: shape,
+          backgroundColor: ThemeManager.containerColor,
+          content: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                TextButton(
+                    child: Text('Контактний номер ',
+                      style: TextStyle(fontSize: 24,color: ThemeManager.whiteThings)),
+                onPressed: Navigator.of(context).pop,
+                ),
+                TextButton(child: Text('+380938888888',style: TextStyle(fontSize: 24,color: ThemeManager.whiteThings)),
+                onPressed: Navigator.of(context).pop,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 }

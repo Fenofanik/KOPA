@@ -45,7 +45,7 @@ class VerificationState extends State<Verification> {
             String phoneNumber = result.user.phoneNumber;
             List<String> favs=[];
 
-            FirebaseFirestore.instance.collection('users').doc(_userId).set({
+            firebaseServices.userRef.doc(_userId).set({
                 "id":_userId,
               "phoneNumber": phoneNumber,
               "favs":favs,
