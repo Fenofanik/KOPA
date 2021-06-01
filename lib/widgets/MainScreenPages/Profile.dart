@@ -102,13 +102,13 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
 
         var downloadUrl = await snapshot.ref.getDownloadURL();
 
-        setState(() {
+
           imageUrl = downloadUrl;
           String _userId = firebaseServices.getUserId();
           FirebaseFirestore.instance.collection('users').doc(_userId).update({
             "imageUrl": imageUrl,
           });
-        });
+
       } else {
         print('No path received');
       }
@@ -169,17 +169,19 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
     return Padding(
         padding: EdgeInsets.only(left: 15, right: 15),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text("Контактний номер",
+          Text("Контактна інформація",
               style: TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
           SizedBox(height: 5),
           Container(
-            width: 320,
+            width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 border: Border(
                     bottom:
                         BorderSide(color: ThemeManager.myAddBorder, width: 1))),
             child: Text(
-              document['phoneNumber'],
+              document['phoneNumber']==null?
+                  'Pls add phone number'
+                  :document['phoneNumber'],
               style: TextStyle(fontSize: 18, color: ThemeManager.whiteThings),
             ),
           ),
@@ -194,13 +196,15 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
               style: TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
           SizedBox(height: 5),
           Container(
-            width: 320,
+            width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 border: Border(
                     bottom:
                         BorderSide(color: ThemeManager.myAddBorder, width: 1))),
             child: Text(
-              document['city'],
+              document['city']==null?
+               'Ви не додали місто'
+              :document['city'],
               style: TextStyle(fontSize: 18, color: ThemeManager.whiteThings),
             ),
           ),
@@ -211,11 +215,12 @@ class ProfileScreenMainState extends State<ProfileScreenMain> {
     return Padding(
       padding: EdgeInsets.only(left: 20, right: 20),
       child: Center(
+        heightFactor: MediaQuery.of(context).size.height/250,
+          widthFactor: MediaQuery.of(context).size.width,
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: shape,
-                minimumSize: Size(290, 40),
-                padding: EdgeInsets.only(left: 35, right: 35),
+                padding: EdgeInsets.only(left: 120, right: 120),
                 primary: ThemeManager.forButtons,
               ),
               child: Text("Вийти",

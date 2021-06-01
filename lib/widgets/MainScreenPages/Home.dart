@@ -50,12 +50,18 @@ class HomeState extends State<Home> {
                   color: selectedIndex == 0 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
               label: ""),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/Sneaker.svg',
-                  color: selectedIndex == 1 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
+              icon: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: SvgPicture.asset('assets/images/Sneaker.svg',
+                    color: selectedIndex == 1 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
+              ),
               label: ""),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite,
-                  color: selectedIndex == 2 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
+              icon: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Icon(Icons.favorite,
+                    color: selectedIndex == 2 ? ThemeManager.forButtons : ThemeManager.bottomBarNotFocus),
+              ),
               label: ""),
           BottomNavigationBarItem(
               icon: Icon(Icons.settings,

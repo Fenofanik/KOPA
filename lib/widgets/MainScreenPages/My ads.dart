@@ -30,7 +30,6 @@ class MyScreenMainState extends State<MyScreenMain>
 
   @override
   Widget build(BuildContext context) {
-    final String userId = firebaseServices.getUserId();
     return Scaffold(
       backgroundColor: ThemeManager.background,
       body:  Padding(

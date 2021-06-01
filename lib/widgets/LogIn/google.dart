@@ -16,6 +16,7 @@ class GoogleSignInProvider extends ChangeNotifier{
     if(googleUser==null)return;
     _user = googleUser;
 
+
     final googleAuth = await googleUser.authentication;
     final credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,
@@ -25,10 +26,12 @@ class GoogleSignInProvider extends ChangeNotifier{
     await FirebaseAuth.instance.signInWithCredential(credential).then((
         result) {
       String googleId = result.user.uid;
+      String email = result.user.email;
       List<String> favs=[];
-      firebaseServices.userRef.doc(googleId).update({
-        "googleId": googleId,
+      firebaseServices.userRef.doc(googleId).set({
+        "id": googleId,
         "favs":favs,
+        "phoneNumber": email,
 
       });
     });

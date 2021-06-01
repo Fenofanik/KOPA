@@ -59,6 +59,7 @@ class ButtonLogInState extends State<ButtonLogIn> {
                         onPressed: () {
                           final provider = Provider.of<GoogleSignInProvider>(context,listen:false);
                           provider.googleLogIn();
+                          Navigator.pushNamed(context, '/Verification3');
 
                         }))
               ]))

@@ -221,16 +221,15 @@ class VerificationState extends State<Verification> {
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 shape: shape,
-                                minimumSize: Size(290, 40),
-                                padding: const EdgeInsets.only(left: 35, right: 35),
+                                padding: const EdgeInsets.only(left: 90, right: 90),
                                 primary: ThemeManager.forButtons,
                               ),
                               child: Text("Далі",
                                   style: TextStyle(
                                       fontSize: 14, color: ThemeManager.whiteThings)),
-                              onPressed: () async{
+                              onPressed: () {
 
-                                setState(() async{
+                                setState(() {
                                   if (formKey.currentState.validate()) {
                                     PhoneAuthCredential phoneAuthCredential =
                                     PhoneAuthProvider.credential(verificationId: verificationId, smsCode: otpController.text);
