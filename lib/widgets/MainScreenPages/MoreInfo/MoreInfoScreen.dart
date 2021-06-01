@@ -394,7 +394,16 @@ class MoreInfoState extends State<MoreInfo> {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 45,right: 45,top: 10,bottom: 10),
                                 child: Container(
-                                  child: document['sold'] ? Container(): ElevatedButton(
+                                  child: document['sold'] ? ElevatedButton(
+                                    onPressed: (){
+                                      _showDelete(document);
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      shape:  shape,
+                                      primary: ThemeManager.forButtons,
+                                    ),
+                                    child: Text("Видалити з архіву",style: TextStyle(fontSize: 16,color: ThemeManager.whiteThings),),
+                                  ): ElevatedButton(
                                     onPressed: (){
                                       _showMyDialog(document);
                                     },
@@ -530,6 +539,66 @@ class MoreInfoState extends State<MoreInfo> {
                   },),
               ),
             ],)
+          ],
+        );
+      },
+    );
+  }
+  
+  Future<void> _showDelete(DocumentSnapshot document) async {
+    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(30));
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: shape,
+          backgroundColor: ThemeManager.containerColor,
+          content: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Text('Ви впевнені, що',style: TextStyle(fontSize: 24,color: ThemeManager.whiteThings),),
+                Text('хочете видалити?',style: TextStyle(fontSize: 24,color: ThemeManager.whiteThings)),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(right: 5),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: shape,
+                        padding: EdgeInsets.only(left: 50, right: 50),
+                        primary: ThemeManager.forButtons,
+                      ),
+                      child: Text("Ні",
+                          style:
+                          TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
+                      onPressed: ()  {
+                        Navigator.of(context).pop();
+                      }),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: shape,
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      primary: ThemeManager.forButtons,
+                    ),
+                    child: Text("Так",
+                        style:
+                        TextStyle(fontSize: 14, color: ThemeManager.whiteThings)),
+                    onPressed: ()async{
+                      await firebaseServices.productRef.doc(document['id']).delete();
+                      Navigator.pushNamed(context, '/Home');
+
+                    },),
+                ),
+              ],)
           ],
         );
       },

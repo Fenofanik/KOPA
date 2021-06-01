@@ -27,11 +27,13 @@ class GoogleSignInProvider extends ChangeNotifier{
         result) {
       String googleId = result.user.uid;
       String email = result.user.email;
+      String googleImg = result.user.photoURL;
       List<String> favs=[];
       firebaseServices.userRef.doc(googleId).set({
         "id": googleId,
         "favs":favs,
         "phoneNumber": email,
+        "imageUrl":googleImg,
 
       });
     });
