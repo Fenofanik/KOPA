@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/widgets/LogIn/Verification.dart';
+import 'package:provider/provider.dart';
+
+import 'google.dart';
 
 class ButtonLogIn extends StatefulWidget {
   @override
@@ -53,7 +56,11 @@ class ButtonLogInState extends State<ButtonLogIn> {
                         iconSize: 25.0,
                         icon: Center(child: new Icon(FontAwesomeIcons.google)),
                         alignment: Alignment.center,
-                        onPressed: () {}))
+                        onPressed: () {
+                          final provider = Provider.of<GoogleSignInProvider>(context,listen:false);
+                          provider.googleLogIn();
+
+                        }))
               ]))
         : Verification();
   }

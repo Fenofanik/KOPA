@@ -180,7 +180,11 @@ class MainScreenState extends State<MainScreen> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(radius),
                           child: FittedBox(
-                            child: Image.network(document['image'][0]),
+                            child:
+                            document['image'].isEmpty?
+                            Icon(Icons.camera_alt_outlined,color: ThemeManager.forButtons):
+                            Image.network(document['image'][0]),
+
                             fit: BoxFit.fill,
                           ),
                         ),
