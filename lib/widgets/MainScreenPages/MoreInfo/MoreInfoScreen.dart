@@ -1,14 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/Models/ProductModel.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/ImageSwipe.dart';
 import 'package:kopamain/widgets/MainScreenPages/UserCreate.dart';
 
-import '../MainScreen.dart';
 
 class MoreInfo extends StatefulWidget {
   final productId;
@@ -544,7 +542,7 @@ class MoreInfoState extends State<MoreInfo> {
       },
     );
   }
-  
+
   Future<void> _showDelete(DocumentSnapshot document) async {
     final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(30));
     return showDialog<void>(
