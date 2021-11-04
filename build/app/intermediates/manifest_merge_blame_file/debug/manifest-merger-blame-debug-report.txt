@@ -12,53 +12,53 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:4:5-66
-14-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:4:22-64
+14-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:4:5-66
+14-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:4:22-64
 15    <uses-permission android:name="android.permission.WAKE_LOCK" />
-15-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-68
-15-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-65
+15-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-68
+15-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-65
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
-16-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
+16-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+16-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
 17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-17-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-80
-17-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-77
+17-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-80
+17-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-77
 18    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-18-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-81
-18-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-78
+18-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-81
+18-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-78
 19    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-19-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:25:5-82
-19-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:25:22-79
+19-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:25:5-82
+19-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:25:22-79
 20    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-20-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:26:5-110
-20-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:26:22-107
+20-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:26:5-110
+20-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:26:22-107
 21
 22    <application
-22-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:6:5-56:19
+22-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:6:5-56:19
 23        android:name="androidx.multidex.MultiDexApplication"
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.1.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\dcc4d110ff2d1c790fe7941428161095\core-1.1.0\AndroidManifest.xml:24:18-86
+24-->[androidx.core:core:1.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\dcc4d110ff2d1c790fe7941428161095\core-1.1.0\AndroidManifest.xml:24:18-86
 25        android:debuggable="true"
 26        android:icon="@mipmap/ic_launcher"
-26-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:8:9-43
+26-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:8:9-43
 27        android:label="kopamain"
-27-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:7:9-33
+27-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:7:9-33
 28        android:supportsRtl="true" >
-28-->[com.facebook.android:facebook-login:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6bf4ec9cf6a9e14ff03c72fc804c8260\jetified-facebook-login-5.5.1\AndroidManifest.xml:28:18-44
+28-->[com.facebook.android:facebook-login:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\934589921d9ef084ccca58e368356e22\jetified-facebook-login-5.5.1\AndroidManifest.xml:28:18-44
 29        <activity
-29-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:9:9-37:20
+29-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:9:9-37:20
 30            android:name="com.example.kopamain.MainActivity"
-30-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:10:13-41
+30-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:10:13-41
 31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-31-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:13:13-163
+31-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:13:13-163
 32            android:hardwareAccelerated="true"
-32-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:14:13-47
+32-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:14:13-47
 33            android:launchMode="singleTop"
-33-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:11:13-43
+33-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:11:13-43
 34            android:theme="@style/LaunchTheme"
-34-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:12:13-47
+34-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:12:13-47
 35            android:windowSoftInputMode="adjustResize" >
-35-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:15:13-55
+35-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:15:13-55
 36
 37            <!--
 38                 Specifies an Android theme to apply to this Activity as soon as
@@ -67,11 +67,11 @@
 41                 to determine the Window background behind the Flutter UI.
 42            -->
 43            <meta-data
-43-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:20:13-23:17
+43-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:20:13-23:17
 44                android:name="io.flutter.embedding.android.NormalTheme"
-44-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:21:15-70
+44-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:21:15-70
 45                android:resource="@style/NormalTheme" />
-45-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:22:15-52
+45-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:22:15-52
 46            <!--
 47                 Displays an Android View that continues showing the launch screen
 48                 Drawable until Flutter paints its first frame, then this splash
@@ -80,63 +80,63 @@
 51                 Flutter's first frame.
 52            -->
 53            <meta-data
-53-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:29:13-32:17
+53-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:29:13-32:17
 54                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-54-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:30:15-79
+54-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:30:15-79
 55                android:resource="@drawable/launch_background" />
-55-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:31:15-61
+55-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:31:15-61
 56
 57            <intent-filter>
-57-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:33:13-36:29
+57-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:33:13-36:29
 58                <action android:name="android.intent.action.MAIN" />
-58-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:34:17-68
-58-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:34:25-66
+58-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:34:17-68
+58-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:34:25-66
 59
 60                <category android:name="android.intent.category.LAUNCHER" />
-60-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:35:17-76
-60-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:35:27-74
+60-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:35:17-76
+60-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:35:27-74
 61            </intent-filter>
 62        </activity>
 63
 64        <meta-data
-64-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:39:9-107
+64-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:39:9-107
 65            android:name="com.facebook.sdk.ApplicationId"
-65-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:39:20-65
+65-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:39:20-65
 66            android:value="@string/facebook_app_id" />
-66-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:39:66-105
+66-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:39:66-105
 67
 68        <activity
-68-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:41:9-184
+68-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:41:9-184
 69            android:name="com.facebook.FacebookActivity"
-69-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:41:19-63
+69-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:41:19-63
 70            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-70-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:41:64-148
+70-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:41:64-148
 71            android:label="@string/app_name"
-71-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:41:149-181
+71-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:41:149-181
 72            android:theme="@style/com_facebook_activity_theme" />
-72-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\b014c38a08c5411f25d2d7b42b1b29d9\jetified-facebook-common-5.5.1\AndroidManifest.xml:32:13-63
+72-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\ef9a5250445d9a45d346db25bdb6b3f6\jetified-facebook-common-5.5.1\AndroidManifest.xml:32:13-63
 73        <activity
-73-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:43:9-49:20
+73-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:43:9-49:20
 74            android:name="com.facebook.CustomTabActivity"
-74-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:43:19-64
+74-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:43:19-64
 75            android:exported="true" >
-75-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:43:65-88
+75-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:43:65-88
 76            <intent-filter>
-76-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:44:13-48:29
+76-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:44:13-48:29
 77                <action android:name="android.intent.action.VIEW" />
-77-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:44:29-81
-77-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:44:37-78
+77-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:44:29-81
+77-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:44:37-78
 78
 79                <category android:name="android.intent.category.DEFAULT" />
-79-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:45:17-76
-79-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:45:27-73
+79-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:45:17-76
+79-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:45:27-73
 80                <category android:name="android.intent.category.BROWSABLE" />
-80-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:46:17-78
-80-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:46:27-75
+80-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:46:17-78
+80-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:46:27-75
 81
 82                <data android:scheme="@string/fb_login_protocol_scheme" />
-82-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:47:17-75
-82-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:47:23-72
+82-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:47:17-75
+82-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:47:23-72
 83            </intent-filter>
 84        </activity>
 85
@@ -145,275 +145,275 @@
 88             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 89        -->
 90        <meta-data
-90-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:53:9-55:33
+90-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:53:9-55:33
 91            android:name="flutterEmbedding"
-91-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:54:13-44
+91-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:54:13-44
 92            android:value="2" />
-92-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:55:13-30
+92-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:55:13-30
 93
 94        <service
-94-->[:firebase_database] D:\Flutter PROJECT KOPA\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
+94-->[:firebase_database] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
 95            android:name="com.google.firebase.components.ComponentDiscoveryService"
-95-->[:firebase_database] D:\Flutter PROJECT KOPA\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:8:18-89
+95-->[:firebase_database] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:8:18-89
 96            android:directBootAware="true"
-96-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+96-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 97            android:exported="false" >
-97-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:76:13-37
+97-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:76:13-37
 98            <meta-data
-98-->[:firebase_database] D:\Flutter PROJECT KOPA\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+98-->[:firebase_database] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 99                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
-99-->[:firebase_database] D:\Flutter PROJECT KOPA\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-127
+99-->[:firebase_database] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-127
 100                android:value="com.google.firebase.components.ComponentRegistrar" />
-100-->[:firebase_database] D:\Flutter PROJECT KOPA\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+100-->[:firebase_database] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 101            <meta-data
-101-->[:cloud_firestore] D:\Flutter PROJECT KOPA\kopamain\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+101-->[:cloud_firestore] C:\AllForFlutter\AllStudioProjects\kopamain\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 102                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-102-->[:cloud_firestore] D:\Flutter PROJECT KOPA\kopamain\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
+102-->[:cloud_firestore] C:\AllForFlutter\AllStudioProjects\kopamain\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
 103                android:value="com.google.firebase.components.ComponentRegistrar" />
-103-->[:cloud_firestore] D:\Flutter PROJECT KOPA\kopamain\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+103-->[:cloud_firestore] C:\AllForFlutter\AllStudioProjects\kopamain\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 104            <meta-data
-104-->[:firebase_auth] D:\Flutter PROJECT KOPA\kopamain\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+104-->[:firebase_auth] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 105                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-105-->[:firebase_auth] D:\Flutter PROJECT KOPA\kopamain\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
+105-->[:firebase_auth] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
 106                android:value="com.google.firebase.components.ComponentRegistrar" />
-106-->[:firebase_auth] D:\Flutter PROJECT KOPA\kopamain\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+106-->[:firebase_auth] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 107            <meta-data
-107-->[:firebase_storage] D:\Flutter PROJECT KOPA\kopamain\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+107-->[:firebase_storage] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 108                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-108-->[:firebase_storage] D:\Flutter PROJECT KOPA\kopamain\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-126
+108-->[:firebase_storage] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-126
 109                android:value="com.google.firebase.components.ComponentRegistrar" />
-109-->[:firebase_storage] D:\Flutter PROJECT KOPA\kopamain\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+109-->[:firebase_storage] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 110            <meta-data
-110-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:34:13-36:85
+110-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:34:13-36:85
 111                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
-111-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:35:17-128
+111-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:35:17-128
 112                android:value="com.google.firebase.components.ComponentRegistrar" />
-112-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:36:17-82
+112-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:36:17-82
 113            <meta-data
-113-->[:firebase_core] D:\Flutter PROJECT KOPA\kopamain\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+113-->[:firebase_core] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 114                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-114-->[:firebase_core] D:\Flutter PROJECT KOPA\kopamain\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
+114-->[:firebase_core] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
 115                android:value="com.google.firebase.components.ComponentRegistrar" />
-115-->[:firebase_core] D:\Flutter PROJECT KOPA\kopamain\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+115-->[:firebase_core] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 116            <meta-data
-116-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
+116-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
 117                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-117-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
+117-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
 118                android:value="com.google.firebase.components.ComponentRegistrar" />
-118-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
+118-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
 119            <meta-data
-119-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:52:13-54:85
+119-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:52:13-54:85
 120                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-120-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:53:17-119
+120-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:53:17-119
 121                android:value="com.google.firebase.components.ComponentRegistrar" />
-121-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:54:17-82
+121-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:54:17-82
 122            <meta-data
-122-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\09b476f32d912d40c8370b753a586f28\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:28:13-30:85
+122-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\09b476f32d912d40c8370b753a586f28\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:28:13-30:85
 123                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-123-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\09b476f32d912d40c8370b753a586f28\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:29:17-115
+123-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\09b476f32d912d40c8370b753a586f28\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:29:17-115
 124                android:value="com.google.firebase.components.ComponentRegistrar" />
-124-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\09b476f32d912d40c8370b753a586f28\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:30:17-82
+124-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\09b476f32d912d40c8370b753a586f28\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:30:17-82
 125            <meta-data
-125-->[com.google.firebase:firebase-firestore:23.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\b0800e68852520bbcf9e3b5ed10c25ce\jetified-firebase-firestore-23.0.0\AndroidManifest.xml:20:13-22:85
+125-->[com.google.firebase:firebase-firestore:23.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\b0800e68852520bbcf9e3b5ed10c25ce\jetified-firebase-firestore-23.0.0\AndroidManifest.xml:20:13-22:85
 126                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-126-->[com.google.firebase:firebase-firestore:23.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\b0800e68852520bbcf9e3b5ed10c25ce\jetified-firebase-firestore-23.0.0\AndroidManifest.xml:21:17-111
+126-->[com.google.firebase:firebase-firestore:23.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\b0800e68852520bbcf9e3b5ed10c25ce\jetified-firebase-firestore-23.0.0\AndroidManifest.xml:21:17-111
 127                android:value="com.google.firebase.components.ComponentRegistrar" />
-127-->[com.google.firebase:firebase-firestore:23.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\b0800e68852520bbcf9e3b5ed10c25ce\jetified-firebase-firestore-23.0.0\AndroidManifest.xml:22:17-82
+127-->[com.google.firebase:firebase-firestore:23.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\b0800e68852520bbcf9e3b5ed10c25ce\jetified-firebase-firestore-23.0.0\AndroidManifest.xml:22:17-82
 128            <meta-data
-128-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d81ad04c2c312effa0c19a9376ee3967\jetified-firebase-storage-20.0.0\AndroidManifest.xml:33:13-35:85
+128-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d81ad04c2c312effa0c19a9376ee3967\jetified-firebase-storage-20.0.0\AndroidManifest.xml:33:13-35:85
 129                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-129-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d81ad04c2c312effa0c19a9376ee3967\jetified-firebase-storage-20.0.0\AndroidManifest.xml:34:17-107
+129-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d81ad04c2c312effa0c19a9376ee3967\jetified-firebase-storage-20.0.0\AndroidManifest.xml:34:17-107
 130                android:value="com.google.firebase.components.ComponentRegistrar" />
-130-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d81ad04c2c312effa0c19a9376ee3967\jetified-firebase-storage-20.0.0\AndroidManifest.xml:35:17-82
+130-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d81ad04c2c312effa0c19a9376ee3967\jetified-firebase-storage-20.0.0\AndroidManifest.xml:35:17-82
 131            <meta-data
-131-->[com.google.firebase:firebase-database:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4794bc330820faad5ca39bffadb903d0\jetified-firebase-database-20.0.0\AndroidManifest.xml:32:13-34:85
+131-->[com.google.firebase:firebase-database:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4794bc330820faad5ca39bffadb903d0\jetified-firebase-database-20.0.0\AndroidManifest.xml:32:13-34:85
 132                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-132-->[com.google.firebase:firebase-database:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4794bc330820faad5ca39bffadb903d0\jetified-firebase-database-20.0.0\AndroidManifest.xml:33:17-109
+132-->[com.google.firebase:firebase-database:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4794bc330820faad5ca39bffadb903d0\jetified-firebase-database-20.0.0\AndroidManifest.xml:33:17-109
 133                android:value="com.google.firebase.components.ComponentRegistrar" />
-133-->[com.google.firebase:firebase-database:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4794bc330820faad5ca39bffadb903d0\jetified-firebase-database-20.0.0\AndroidManifest.xml:34:17-82
+133-->[com.google.firebase:firebase-database:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4794bc330820faad5ca39bffadb903d0\jetified-firebase-database-20.0.0\AndroidManifest.xml:34:17-82
 134            <meta-data
-134-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\f0dbed364ce4d06de3111115f66082e5\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:30:13-32:85
+134-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\f0dbed364ce4d06de3111115f66082e5\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:30:13-32:85
 135                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-135-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\f0dbed364ce4d06de3111115f66082e5\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:31:17-139
+135-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\f0dbed364ce4d06de3111115f66082e5\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:31:17-139
 136                android:value="com.google.firebase.components.ComponentRegistrar" />
-136-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\f0dbed364ce4d06de3111115f66082e5\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:32:17-82
+136-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\f0dbed364ce4d06de3111115f66082e5\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:32:17-82
 137            <meta-data
-137-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\3a97f6ff77b72241f39568fcfcbfc7f8\jetified-firebase-installations-17.0.0\AndroidManifest.xml:18:13-20:85
+137-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\3a97f6ff77b72241f39568fcfcbfc7f8\jetified-firebase-installations-17.0.0\AndroidManifest.xml:18:13-20:85
 138                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-138-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\3a97f6ff77b72241f39568fcfcbfc7f8\jetified-firebase-installations-17.0.0\AndroidManifest.xml:19:17-127
+138-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\3a97f6ff77b72241f39568fcfcbfc7f8\jetified-firebase-installations-17.0.0\AndroidManifest.xml:19:17-127
 139                android:value="com.google.firebase.components.ComponentRegistrar" />
-139-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\3a97f6ff77b72241f39568fcfcbfc7f8\jetified-firebase-installations-17.0.0\AndroidManifest.xml:20:17-82
+139-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\3a97f6ff77b72241f39568fcfcbfc7f8\jetified-firebase-installations-17.0.0\AndroidManifest.xml:20:17-82
 140        </service>
 141        <service
-141-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-15:72
+141-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-15:72
 142            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
-142-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-107
+142-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-107
 143            android:exported="false"
-143-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-37
+143-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-37
 144            android:permission="android.permission.BIND_JOB_SERVICE" />
-144-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-69
+144-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-69
 145        <service
-145-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-22:19
+145-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-22:19
 146            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
-146-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-97
+146-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-97
 147            android:exported="false" >
-147-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
+147-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
 148            <intent-filter>
-148-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-21:29
+148-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-21:29
 149                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-149-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-78
-149-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:25-75
+149-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-78
+149-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:25-75
 150            </intent-filter>
 151        </service>
 152
 153        <receiver
-153-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-31:20
+153-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-31:20
 154            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
-154-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-98
+154-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-98
 155            android:exported="true"
-155-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-36
+155-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-36
 156            android:permission="com.google.android.c2dm.permission.SEND" >
-156-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-73
+156-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-73
 157            <intent-filter>
-157-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-30:29
+157-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-30:29
 158                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-158-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-81
-158-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:25-78
+158-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-81
+158-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:25-78
 159            </intent-filter>
 160        </receiver>
 161
 162        <provider
-162-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:39:9-43:38
+162-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:39:9-43:38
 163            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
-163-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:40:13-102
+163-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:40:13-102
 164            android:authorities="com.BarakamonOleg.KOPA.flutterfirebasemessaginginitprovider"
-164-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:41:13-88
+164-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:41:13-88
 165            android:exported="false"
-165-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-37
+165-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-37
 166            android:initOrder="99" />
-166-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-35
+166-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-35
 167        <provider
-167-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-19:20
+167-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-19:20
 168            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-168-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-82
+168-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-82
 169            android:authorities="com.BarakamonOleg.KOPA.flutter.image_provider"
-169-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-74
+169-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-74
 170            android:exported="false"
-170-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-37
+170-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-37
 171            android:grantUriPermissions="true" >
-171-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-47
+171-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-47
 172            <meta-data
-172-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-18:75
+172-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-18:75
 173                android:name="android.support.FILE_PROVIDER_PATHS"
-173-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+173-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
 174                android:resource="@xml/flutter_image_picker_file_paths" />
-174-->[:image_picker] D:\Flutter PROJECT KOPA\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-72
+174-->[:image_picker] C:\AllForFlutter\AllStudioProjects\kopamain\build\image_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-72
 175        </provider>
 176
 177        <activity
-177-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:27:9-44:20
+177-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:27:9-44:20
 178            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-178-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:28:13-80
+178-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:28:13-80
 179            android:excludeFromRecents="true"
-179-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:29:13-46
+179-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:29:13-46
 180            android:exported="true"
-180-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:30:13-36
+180-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:30:13-36
 181            android:launchMode="singleTask"
-181-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:31:13-44
+181-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:31:13-44
 182            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-182-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:32:13-72
+182-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:32:13-72
 183            <intent-filter>
-183-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:33:13-43:29
+183-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:33:13-43:29
 184                <action android:name="android.intent.action.VIEW" />
-184-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:44:29-81
-184-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:44:37-78
+184-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:44:29-81
+184-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:44:37-78
 185
 186                <category android:name="android.intent.category.DEFAULT" />
-186-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:45:17-76
-186-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:45:27-73
+186-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:45:17-76
+186-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:45:27-73
 187                <category android:name="android.intent.category.BROWSABLE" />
-187-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:46:17-78
-187-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:46:27-75
+187-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:46:17-78
+187-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:46:27-75
 188
 189                <data
-189-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:47:17-75
+189-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:47:17-75
 190                    android:host="firebase.auth"
 191                    android:path="/"
 192                    android:scheme="genericidp" />
-192-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:47:23-72
+192-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:47:23-72
 193            </intent-filter>
 194        </activity>
 195        <activity
-195-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:45:9-62:20
+195-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:45:9-62:20
 196            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-196-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:46:13-79
+196-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:46:13-79
 197            android:excludeFromRecents="true"
-197-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:47:13-46
+197-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:47:13-46
 198            android:exported="true"
-198-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:48:13-36
+198-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:48:13-36
 199            android:launchMode="singleTask"
-199-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:49:13-44
+199-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:49:13-44
 200            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-200-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:50:13-72
+200-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:50:13-72
 201            <intent-filter>
-201-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:51:13-61:29
+201-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:51:13-61:29
 202                <action android:name="android.intent.action.VIEW" />
-202-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:44:29-81
-202-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:44:37-78
+202-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:44:29-81
+202-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:44:37-78
 203
 204                <category android:name="android.intent.category.DEFAULT" />
-204-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:45:17-76
-204-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:45:27-73
+204-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:45:17-76
+204-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:45:27-73
 205                <category android:name="android.intent.category.BROWSABLE" />
-205-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:46:17-78
-205-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:46:27-75
+205-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:46:17-78
+205-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:46:27-75
 206
 207                <data
-207-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:47:17-75
+207-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:47:17-75
 208                    android:host="firebase.auth"
 209                    android:path="/"
 210                    android:scheme="recaptcha" />
-210-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:47:23-72
+210-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:47:23-72
 211            </intent-filter>
 212        </activity>
 213
 214        <service
-214-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:64:9-73:19
+214-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:64:9-73:19
 215            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-215-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:65:13-101
+215-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:65:13-101
 216            android:enabled="true"
-216-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:66:13-35
+216-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:66:13-35
 217            android:exported="false" >
-217-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:67:13-37
+217-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:67:13-37
 218            <intent-filter>
-218-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:68:13-72:29
+218-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:68:13-72:29
 219                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-219-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:17-89
-219-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:25-86
+219-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:17-89
+219-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7cbe3be1f73401522a0e54df01337ead\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:25-86
 220
 221                <category android:name="android.intent.category.DEFAULT" />
-221-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:45:17-76
-221-->D:\Flutter PROJECT KOPA\kopamain\android\app\src\main\AndroidManifest.xml:45:27-73
+221-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:45:17-76
+221-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:45:27-73
 222            </intent-filter>
 223        </service>
 224
 225        <activity android:name="com.facebook.CustomTabMainActivity" />
-225-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\b014c38a08c5411f25d2d7b42b1b29d9\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:9-71
-225-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\b014c38a08c5411f25d2d7b42b1b29d9\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:19-68
+225-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\ef9a5250445d9a45d346db25bdb6b3f6\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:9-71
+225-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\ef9a5250445d9a45d346db25bdb6b3f6\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:19-68
 226
 227        <receiver
-227-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:28:9-35:20
+227-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:28:9-35:20
 228            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-228-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:29:13-78
+228-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:29:13-78
 229            android:exported="true"
-229-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:30:13-36
+229-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:30:13-36
 230            android:permission="com.google.android.c2dm.permission.SEND" >
-230-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:31:13-73
+230-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:31:13-73
 231            <intent-filter>
-231-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-30:29
+231-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-30:29
 232                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-232-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-81
-232-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:25-78
+232-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-81
+232-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:25-78
 233            </intent-filter>
 234        </receiver>
 235        <!--
@@ -421,114 +421,114 @@
 237             but set to not exported to explicitly avoid allowing another app to call it.
 238        -->
 239        <service
-239-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:41:9-48:19
+239-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:41:9-48:19
 240            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-240-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:42:13-82
+240-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:42:13-82
 241            android:directBootAware="true"
-241-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:43:13-43
+241-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:43:13-43
 242            android:exported="false" >
-242-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:44:13-37
+242-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:44:13-37
 243            <intent-filter android:priority="-500" >
-243-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-21:29
+243-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-21:29
 244                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-244-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-78
-244-->[:firebase_messaging] D:\Flutter PROJECT KOPA\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:25-75
+244-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-78
+244-->[:firebase_messaging] C:\AllForFlutter\AllStudioProjects\kopamain\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:25-75
 245            </intent-filter>
 246        </service>
 247        <service
-247-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:29:9-35:19
+247-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:29:9-35:19
 248            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-248-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:30:13-103
+248-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:30:13-103
 249            android:exported="false" >
-249-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:31:13-37
+249-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:31:13-37
 250            <meta-data
-250-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:32:13-34:39
+250-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:32:13-34:39
 251                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-251-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:33:17-94
+251-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:33:17-94
 252                android:value="cct" />
-252-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:34:17-36
+252-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\e849db1a71544712257d76205a721f72\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:34:17-36
 253        </service>
 254
 255        <provider
-255-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+255-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
 256            android:name="com.google.firebase.provider.FirebaseInitProvider"
-256-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+256-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
 257            android:authorities="com.BarakamonOleg.KOPA.firebaseinitprovider"
-257-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+257-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
 258            android:directBootAware="true"
-258-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+258-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
 259            android:exported="false"
-259-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+259-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
 260            android:initOrder="100" />
-260-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+260-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
 261
 262        <activity
-262-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+262-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
 263            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-263-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+263-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
 264            android:excludeFromRecents="true"
-264-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+264-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
 265            android:exported="false"
-265-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+265-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
 266            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-266-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+266-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
 267        <!--
 268            Service handling Google Sign-In user revocation. For apps that do not integrate with
 269            Google Sign-In, this service will never be started.
 270        -->
 271        <service
-271-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+271-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
 272            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-272-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+272-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
 273            android:exported="true"
-273-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+273-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
 274            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-274-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\7d9495aa7cef5dbe4c383810c39993f9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+274-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
 275
 276        <activity
-276-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+276-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 277            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-277-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+277-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
 278            android:exported="false"
-278-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+278-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
 279            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-279-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+279-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
 280
 281        <receiver
-281-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:29:9-33:20
+281-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:29:9-33:20
 282            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-282-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:30:13-85
+282-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:30:13-85
 283            android:enabled="true"
-283-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:31:13-35
+283-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:31:13-35
 284            android:exported="false" >
-284-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:32:13-37
+284-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:32:13-37
 285        </receiver>
 286
 287        <service
-287-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:35:9-38:40
+287-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:35:9-38:40
 288            android:name="com.google.android.gms.measurement.AppMeasurementService"
-288-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:36:13-84
+288-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:36:13-84
 289            android:enabled="true"
-289-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:37:13-35
+289-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:37:13-35
 290            android:exported="false" />
-290-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:38:13-37
+290-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:38:13-37
 291        <service
-291-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:39:9-43:72
+291-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:39:9-43:72
 292            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-292-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:40:13-87
+292-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:40:13-87
 293            android:enabled="true"
-293-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:41:13-35
+293-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:41:13-35
 294            android:exported="false"
-294-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:42:13-37
+294-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:42:13-37
 295            android:permission="android.permission.BIND_JOB_SERVICE" />
-295-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:43:13-69
+295-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\8ecb8075a5fee1308e139b938712efa5\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:43:13-69
 296
 297        <meta-data
-297-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\9ec792db653432278ee7f7ed12a1eb3b\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
+297-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\9ec792db653432278ee7f7ed12a1eb3b\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
 298            android:name="com.google.android.gms.version"
-298-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\9ec792db653432278ee7f7ed12a1eb3b\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
+298-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\9ec792db653432278ee7f7ed12a1eb3b\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
 299            android:value="@integer/google_play_services_version" />
-299-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\9ec792db653432278ee7f7ed12a1eb3b\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
+299-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\9ec792db653432278ee7f7ed12a1eb3b\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
 300        <!--
 301         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
 302         with the application context. This config is merged in with the host app's manifest,
@@ -539,59 +539,59 @@
 307         a completely different provider.
 308        -->
 309        <provider
-309-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:39:9-42:40
+309-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:39:9-42:40
 310            android:name="com.facebook.internal.FacebookInitProvider"
-310-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:40:13-70
+310-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:40:13-70
 311            android:authorities="com.BarakamonOleg.KOPA.FacebookInitProvider"
-311-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:41:13-72
+311-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:41:13-72
 312            android:exported="false" />
-312-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:42:13-37
+312-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:42:13-37
 313
 314        <receiver
-314-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:44:9-50:20
+314-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:44:9-50:20
 315            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-315-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:45:13-86
+315-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:45:13-86
 316            android:exported="false" >
-316-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:46:13-37
+316-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:46:13-37
 317            <intent-filter>
-317-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:47:13-49:29
+317-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:47:13-49:29
 318                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-318-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:17-95
-318-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:25-92
+318-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:17-95
+318-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:25-92
 319            </intent-filter>
 320        </receiver>
 321        <receiver
-321-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:51:9-58:20
+321-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:51:9-58:20
 322            android:name="com.facebook.CampaignTrackingReceiver"
-322-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:52:13-65
+322-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:52:13-65
 323            android:exported="true"
-323-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:53:13-36
+323-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:53:13-36
 324            android:permission="android.permission.INSTALL_PACKAGES" >
-324-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:54:13-69
+324-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:54:13-69
 325            <intent-filter>
-325-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:55:13-57:29
+325-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:55:13-57:29
 326                <action android:name="com.android.vending.INSTALL_REFERRER" />
-326-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:17-79
-326-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\62cc9f6b784e5d60071cdfac4b5eabc2\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:25-76
+326-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:17-79
+326-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:25-76
 327            </intent-filter>
 328        </receiver>
 329
 330        <service
-330-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:26:9-30:19
+330-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:26:9-30:19
 331            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-331-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:27:13-117
+331-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:27:13-117
 332            android:exported="false"
-332-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:28:13-37
+332-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:28:13-37
 333            android:permission="android.permission.BIND_JOB_SERVICE" >
-333-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:29:13-69
+333-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:29:13-69
 334        </service>
 335
 336        <receiver
-336-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:32:9-34:40
+336-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:32:9-34:40
 337            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-337-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:33:13-132
+337-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:33:13-132
 338            android:exported="false" />
-338-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Fenofanik\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:34:13-37
+338-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\4fa4cf1cc8b9f9f742afc7f3f4d26849\jetified-transport-runtime-3.0.0\AndroidManifest.xml:34:13-37
 339    </application>
 340
 341</manifest>

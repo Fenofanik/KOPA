@@ -14,7 +14,8 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: ThemeManager.background,
-        body: Padding(
+        body:
+        Padding(
             padding: EdgeInsets.all(20),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

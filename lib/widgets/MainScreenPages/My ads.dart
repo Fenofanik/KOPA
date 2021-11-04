@@ -71,7 +71,6 @@ class MyScreenMainState extends State<MyScreenMain>
                 children: [
                   MainScreen(productId: 1,isFavorite: false,isMyProduct: true,isSold: false),
                   MainScreen(productId: 1,isFavorite: false,isMyProduct: true,isSold: true),
-
                 ],
               ),
             ),

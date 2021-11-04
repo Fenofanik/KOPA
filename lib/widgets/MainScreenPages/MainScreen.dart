@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
+import 'package:kopamain/presentation/ui/logIn/logIn_controller.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/MainScreenPages/MoreInfo/MoreInfoScreen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 class MainScreen extends StatefulWidget {
   final productId;
@@ -13,11 +15,13 @@ class MainScreen extends StatefulWidget {
 
   MainScreen({this.productId, this.isFavorite,this.isSold,this.isMyProduct});
 
+
   @override
   MainScreenState createState() => MainScreenState();
 }
 
 class MainScreenState extends State<MainScreen> {
+  final LoginController loginController = Get.find();
   FirebaseServices firebaseServices = FirebaseServices();
   TextEditingController filterBrand = TextEditingController();
   TextEditingController filterMaterial = TextEditingController();
@@ -35,9 +39,11 @@ class MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+      Scaffold(
         backgroundColor: ThemeManager.background,
-        body: FutureBuilder<QuerySnapshot>(
+        body:
+        FutureBuilder<QuerySnapshot>(
           future: firebaseServices.productRef.get(),
           builder: (context, productsSnapshot) {
             return StreamBuilder<QuerySnapshot>(
@@ -131,7 +137,8 @@ class MainScreenState extends State<MainScreen> {
         PreferredSize(preferredSize: Size(0.0, 0.0),child: Container(),):AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: ThemeManager.background,
-            leading: GestureDetector(
+            leading:
+            GestureDetector(
               onTap: () {},
               child: (widget.isFavorite || widget.isSold == true || widget.isMyProduct == true)
                   ? Container()

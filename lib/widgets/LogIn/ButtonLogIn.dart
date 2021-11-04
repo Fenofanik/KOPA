@@ -6,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/services/Firebase_services.dart';
 import 'package:kopamain/widgets/LogIn/Verification.dart';
-import 'package:kopamain/widgets/LogIn/Verification3.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'google.dart';
@@ -54,7 +53,6 @@ class ButtonLogInState extends State<ButtonLogIn> {
             firebaseServices.userRef.doc(faceBookId).set({
               "id": faceBookId,
               "name":userName,
-              "secondName":secondName,
               "favs":favs,
               "phoneNumber": email,
               "imageUrl":faceBookImg,
@@ -108,7 +106,8 @@ class ButtonLogInState extends State<ButtonLogIn> {
   Widget build(BuildContext context) {
     return showTextField == 1
         ? Padding(padding: const EdgeInsets.only(bottom: 30),
-        child :Row(
+        child :
+        Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -153,7 +152,8 @@ class ButtonLogInState extends State<ButtonLogIn> {
                           await provider.googleLogIn();
                               await Navigator.pushNamed(context, '/Verification3');
                         }))
-              ]))
+              ])
+    )
         : Verification();
   }
 

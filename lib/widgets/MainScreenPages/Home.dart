@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
+import 'package:kopamain/core/states/base_stateless_screen.dart';
+import 'package:kopamain/presentation/ui/logIn/logIn_controller.dart';
 import 'package:kopamain/widgets/MainScreenPages/MainScreen.dart';
 import 'package:kopamain/widgets/MainScreenPages/My ads.dart';
 import 'package:kopamain/widgets/MainScreenPages/Profile.dart';
+import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,6 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
+  // final LoginController loginController = Get.find();
   int selectedIndex = 0;
   Widget mainScreen = MainScreen(productId: 1, isFavorite: false,isMyProduct: false,isSold: false);
   Widget myScreen = MyScreenMain();
@@ -40,7 +44,8 @@ class HomeState extends State<Home> {
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar:
+      BottomNavigationBar(
         backgroundColor:ThemeManager.bottomBarBack,
         type: BottomNavigationBarType.fixed,
         currentIndex: this.selectedIndex,
@@ -95,3 +100,7 @@ class HomeState extends State<Home> {
     });
   }
 }
+
+
+
+

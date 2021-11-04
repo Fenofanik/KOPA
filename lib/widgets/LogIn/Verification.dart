@@ -4,7 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kopamain/AppColors/Colors_app.dart';
+import 'package:kopamain/core/states/base_stateless_screen.dart';
+import 'package:kopamain/presentation/routes/app_pages.dart';
+import 'package:kopamain/presentation/ui/logIn/logIn_controller.dart';
 import 'package:kopamain/services/Firebase_services.dart';
+import 'package:get/get.dart';
+
 
 enum MobileVerificationState{
   Verification,
@@ -75,7 +80,7 @@ class VerificationState extends State<Verification> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 20,top: 15),
+                          padding: const EdgeInsets.only(left: 20, right: 20),
                           child: TextFormField(
                               controller: phoneController,
                               maxLength: 13,
@@ -113,7 +118,7 @@ class VerificationState extends State<Verification> {
                               style: TextStyle(
                                   fontSize: (14), color: ThemeManager.whiteThings))),
                       Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 20,top: 15),
+                        padding: const EdgeInsets.only(left: 20, right: 20),
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: shape,
@@ -175,7 +180,7 @@ class VerificationState extends State<Verification> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 20,top: 15),
+                          padding: const EdgeInsets.only(left: 20, right: 20),
                           child: TextFormField(
                               controller: otpController,
                               maxLength: 6,
@@ -217,8 +222,8 @@ class VerificationState extends State<Verification> {
                               style: TextStyle(
                                   fontSize: (14), color: ThemeManager.whiteThings))),
                       Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 20,top: 15),
-                          child: ElevatedButton(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                            child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 shape: shape,
                                 padding: const EdgeInsets.only(left: 90, right: 90),
@@ -235,7 +240,8 @@ class VerificationState extends State<Verification> {
                                     PhoneAuthProvider.credential(verificationId: verificationId, smsCode: otpController.text);
 
                                     signInWithPhoneAuthCredential(phoneAuthCredential);
-                                    Navigator.pushNamed(context, '/Verification3');
+                                    Get.toNamed(Routes.NavigationScreen);
+                                    // Navigator.pushNamed(context, '/Verification3');
                                   }
                                 });
                               }))
@@ -254,3 +260,6 @@ class VerificationState extends State<Verification> {
     );
   }
 }
+
+
+
