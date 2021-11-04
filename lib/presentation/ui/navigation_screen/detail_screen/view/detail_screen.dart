@@ -91,6 +91,7 @@ final UserFavoriteController ufc = Get.find();
                                                       .whiteThings
                                               ),
                                               onPressed: () async {
+
                                                controller.updateUserFavorites(sneakerModel);
                                                mcs.onInit();
                                                ufc.onInit();
