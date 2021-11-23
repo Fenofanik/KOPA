@@ -47,7 +47,7 @@ class DetailScreen extends StatelessWidget {
                             flex: 6,
                             child: controller.detailSneaker.image == null ||
                                     controller.detailSneaker.image.isEmpty
-                                ? Icon(
+                                ? const Icon(
                                     Icons.camera_enhance_outlined,
                                     color: whiteThings,
                                   )

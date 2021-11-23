@@ -38,7 +38,7 @@ Widget userProfileImageView(UserModel user, ProfileController pc) {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
-            backgroundColor: transparent,
+            backgroundColor: background,
             backgroundImage: user.image == null ||
                     user.image == AppStrings.NullString ||
                     user.image == AppStrings.EmptyString
