@@ -9,7 +9,6 @@ import 'package:kopamain/presentation/ui/navigation_screen/profile_screen/profil
 class ProfileScreen extends StatelessWidget {
   final ProfileController pc = Get.put(ProfileController());
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
