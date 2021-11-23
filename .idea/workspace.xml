@@ -31,9 +31,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c365cf5f-fa02-49f9-a6a7-41ce2ed4eb76" name="Default Changelist" comment="Refactor">
-      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/profile_screen/view/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/profile_screen/view/profile_screen.dart" afterDir="false" />
-    </list>
+    <list default="true" id="c365cf5f-fa02-49f9-a6a7-41ce2ed4eb76" name="Default Changelist" comment="Refactor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637678420187</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor">
+      <created>1637678608250</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637678608250</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
