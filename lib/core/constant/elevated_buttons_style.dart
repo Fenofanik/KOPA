@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kopamain/core/constant/text_styles.dart';
+import 'package:kopamain/core/constant/theme_data.dart';
 
 import 'colors.dart';
 
@@ -7,18 +7,17 @@ final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(200));
 
 final buttonStyle = ElevatedButton.styleFrom(
     shape: shape,
-    textStyle:buttonAdd
+    textStyle:buildThemeData().textTheme.button
 );
 
 final buttonStyle2 = ElevatedButton.styleFrom(
-  // primary: secondAppBarBackground,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    textStyle:buttonAdd
+    textStyle:buildThemeData().textTheme.button
 );
 final buttonStyleClose = ElevatedButton.styleFrom(
   primary: whiteThings,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    textStyle:buttonCLose
+    textStyle:buildThemeData().textTheme.caption
 );
 
 // // ElevatedButton.styleFrom(

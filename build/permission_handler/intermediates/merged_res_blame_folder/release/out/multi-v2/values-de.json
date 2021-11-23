@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\permission_handler\\intermediates\\res\\merged\\release\\values-de\\values-de.xml",
+            "outputFile": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\permission_handler\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-de\\values-de.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\permission_handler\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-de\\values-de.xml",
+            "outputFile": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\permission_handler\\intermediates\\res\\merged\\release\\values-de\\values-de.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-de\\values-de.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -5,10 +5,12 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/user_model.dart';
+import 'package:kopamain/presentation/routes/app_pages.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
 
 class ProfileController extends GetxController {
+
   bool _loading = true;
 
   bool get loading => _loading;
@@ -36,7 +38,7 @@ class ProfileController extends GetxController {
           loading = false;
         } else {
           print(value.toString());
-          Get.snackbar('Something', 'Go wrong');
+          Get.snackbar('Error get user', '${value.toString()}');
         }
       });
       update();
@@ -59,8 +61,7 @@ class ProfileController extends GetxController {
       if (_imageFile != null) {
         var snapshot = await _storage
             .ref()
-            .child(
-                'folderName/imageName-${DateTime.now().millisecondsSinceEpoch}')
+            .child('folderName/usersImage${DateTime.now().millisecondsSinceEpoch}')
             .putFile(file);
 
         var downloadUrl = await snapshot.ref.getDownloadURL();
@@ -73,25 +74,22 @@ class ProfileController extends GetxController {
                 if(value!=null){
                   currentUser = value;
                 }
-          } );
+          });
           update();
         }catch(e){
           print(e.toString());
         }
-
-        // FirebaseServices().userRef.doc(currentUser.id).update({
-        //   "imageUrl": imageUrl,
-        // });
         update();
       } else {
-        print('No path received');
+        Get.snackbar('Error to upload file', 'No path received');
       }
     } else {
-      print('Wooops');
+      print('${permissionStatus.toString()}');
     }
   }
 
-  signOut() {
+  signOut() async{
+    Get.offAllNamed(Routes.LogIn);
     _auth.signOut();
   }
 

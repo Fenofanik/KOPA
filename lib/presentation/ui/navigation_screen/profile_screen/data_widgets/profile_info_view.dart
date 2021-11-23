@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:kopamain/core/constant/constant.dart';
 import 'package:kopamain/core/constant/theme_data.dart';
 import 'package:kopamain/domain/models/user_model.dart';

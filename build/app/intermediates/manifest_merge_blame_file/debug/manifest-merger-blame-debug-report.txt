@@ -44,7 +44,7 @@
 27        android:label="kopamain"
 27-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:7:9-33
 28        android:supportsRtl="true" >
-28-->[com.facebook.android:facebook-login:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\934589921d9ef084ccca58e368356e22\jetified-facebook-login-5.5.1\AndroidManifest.xml:28:18-44
+28-->[com.facebook.android:facebook-login:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c1aa3cbf77c84124f23da0f7109f2c4a\jetified-facebook-login-5.5.1\AndroidManifest.xml:28:18-44
 29        <activity
 29-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:9:9-37:20
 30            android:name="com.example.kopamain.MainActivity"
@@ -114,7 +114,7 @@
 71            android:label="@string/app_name"
 71-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:41:149-181
 72            android:theme="@style/com_facebook_activity_theme" />
-72-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\ef9a5250445d9a45d346db25bdb6b3f6\jetified-facebook-common-5.5.1\AndroidManifest.xml:32:13-63
+72-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7d6d7f0b0376951e6106fe9495b9e982\jetified-facebook-common-5.5.1\AndroidManifest.xml:32:13-63
 73        <activity
 73-->C:\AllForFlutter\AllStudioProjects\kopamain\android\app\src\main\AndroidManifest.xml:43:9-49:20
 74            android:name="com.facebook.CustomTabActivity"
@@ -398,8 +398,8 @@
 223        </service>
 224
 225        <activity android:name="com.facebook.CustomTabMainActivity" />
-225-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\ef9a5250445d9a45d346db25bdb6b3f6\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:9-71
-225-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\ef9a5250445d9a45d346db25bdb6b3f6\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:19-68
+225-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7d6d7f0b0376951e6106fe9495b9e982\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:9-71
+225-->[com.facebook.android:facebook-common:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\7d6d7f0b0376951e6106fe9495b9e982\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:19-68
 226
 227        <receiver
 227-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\6018502d4ccfd9ea2da29bbea8743355\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:28:9-35:20
@@ -463,27 +463,27 @@
 260-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\d37a3de80221276b312f2332c3a880bd\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
 261
 262        <activity
-262-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+262-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
 263            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-263-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+263-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
 264            android:excludeFromRecents="true"
-264-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+264-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
 265            android:exported="false"
-265-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+265-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
 266            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-266-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+266-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
 267        <!--
 268            Service handling Google Sign-In user revocation. For apps that do not integrate with
 269            Google Sign-In, this service will never be started.
 270        -->
 271        <service
-271-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+271-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
 272            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-272-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+272-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
 273            android:exported="true"
-273-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+273-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
 274            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-274-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a4027b17789f2b77d0887ee1c7abf731\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+274-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\21f512269f26fb15f373ecdaefd69c5b\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
 275
 276        <activity
 276-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\19fb984a44baede148880087e00ffed0\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
@@ -539,40 +539,40 @@
 307         a completely different provider.
 308        -->
 309        <provider
-309-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:39:9-42:40
+309-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:39:9-42:40
 310            android:name="com.facebook.internal.FacebookInitProvider"
-310-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:40:13-70
+310-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:40:13-70
 311            android:authorities="com.BarakamonOleg.KOPA.FacebookInitProvider"
-311-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:41:13-72
+311-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:41:13-72
 312            android:exported="false" />
-312-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:42:13-37
+312-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:42:13-37
 313
 314        <receiver
-314-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:44:9-50:20
+314-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:44:9-50:20
 315            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-315-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:45:13-86
+315-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:45:13-86
 316            android:exported="false" >
-316-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:46:13-37
+316-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:46:13-37
 317            <intent-filter>
-317-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:47:13-49:29
+317-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:47:13-49:29
 318                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-318-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:17-95
-318-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:25-92
+318-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:17-95
+318-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:25-92
 319            </intent-filter>
 320        </receiver>
 321        <receiver
-321-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:51:9-58:20
+321-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:51:9-58:20
 322            android:name="com.facebook.CampaignTrackingReceiver"
-322-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:52:13-65
+322-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:52:13-65
 323            android:exported="true"
-323-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:53:13-36
+323-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:53:13-36
 324            android:permission="android.permission.INSTALL_PACKAGES" >
-324-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:54:13-69
+324-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:54:13-69
 325            <intent-filter>
-325-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:55:13-57:29
+325-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:55:13-57:29
 326                <action android:name="com.android.vending.INSTALL_REFERRER" />
-326-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:17-79
-326-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\c4d5ff80933f759cd0fd3e4407c4e6f3\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:25-76
+326-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:17-79
+326-->[com.facebook.android:facebook-core:5.5.1] C:\Users\Олег\.gradle\caches\transforms-2\files-2.1\a1f9ff5212e2524ba67c2b640a7cde40\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:25-76
 327            </intent-filter>
 328        </receiver>
 329

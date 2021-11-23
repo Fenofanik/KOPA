@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+            "outputFile": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\65cecfc6744722c6142f9c839e558ce9\\appcompat-1.0.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\65cecfc6744722c6142f9c839e558ce9\\appcompat-1.0.0\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

@@ -17,7 +17,7 @@ Widget profileSignOutButton(ProfileController pc) {
               padding: const EdgeInsets.only(left: 120, right: 120),
               primary: forButtons,
             ),
-            child: Text(AppStrings.Out, style: buildThemeData().textTheme.headline2),
+            child: Text(AppStrings.Out, style: buildThemeData().textTheme.headline5),
             onPressed: () async {
               await pc.signOut();
             })),

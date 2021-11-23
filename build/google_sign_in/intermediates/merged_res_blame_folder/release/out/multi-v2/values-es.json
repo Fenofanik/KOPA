@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\google_sign_in\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-es\\values-es.xml",
+            "outputFile": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\google_sign_in\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-es\\values-es.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-es\\values-es.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2931",
-                        "endColumns": "100",
-                        "endOffsets": "3027"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\5b0d1ce44dfb00cb8e492429ce8b2b2d\\jetified-play-services-base-16.0.1\\res\\values-es\\values.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\da1ca1437fd902c5f123784e4493fdfa\\jetified-play-services-base-16.0.1\\res\\values-es\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\4f0575bd4bf77cf5764f27c7002e87ef\\jetified-play-services-basement-16.0.1\\res\\values-es\\values.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\0d8b29821d3bbe226bb9b66fc82222b9\\jetified-play-services-basement-16.0.1\\res\\values-es\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,32 +35,32 @@
                         "startOffsets": "1299",
                         "endColumns": "218",
                         "endOffsets": "1513"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2931",
+                        "endColumns": "100",
+                        "endOffsets": "3027"
                     }
                 }
             ]
         },
         {
-            "outputFile": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\google_sign_in\\intermediates\\res\\merged\\release\\values-es\\values-es.xml",
+            "outputFile": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\google_sign_in\\intermediates\\res\\merged\\release\\values-es\\values-es.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-es\\values-es.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2931",
-                        "endColumns": "100",
-                        "endOffsets": "3027"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\5b0d1ce44dfb00cb8e492429ce8b2b2d\\jetified-play-services-base-16.0.1\\res\\values-es\\values.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\da1ca1437fd902c5f123784e4493fdfa\\jetified-play-services-base-16.0.1\\res\\values-es\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -94,7 +77,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\4f0575bd4bf77cf5764f27c7002e87ef\\jetified-play-services-basement-16.0.1\\res\\values-es\\values.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\0d8b29821d3bbe226bb9b66fc82222b9\\jetified-play-services-basement-16.0.1\\res\\values-es\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -108,6 +91,23 @@
                         "startOffsets": "1299",
                         "endColumns": "218",
                         "endOffsets": "1513"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2931",
+                        "endColumns": "100",
+                        "endOffsets": "3027"
                     }
                 }
             ]

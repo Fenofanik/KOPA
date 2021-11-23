@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kopamain/core/constant/colors.dart';
-import 'package:kopamain/presentation/ui/navigation_screen/profile/data_widgets/profile_info_view.dart';
-import 'package:kopamain/presentation/ui/navigation_screen/profile/data_widgets/profile_singOut_button.dart';
-import 'package:kopamain/presentation/ui/navigation_screen/profile/data_widgets/user_profile_image_view.dart';
-import 'package:kopamain/presentation/ui/navigation_screen/profile/profile_controller.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/profile_screen/data_widgets/profile_info_view.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/profile_screen/data_widgets/profile_singOut_button.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/profile_screen/data_widgets/user_profile_image_view.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/profile_screen/profile_controller.dart';
 
 class ProfileScreen extends StatelessWidget {
   final ProfileController pc = Get.put(ProfileController());

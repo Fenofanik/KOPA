@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
 import 'package:kopamain/presentation/bindings/login_bindings.dart';
 import 'package:kopamain/presentation/bindings/navigation_screen_bindings.dart';
+import 'package:kopamain/presentation/bindings/profile_screen_bindings.dart';
 import 'package:kopamain/presentation/bindings/splash_binding.dart';
 import 'package:kopamain/presentation/ui/logIn/view/logIn_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/detail_screen/view/detail_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/main_screen/view/main_screen.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/profile_screen/view/profile_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/user_favorite/view/user_favorite_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/user_products/view/user_products_view.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/view/navigation_screen.dart';
@@ -26,7 +28,7 @@ class AppPages {
     GetPage(
       name: Routes.LogIn,
       page: () => LogInScreen(),
-      binding: LoginBinding(),
+      // binding: LoginBinding(),
       transition: Transition.fadeIn,
     ),
     GetPage(
@@ -63,6 +65,12 @@ class AppPages {
       name: Routes.UserFavorite,
       page: () => UserFavoriteScreen(),
       // binding: LoginBinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: Routes.ProfileScreen,
+      page: () => ProfileScreen(),
+      binding: ProfileScreenBinding(),
       transition: Transition.fadeIn,
     ),
 

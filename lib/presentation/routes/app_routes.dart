@@ -11,9 +11,10 @@ abstract class Routes {
   static const DetailScreen  = '/DetailScreen';
   static const UserCreate = '/UserCreate';
   static const LoginPage = '/LoginPage';
-  static const UserAddInfo = '/Verification3';
+  static const UserAddInfo = '/UserAddInfoScreen';
   static const UserProducts = 'UserProductsScreen';
   static const UserFavorite = '/UserFavoriteScreen';
+  static const ProfileScreen = 'ProfileScreen';
 
 //initialRoute: '/',
 //         routes: {

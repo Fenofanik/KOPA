@@ -1,99 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:kopamain/AppColors/Colors_app.dart';
-import 'package:kopamain/core/constant/text_styles.dart';
-
 import 'colors.dart';
-import 'constant.dart';
 
-final radius = BorderRadius.all(Radius.circular(3));
-final radius2 = BorderRadius.circular(3);
-final radius3 = BorderRadius.all(Radius.circular(4));
-final radius4 = BorderRadius.circular(4);
-final radius5 = BorderRadius.all(Radius.circular(16));
-final borders = BorderSide(width: 1, color: borderColorLog);
-final searchBorder = BorderSide.none;
-final focusBorders = BorderSide(width: 2, color: forButtons);
-final errorBorders = BorderSide(width: 1, color: redThings);
-
+final radius = const BorderRadius.all(const Radius.circular(3));
+final radius3 = const BorderRadius.all(const Radius.circular(4));
+final radius5 = const BorderRadius.all(const Radius.circular(16));
+final borders = const BorderSide(width: 1, color: borderColorLog);
+final focusBorders = const BorderSide(width: 2, color: forButtons);
+final errorBorders = const BorderSide(width: 1, color: redThings);
 
 final styleForBorder =
-OutlineInputBorder(borderSide: borders, borderRadius: radius);
+    OutlineInputBorder(borderSide: borders, borderRadius: radius);
 
 final styleForBorder2 =
-OutlineInputBorder(borderSide: borders, borderRadius: radius);
+    OutlineInputBorder(borderSide: borders, borderRadius: radius);
 
 final styleFocus =
-OutlineInputBorder(borderSide: focusBorders, borderRadius: radius);
+    OutlineInputBorder(borderSide: focusBorders, borderRadius: radius);
 
 final styleError =
-OutlineInputBorder(borderSide: errorBorders, borderRadius: radius);
+    OutlineInputBorder(borderSide: errorBorders, borderRadius: radius);
 
+final otpBorderRadius = const BorderRadius.all(const Radius.circular(30));
+final otpBorderSide = const BorderSide(width: 2, color: redThings);
+final otpBorderSide2 = const BorderSide(width: 2, color: borderColorLog);
 
-final textFieldDecoration = InputDecoration(
-    counterText: AppStrings.EmptyString,
-    labelText: AppStrings.DocExternalID,
-    labelStyle: labelTextForTextField,
-    hintText: AppStrings.DocExternalID,
-    hintStyle: hintTextForTextField,
-    enabledBorder: styleForBorder,
-    focusedBorder: styleFocus,
-    errorBorder: styleError,
-    focusedErrorBorder: styleError);
-
-
-// Widget buildOtpTextField(controller){
-//   return
-// }
-
-final otpBorderRadius = BorderRadius.all(
-    Radius.circular(30));
-final otpBorderSide = BorderSide(
-    width: 2, color: ThemeManager.redThings);
-final otpBorderSide2 = BorderSide(
-    width: 2, color: ThemeManager.borderColorLog);
-
-final otpError = OutlineInputBorder(borderRadius:otpBorderRadius,borderSide: otpBorderSide );
-final otpFocusedError = OutlineInputBorder(
-    borderSide: BorderSide(
-        width: 2, color: ThemeManager.redThings),
-    borderRadius: BorderRadius.all(
-        Radius.circular(30)));
-final otpEnabled = OutlineInputBorder(
-    borderSide: BorderSide(
-        width: 2, color: ThemeManager.borderColorLog),
-    borderRadius: BorderRadius.all(
-        Radius.circular(30)));
-final otpFocused = OutlineInputBorder(
-    borderSide: BorderSide(
-        width: 2, color: ThemeManager.borderColorLog),
-    borderRadius: BorderRadius.all(
-        Radius.circular(30)));
+final otpError = OutlineInputBorder(
+    borderRadius: otpBorderRadius, borderSide: otpBorderSide);
+final otpFocusedError = const OutlineInputBorder(
+    borderSide: const BorderSide(width: 2, color: redThings),
+    borderRadius: const BorderRadius.all(const Radius.circular(30)));
+final otpEnabled = const OutlineInputBorder(
+    borderSide: const BorderSide(width: 2, color: borderColorLog),
+    borderRadius: const BorderRadius.all(const Radius.circular(30)));
+final otpFocused = const OutlineInputBorder(
+    borderSide: const BorderSide(width: 2, color: borderColorLog),
+    borderRadius: const BorderRadius.all(const Radius.circular(30)));
 
 final oldStyle = InputDecoration(
-  errorStyle: TextStyle(fontSize: 7),
+  errorStyle: const TextStyle(fontSize: 7),
   contentPadding: const EdgeInsets.all(10),
-  enabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-          width: 2, color: ThemeManager.borderColorLog),
-      borderRadius: BorderRadius.all(
-          Radius.circular(30))),
-  focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-          width: 2, color: ThemeManager.borderColorLog),
-      borderRadius: BorderRadius.all(
-          Radius.circular(30))),
-  errorBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-          width: 2, color: ThemeManager.redThings),
-      borderRadius: BorderRadius.all(
-          Radius.circular(30))),
+  enabledBorder: const OutlineInputBorder(
+      borderSide: const BorderSide(width: 2, color: borderColorLog),
+      borderRadius: const BorderRadius.all(const Radius.circular(30))),
+  focusedBorder: const OutlineInputBorder(
+      borderSide: const BorderSide(width: 2, color: borderColorLog),
+      borderRadius: const BorderRadius.all(const Radius.circular(30))),
+  errorBorder: const OutlineInputBorder(
+      borderSide: const BorderSide(width: 2, color: redThings),
+      borderRadius: const BorderRadius.all(const Radius.circular(30))),
   focusedErrorBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-          width: 2, color: ThemeManager.redThings),
-      borderRadius: BorderRadius.all(
-          Radius.circular(30))),
+      borderSide: const BorderSide(width: 2, color: redThings),
+      borderRadius: const BorderRadius.all(const Radius.circular(30))),
 );
-
-
-
-

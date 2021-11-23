@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\Flutter PROJECT KOPA\\kopamain\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\65cecfc6744722c6142f9c839e558ce9\\appcompat-1.0.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\65cecfc6744722c6142f9c839e558ce9\\appcompat-1.0.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

@@ -2,7 +2,6 @@ import 'package:kopamain/data/services/firebase_service.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 
 class UserService {
-
   Future<UserModel> getUserById() async {
     try {
       final userId = FirebaseServices().firebaseAuth.currentUser.uid;
@@ -18,9 +17,10 @@ class UserService {
 
   Future<UserModel> updateUserFavorite(UserModel user) async {
     try {
-      await FirebaseServices().userRef.doc(user.id).update({
-        'favs' : user.favorite
-      });
+      await FirebaseServices()
+          .userRef
+          .doc(user.id)
+          .update({'favs': user.favorite});
       return user;
     } catch (e) {
       print(e);
@@ -30,9 +30,10 @@ class UserService {
 
   Future<UserModel> updateUserImage(UserModel user) async {
     try {
-      await FirebaseServices().userRef.doc(user.id).update({
-        'imageUrl' : user.image
-      });
+      await FirebaseServices()
+          .userRef
+          .doc(user.id)
+          .update({'imageUrl': user.image});
       return user;
     } catch (e) {
       print(e);
@@ -40,10 +41,12 @@ class UserService {
     }
   }
 
-  Future<UserModel> updateUser(UserModel user) async {
+  Future<UserModel> updateUserInfo(UserModel user) async {
     try {
       await FirebaseServices().userRef.doc(user.id).update({
-        'favs' : user.favorite
+        "name": user.firstName,
+        "secondName": user.secondName,
+        "city": user.city
       });
       return user;
     } catch (e) {
@@ -51,5 +54,4 @@ class UserService {
       return UserModel();
     }
   }
-
 }

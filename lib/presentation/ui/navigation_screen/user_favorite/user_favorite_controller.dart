@@ -26,7 +26,7 @@ class UserFavoriteController extends GetxController{
     await UserService().getUserById().then((value) {
       loading = false;
       currentUser = value;
-      print("${currentUser.favorite.toList()}");
+      print("${currentUser.toString()}");
       update();
     });
   }
@@ -45,21 +45,21 @@ class UserFavoriteController extends GetxController{
   Future <void> getFavoriteSneakers()async{
     sneakers.clear();
     try{
+      loading = true;
       await SneakersService().getFavorites().then((e) {
         sneakers.addAll(e.toList());
-        loading = false;
-        update();
       });
-    }catch(e){
+    }catch(e) {
       print(e.toString());
     }
+      loading = false;
+      update();
   }
 
   Future <void> updateUserFavorites (SneakerModel sneaker)async{
     try {
       if(currentUser.favorite.any((element) => element == sneaker.id.trim())){
         currentUser.favorite.remove(sneaker.id.trim());
-
         await UserService().updateUserFavorite(currentUser).then((value) => currentUser = value);
         sneakers.remove(sneaker);
         print("TEST USER REMOVE FAVORITE ${currentUser.favorite.toList()}");
@@ -74,7 +74,7 @@ class UserFavoriteController extends GetxController{
       }
     }
     catch(e){
-
+      Get.snackbar('Error to update', '$e');
     }
   }
 

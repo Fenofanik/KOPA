@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\firebase_auth\\intermediates\\res\\merged\\release\\values-vi\\values-vi.xml",
+            "outputFile": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\firebase_auth\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-vi\\values-vi.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\9ec792db653432278ee7f7ed12a1eb3b\\jetified-play-services-basement-17.1.0\\res\\values-vi\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "194",
-                        "endOffsets": "441"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1285",
-                        "endColumns": "194",
-                        "endOffsets": "1475"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-vi\\values-vi.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\19fb984a44baede148880087e00ffed0\\jetified-play-services-base-17.1.0\\res\\values-vi\\values.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\9ec792db653432278ee7f7ed12a1eb3b\\jetified-play-services-basement-17.1.0\\res\\values-vi\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "194",
+                        "endOffsets": "441"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1285",
+                        "endColumns": "194",
+                        "endOffsets": "1475"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\19fb984a44baede148880087e00ffed0\\jetified-play-services-base-17.1.0\\res\\values-vi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -57,27 +57,10 @@
             ]
         },
         {
-            "outputFile": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\firebase_auth\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-vi\\values-vi.xml",
+            "outputFile": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\firebase_auth\\intermediates\\res\\merged\\release\\values-vi\\values-vi.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\9ec792db653432278ee7f7ed12a1eb3b\\jetified-play-services-basement-17.1.0\\res\\values-vi\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "194",
-                        "endOffsets": "441"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1285",
-                        "endColumns": "194",
-                        "endOffsets": "1475"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-vi\\values-vi.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\dcc4d110ff2d1c790fe7941428161095\\core-1.1.0\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -94,7 +77,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\19fb984a44baede148880087e00ffed0\\jetified-play-services-base-17.1.0\\res\\values-vi\\values.xml",
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\9ec792db653432278ee7f7ed12a1eb3b\\jetified-play-services-basement-17.1.0\\res\\values-vi\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "194",
+                        "endOffsets": "441"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1285",
+                        "endColumns": "194",
+                        "endOffsets": "1475"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\19fb984a44baede148880087e00ffed0\\jetified-play-services-base-17.1.0\\res\\values-vi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

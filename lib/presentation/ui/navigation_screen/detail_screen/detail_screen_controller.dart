@@ -1,13 +1,14 @@
-
-
 import 'package:get/get.dart';
+import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/user_products/user_products_controller.dart';
 
 class DetailScreenController extends GetxController{
   MainScreenController mcs = Get.find();
+  UserProductsController upc = Get.find();
 
   int selectedImage = 0;
 
@@ -48,6 +49,26 @@ class DetailScreenController extends GetxController{
     }
     catch(e){
 
+    }
+  }
+
+  Future<void> deleteUserProduct(SneakerModel sneaker) async {
+    loading = true;
+    if (sneaker != null) {
+      try {
+        await SneakersService().deleteProduct(sneaker).then((value) async{
+          mcs.sneakers.remove(sneaker);
+          await mcs.getAllSneakers();
+          await upc.getUsersProducts();
+          loading = false;
+          Get.back();
+          Get.snackbar('Product', 'Deleted',snackPosition: SnackPosition.BOTTOM);
+        });
+      } catch (e) {
+        print(e);
+      }
+    } else {
+      print('ERROR DELETE SNEAKER');
     }
   }
 

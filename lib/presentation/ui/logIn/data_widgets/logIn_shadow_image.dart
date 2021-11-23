@@ -9,12 +9,10 @@ Widget logInShadow (){
       alignment: Alignment.center,
       children: [
         Container(
-          child:  SvgPicture.asset(
-              LoginShadow
-          ),
+          child:  SvgPicture.asset(LoginShadow),
         ),
         Container(
-            child:Text("Вхід",style: TextStyle(fontSize: 28 ,color: whiteThings))
+            child:Text("Вхід",style: const TextStyle(fontSize: 28 ,color: whiteThings))
         )
       ]);
 }

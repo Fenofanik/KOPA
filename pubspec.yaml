@@ -54,6 +54,7 @@ dependencies:
   google_sign_in: ^4.5.1
   flutter_facebook_login: ^3.0.0
   http: ^0.13.3
+  fluttertoast: ^8.0.8
 
 
 

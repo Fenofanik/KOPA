@@ -17,17 +17,8 @@ class SplashScreen extends BaseStatelessScreen {
   Widget buildBody(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          width: Get.size.width,
-          height: Get.size.height,
-          // color: tra,
-          child: Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 200, horizontal: 100),
-                child: Image.asset(SplashLogo,width: Get.width/3,height: Get.height/2,
-                ),
-              )
-          ),
+        Center(
+            child: Image.asset(SplashLogo)
         ),
         Positioned(
             bottom: 15,

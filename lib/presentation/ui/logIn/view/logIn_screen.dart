@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:kopamain/presentation/utils/utils.dart';
 
 class LogInScreen extends BaseStatelessScreen {
-  final LoginController loginController = Get.find();
+  final LoginController loginController = Get.put(LoginController());
 
   @override
   Widget buildBody(BuildContext context) {
@@ -23,8 +23,6 @@ class LogInScreen extends BaseStatelessScreen {
                           padding: const EdgeInsets.only(top: 70.0),
                           child: SecondPart(),
                         ))
-              // Expanded(child: MainPart(), flex: 6),
-              // Expanded(child: ButtonLogIn(), flex: 2)
             ]);
     });
   }

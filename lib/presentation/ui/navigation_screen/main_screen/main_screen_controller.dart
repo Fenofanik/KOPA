@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
@@ -6,9 +5,11 @@ import 'package:kopamain/domain/models/sneaker_model.dart';
 import 'package:flutter/material.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 
-class MainScreenController extends GetxController{
-
-  bool isMainScreen = true;
+class MainScreenController extends GetxController {
+  // bool isMainScreen = true;
+  // bool isFavoriteScreen = false;
+  // bool isUserProductScreen = false;
+  // bool isProfileScreen = false;
 
   String searchQuery = '';
 
@@ -25,6 +26,11 @@ class MainScreenController extends GetxController{
     update();
   }
 
+  TextEditingController brand = TextEditingController();
+  TextEditingController material = TextEditingController();
+  TextEditingController size = TextEditingController();
+  TextEditingController price = TextEditingController();
+
   UserModel currentUser = UserModel();
 
   SneakerModel currentSneaker = SneakerModel();
@@ -38,17 +44,16 @@ class MainScreenController extends GetxController{
     update();
   }
 
-
-  Future <void> getAllSneakers()async{
+  Future<void> getAllSneakers() async {
     sneakers.clear();
     loading = true;
-    try{
+    try {
       await SneakersService().getSneakerList().then((e) {
-          sneakers.addAll(e.toList());
-          loading = false;
+        sneakers.addAll(e.toList());
+        loading = false;
         update();
       });
-    }catch(e){
+    } catch (e) {
       loading = true;
       Get.snackbar("Error", '$e');
     }
@@ -62,53 +67,95 @@ class MainScreenController extends GetxController{
     });
   }
 
-  Future <void> updateUserFavorites (SneakerModel sneaker)async{
+  Future<void> updateUserFavorites(SneakerModel sneaker) async {
     try {
-      if(currentUser.favorite.any((element) => element == sneaker.id.trim())){
+      if (currentUser.favorite.any((element) => element == sneaker.id.trim())) {
         currentUser.favorite.remove(sneaker.id.trim());
-        await UserService().updateUserFavorite(currentUser).then((value) => currentUser = value);
+        await UserService()
+            .updateUserFavorite(currentUser)
+            .then((value) => currentUser = value);
         print("TEST USER REMOVE FAVORITE ${currentUser.favorite.toList()}");
         update();
-      }
-      else{
+      } else {
         currentUser.favorite.add(sneaker.id.trim());
-        await UserService().updateUserFavorite(currentUser).then((value) => currentUser = value);
+        await UserService()
+            .updateUserFavorite(currentUser)
+            .then((value) => currentUser = value);
         print("TEST USER ADD FAVORITE ${currentUser.favorite.toList()}");
         update();
       }
-    }
-    catch(e){
+    } catch (e) {}
+  }
 
+  Future<void> deleteUserProduct(SneakerModel sneaker) async {
+    loading = true;
+    if (sneaker != null) {
+      try {
+        await SneakersService().deleteProduct(sneaker).then((value) {
+          sneakers.remove(sneaker);
+          Get.snackbar('Product', 'Deleted');
+          loading = false;
+        });
+      } catch (e) {
+        print(e);
+      }
+    } else {
+      print('ERROR DELETE SNEAKER');
     }
   }
 
+  void clearControllers() {
+    brand.clear();
+    material.clear();
+    size.clear();
+    price.clear();
+  }
 
-
-  void controllerForSearch(){
-    searchController.addListener(() {
-      if (searchController.text.trim().isNotEmpty) {
-        searchQuery = searchController.text.trim();
+  void listenToControllers() {
+    brand.addListener(() {
+      if (brand.text.trim().isNotEmpty) {
+        searchQuery = brand.text.trim();
+        update();
+      } else {
+        searchQuery = '';
         update();
       }
-      else {
+    });
+    material.addListener(() {
+      if (material.text.trim().isNotEmpty) {
+        searchQuery = material.text.trim();
+        update();
+      } else {
+        searchQuery = '';
+        update();
+      }
+    });
+    size.addListener(() {
+      if (size.text.trim().isNotEmpty) {
+        searchQuery = size.text.trim();
+        update();
+      } else {
+        searchQuery = '';
+        update();
+      }
+    });
+    price.addListener(() {
+      if (price.text.trim().isNotEmpty) {
+        searchQuery = price.text.trim();
+        update();
+      } else {
         searchQuery = '';
         update();
       }
     });
   }
 
-  // Future<void> addToFavorite ()async{
-  //   await
-  // }
-
-
   @override
- Future <void> onInit() async {
+  Future<void> onInit() async {
     loading = true;
-    isMainScreen = true;
     await getCurrentUserById();
     await getAllSneakers();
-    controllerForSearch();
+    listenToControllers();
 
     super.onInit();
   }

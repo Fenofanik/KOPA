@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kopamain/AppColors/Colors_app.dart';
+import 'colors.dart';
 
-final detailBorder = RoundedRectangleBorder(
-  borderRadius: BorderRadius.circular(44),
+final detailBorder =  RoundedRectangleBorder(
+  borderRadius:  BorderRadius.circular(44),
 );
 
-final priceContainer = BoxDecoration(
-    borderRadius: BorderRadius.circular(22), color: ThemeManager.boxPriceColor);
+final priceContainer =  BoxDecoration(
+    borderRadius:  BorderRadius.circular(22), color: boxPriceColor);

@@ -9,13 +9,21 @@ class UserProductsController extends GetxController
     with SingleGetTickerProviderMixin {
   TabController userTabController;
 
-
   bool _loading = true;
 
   bool get loading => _loading;
 
   set loading(bool loading) {
     _loading = loading;
+    update();
+  }
+
+  bool _loadingArchive = true;
+
+  bool get loadingArchive => _loadingArchive;
+
+  set loadingArchive(bool loadingArchive) {
+    _loadingArchive = loadingArchive;
     update();
   }
 
@@ -28,6 +36,15 @@ class UserProductsController extends GetxController
     update();
   }
 
+  List<SneakerModel> _sneakersArchive = [];
+
+  List<SneakerModel> get sneakersArchive => _sneakersArchive;
+
+  set sneakersArchive(List<SneakerModel> sneakersArchive) {
+    _sneakersArchive = sneakersArchive;
+    update();
+  }
+
   UserModel currentUser = UserModel();
 
   Future<void> getCurrentUserById() async {
@@ -37,36 +54,52 @@ class UserProductsController extends GetxController
     });
   }
 
+  final userProducts = GlobalKey<RefreshIndicatorState>();
+  final userArchive = GlobalKey<RefreshIndicatorState>();
+
   Future<void> getUsersProducts() async {
+    loading = true;
     sneakers.clear();
-    try{
+    try {
       await SneakersService().getUserProducts().then((e) {
-        if(e!=null){
+        if (e != null) {
           sneakers.addAll(e.toList());
           loading = false;
           update();
-        }
-        else{
+        } else {
           print(e.toList().toString());
         }
       });
-    }
-    catch(e){
+    } catch (e) {
       print(e.toString());
     }
-
   }
 
-  Future <int> checkTabIndex(int i) async{
-    if (i == 0) {
-      print('TEST INDEX OF SHIT $i');
-      await getUsersProducts();
-      update();
-      return i;
+  Future<void> getUsersArchive() async {
+    loadingArchive = true;
+    sneakersArchive.clear();
+    try {
+      await SneakersService().getUserArchive().then((e) {
+        if (e != null) {
+          sneakersArchive.addAll(e.toList());
+          loadingArchive = false;
+          update();
+        } else {
+          print(e.toList().toString());
+        }
+      });
+    } catch (e) {
+      print(e.toString());
     }
-    else{
-      print('TEST INDEX OF SHIT $i');
-      update();}
+  }
+
+  Future<int> checkTabIndex(int i) async {
+    if (i == 0) {
+      await getUsersProducts();
+      return i;
+    } else {
+      await getUsersArchive();
+    }
     return i;
   }
 
@@ -77,16 +110,12 @@ class UserProductsController extends GetxController
 
   @override
   Future<void> onInit() async {
-      userTabController = TabController(length: myTabs.length, vsync: this);
+    userTabController = TabController(length: myTabs.length, vsync: this);
     loading = true;
+    loadingArchive = true;
     await getCurrentUserById();
     await getUsersProducts();
-
-    // if(userTabController.indexIsChanging){
-    //   await getUserProducts();
-    // }
-    // else{onInit();}
-    // userTabController.addListener(_handleTabSelection);
+    await getUsersArchive();
     super.onInit();
   }
 }

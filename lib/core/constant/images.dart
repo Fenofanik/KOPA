@@ -8,6 +8,7 @@ const String chatBar = 'assets/icons/chart-bar.png';
 /////////////////images\\\\\\\\\\\\\\\\\
 const String SplashLogo = 'assets/images/2.png';
 const String LoginShadow = 'assets/images/3.svg';
+const String sneakerSizesModel = "assets/images/Kek.png";
 
 ///////////////////svg\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

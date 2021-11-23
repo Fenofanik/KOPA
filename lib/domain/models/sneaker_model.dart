@@ -28,29 +28,26 @@ class SneakerModel {
       this.favorite,
       this.userAddAbout});
 
-  SneakerModel.fromSnapshot(DocumentSnapshot snapshot) {
-    author = snapshot["author"];
-    brand = snapshot["brand"];
-    id = snapshot["id"];
-    // image = snapshot["name"];
-    if (snapshot['image'] != null) {
-      image = List<String>();
-      snapshot['image'].forEach((v) {
-        image.add(v);
-      });
-    }
-    // image = snapshot['image'] != null
-    //     ? (snapshot['image'] as List).map((e) => e.toString()).toList()
-    //     : null;
-    length = snapshot["length"];
-    material = snapshot["material"];
-    price = snapshot["price"];
-    size = snapshot["size"];
-    sold = snapshot["sold"];
-    width = snapshot["width"];
-    favorite = snapshot["favorite"];
-    userAddAbout = snapshot["userAddAbout"];
-  }
+  // SneakerModel.fromSnapshot(DocumentSnapshot snapshot) {
+  //   author = snapshot["author"];
+  //   brand = snapshot["brand"];
+  //   id = snapshot["id"];
+  //   // image = snapshot["name"];
+  //   if (snapshot['image'] != null) {
+  //     image = List<String>();
+  //     snapshot['image'].forEach((v) {
+  //       image.add(v);
+  //     });
+  //   }
+  //   length = snapshot["length"];
+  //   material = snapshot["material"];
+  //   price = snapshot["price"];
+  //   size = snapshot["size"];
+  //   sold = snapshot["sold"];
+  //   width = snapshot["width"];
+  //   favorite = snapshot["favorite"];
+  //   userAddAbout = snapshot["userAddAbout"];
+  // }
 
   SneakerModel.fromMap(Map snapshot)
       : author = snapshot["author"],

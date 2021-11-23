@@ -1,29 +1,30 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:kopamain/core/constant/colors.dart';
 import 'package:kopamain/core/constant/images.dart';
 import 'package:get/get.dart';
-//
-// final MainScreenController msc = Get.put(MainScreenController());
+import 'package:kopamain/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/user_create_screen/view/user_create_screen.dart';
+
+final MainScreenController msc = Get.find();
 
 FloatingActionButton getButton (BuildContext context){
   return FloatingActionButton(
     child: Stack(
       children: [
-        SvgPicture.asset(BottomBarButton,color: ThemeManager.forButtons),
-        Positioned(
+        SvgPicture.asset(BottomBarButton,color: forButtons),
+        const Positioned(
             left: 5,
             right: 5,
             top: 15,
-            child: Icon(Icons.add)),
+            child: const Icon(Icons.add)),
       ],
     ),
-    backgroundColor: ThemeManager.bottomBarBack,
+    backgroundColor: bottomBarBack,
     onPressed: () async{
-      Get.snackbar('WILL BE', "SOON ",backgroundColor: redThings);
+     await Get.to(()=>UserCreateScreen());
+     await msc.getAllSneakers();
     },
   );
 }

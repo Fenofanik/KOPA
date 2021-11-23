@@ -1,195 +1,152 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:kopamain/AppColors/Colors_app.dart';
 import 'package:get/get.dart';
+import 'package:kopamain/core/constant/colors.dart';
+import 'package:kopamain/core/constant/constant.dart';
+import 'package:kopamain/core/constant/theme_data.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/navigation_screen_controller.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 
 final MainScreenController msc = Get.find();
 
-AppBar getAppBar(BuildContext context) {
+AppBar getAppBar(BuildContext context,NavigationController nc ) {
   return AppBar(
-    // leading: BackButton(),
-    backgroundColor: ThemeManager.bottomBarBack,
-      leading:
-      msc.isMainScreen?
-      Container(
-          alignment: Alignment.bottomLeft,
-          child: IconButton(
-              icon: Icon(Icons.filter_list_alt),
-              color: Colors.white,
+    backgroundColor: bottomBarBack,
+    leading: Builder(
+      builder: (context) {
+        if (nc.isMainScreen) {
+          return IconButton(
+              icon: const Icon(Icons.filter_list_alt),
+              color: whiteThings,
               onPressed: () {
-                filterAddButtonSheet(context,msc);
-              })):
-          IconButton(onPressed: (){
-            msc.isMainScreen = true;
-            msc.update();
-            Get.back();
-          }, icon: Icon(Icons.arrow_back_ios))
-
+                filterAddButtonSheet(context, msc);
+              });
+        } else if (nc.isProfileScreen) {
+          return const Icon(
+            Icons.account_circle,
+            color: textSize,
+          );
+        } else if (nc.isUserProductScreen) {
+          return const Icon(
+            Icons.create_outlined,
+            color: green,
+          );
+        } else if (nc.isFavoriteScreen) {
+          return const Icon(
+            Icons.favorite,
+            color: redThings,
+          );
+        } else {
+          return IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: buildBackIosButton());
+        }
+      },
+    ),
+    title: Builder(
+      builder: (context) {
+        if (nc.isMainScreen == true) {
+          return Text('Main Screen');
+        } else if (nc.isProfileScreen == true) {
+          return Text('Profile');
+        } else if (nc.isFavoriteScreen == true) {
+          return Text('Favorite');
+        } else if (nc.isUserProductScreen == true) {
+          return Text('User Products');
+        } else {
+          return Text('Detail');
+        }
+      },
+    ),
   );
 }
 
-void filterAddButtonSheet(context,MainScreenController controller) {
+void filterAddButtonSheet(context, MainScreenController controller) {
   showModalBottomSheet(
       context: context,
       builder: (BuildContext bc) {
         return Container(
-          color: ThemeManager.filterBack,
+          color: filterBack,
           height: MediaQuery.of(context).size.height * 45,
           child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(children: <Widget>[
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        alignment: Alignment.center,
-                        child: IconButton(
-                            icon: Icon(
-                              Icons.keyboard_arrow_down,
-                              size: 27,
-                              color: ThemeManager.blackThings,
-                            ),
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            }),
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: TextField(
-                            controller:  controller.searchController,
-                                // controller: controller.filterBrand,
-                                decoration: InputDecoration(
-                                  labelText: "Модель",
-                                  labelStyle: TextStyle(
-                                      fontSize: 14, color: ThemeManager.whiteThings),
-                                  prefixIcon: Icon(
-                                    Icons.circle,
-                                    size: 9,
-                                    color: ThemeManager.forButtons,
-                                  ),
-                                ),
-                                style: TextStyle(
-                                    fontSize: (14), color: ThemeManager.whiteThings)),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: TextField(
-                                controller: controller.searchController,
-                                decoration: InputDecoration(
-                                  labelText: "Матеріал",
-                                  labelStyle: TextStyle(
-                                      fontSize: 14, color: ThemeManager.whiteThings),
-                                  prefixIcon: Icon(
-                                    Icons.circle,
-                                    size: 9,
-                                    color: ThemeManager.forButtons,
-                                  ),
-                                ),
-                                style: TextStyle(
-                                    fontSize: (14), color: ThemeManager.whiteThings)),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                              child: Row(
-                                children: <Widget>[
-                                  Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(right: 250),
-                                        child: TextField(
-                                            controller: controller.searchController,
-                                            keyboardType: TextInputType.phone,
-                                            decoration: InputDecoration(
-                                              labelText: "Розмір",
-                                              labelStyle: TextStyle(
-                                                  fontSize: 14, color: ThemeManager.whiteThings),
-                                              prefixIcon: Icon(
-                                                Icons.circle,
-                                                size: 9,
-                                                color: ThemeManager.forButtons,
-                                              ),
-                                            ),
-                                            style: TextStyle(
-                                                fontSize: (14), color: ThemeManager.whiteThings)),
-                                      ),
-                                      flex: 7),
-                                ],
-                              ))
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                              child: Row(
-                                children: <Widget>[
-                                  Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(right: 250),
-                                        child: TextField(
-                                            controller: controller.searchController,
-                                            keyboardType: TextInputType.phone,
-                                            decoration: InputDecoration(
-                                              labelText: "Ціна",
-                                              labelStyle: TextStyle(
-                                                  fontSize: 14, color: ThemeManager.whiteThings),
-                                              prefixIcon: Icon(
-                                                Icons.circle,
-                                                size: 9,
-                                                color: ThemeManager.forButtons,
-                                              ),
-                                            ),
-                                            style: TextStyle(
-                                                fontSize: (14), color: ThemeManager.whiteThings)),
-                                      ),
-                                      flex: 7),
-                                ],
-                              ))
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(top: 30, left: 20),
-                            child: TextButton(
-                                onPressed: () {
-                                  // controller.clearAllControllers();
-                                },
-                                child: Text(
-                                  'СКИНУТИ',
-                                  style:
-                                  TextStyle(fontSize: 12, color: ThemeManager.forButtons),
-                                )),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 30, left: 20),
-                            child: Container(
-                                margin: EdgeInsets.only(right: 15),
-                                child: TextButton(
-                                    onPressed: () {
-                                      controller.update();
-                                    },
-                                    child: Text(
-                                      'ЗАСТОСУВАТИ',
-                                      style: TextStyle(
-                                          fontSize: 12, color: ThemeManager.forButtons),
-                                    ))),
-                          )
-                        ],
-                      ),
-                    ],
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                IconButton(
+                    icon: buildBackIosButton(),
+                    onPressed: () {
+                      Get.back();
+                    }),
+                TextField(
+                  controller: controller.brand,
+                  decoration: InputDecoration(
+                    labelText: AppStrings.Model,
+                    labelStyle: buildThemeData().textTheme.headline2,
+                    prefixIcon: buildCircleIcon(),
                   ),
-                ]),
-              )),
+                  style: buildThemeData().textTheme.headline2,
+                ),
+                TextField(
+                    controller: controller.material,
+                    decoration: InputDecoration(
+                      labelText: AppStrings.Material,
+                      labelStyle: buildThemeData().textTheme.headline2,
+                      prefixIcon: buildCircleIcon(),
+                    ),
+                    style: buildThemeData().textTheme.headline2),
+                Padding(
+                  padding: const EdgeInsets.only(right: 250),
+                  child: TextField(
+                      controller: controller.size,
+                      keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                        labelText: AppStrings.Size,
+                        labelStyle: buildThemeData().textTheme.headline2,
+                        prefixIcon: buildCircleIcon(),
+                      ),
+                      style: buildThemeData().textTheme.headline2),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 250),
+                  child: TextField(
+                      controller: controller.price,
+                      keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                        labelText: AppStrings.Price,
+                        labelStyle: buildThemeData().textTheme.headline2,
+                        prefixIcon: buildCircleIcon(),
+                      ),
+                      style: buildThemeData().textTheme.headline2),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () {
+                          controller.clearControllers();
+                        },
+                        child: Text(
+                          AppStrings.overthrow,
+                          style: buildThemeData().textTheme.headline1,
+                        ).paddingOnly(top: 30, left: 20)),
+                    TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Text(
+                          AppStrings.apply,
+                          style: buildThemeData().textTheme.headline1,
+                        ).paddingOnly(right: 15, top: 30, left: 20))
+                  ],
+                ),
+              ],
+            ),
+          )),
         );
       });
 }

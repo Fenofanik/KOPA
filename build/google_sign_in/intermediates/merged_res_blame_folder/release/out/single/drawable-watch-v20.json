@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\google_sign_in\\intermediates\\res\\merged\\release\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml",
-        "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\7d9495aa7cef5dbe4c383810c39993f9\\jetified-play-services-auth-16.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml"
+        "merged": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\google_sign_in\\intermediates\\res\\merged\\release\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml",
+        "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\21f512269f26fb15f373ecdaefd69c5b\\jetified-play-services-auth-16.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml"
     },
     {
-        "merged": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\google_sign_in\\intermediates\\res\\merged\\release\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml",
-        "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\7d9495aa7cef5dbe4c383810c39993f9\\jetified-play-services-auth-16.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml"
+        "merged": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\google_sign_in\\intermediates\\res\\merged\\release\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml",
+        "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\21f512269f26fb15f373ecdaefd69c5b\\jetified-play-services-auth-16.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
-        "merged": "D:\\Flutter PROJECT KOPA\\kopamain\\build\\google_sign_in\\intermediates\\res\\merged\\release\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml",
-        "source": "C:\\Users\\Fenofanik\\.gradle\\caches\\transforms-2\\files-2.1\\7d9495aa7cef5dbe4c383810c39993f9\\jetified-play-services-auth-16.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml"
+        "merged": "C:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\google_sign_in\\intermediates\\res\\merged\\release\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml",
+        "source": "C:\\Users\\Олег\\.gradle\\caches\\transforms-2\\files-2.1\\21f512269f26fb15f373ecdaefd69c5b\\jetified-play-services-auth-16.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml"
     }
 ]
