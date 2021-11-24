@@ -1,4 +1,4 @@
-#Tue Nov 23 17:13:11 EET 2021
+#Wed Nov 24 12:24:13 EET 2021
 base.2=C\:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=C\:\\AllForFlutter\\AllStudioProjects\\kopamain\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex

@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:kopamain/data/services/firebase_service.dart';
@@ -22,7 +21,8 @@ class SneakersService {
     User user = FirebaseAuth.instance.currentUser;
     QuerySnapshot data = await FirebaseServices()
         .productRef
-        .where('author', isEqualTo: user.uid).where('sold', isEqualTo: false)
+        .where('author', isEqualTo: user.uid)
+        .where('sold', isEqualTo: false)
         .get();
     List<SneakerModel> sneaker = [];
     data.docs.forEach((e) {
@@ -57,8 +57,30 @@ class SneakersService {
     return sneaker;
   }
 
-  Future<SneakerModel> createProduct (SneakerModel sneaker)async{
+  Future<SneakerModel> createProduct(SneakerModel sneaker) async {
+    final data = {
+      "author": sneaker?.author,
+      "sold": false,
+      "image": sneaker?.image,
+      "size": sneaker?.size,
+      "length": sneaker?.length,
+      "width": sneaker?.width,
+      "brand": sneaker?.brand,
+      "material": sneaker?.material,
+      "userAddAbout": sneaker?.userAddAbout,
+      "price": sneaker?.price,
+    };
 
+    try {
+      if (sneaker?.id == null) {
+        final obj = await FirebaseServices().productRef.add(data);
+        await FirebaseServices().productRef.doc(obj.id).update({"id": obj.id});
+      } else {
+        await FirebaseServices().productRef.doc(sneaker?.id).update(data);
+      }
+    } catch (e) {
+      print(e.toString());
+    }
     return sneaker;
   }
 
@@ -75,10 +97,9 @@ class SneakersService {
       "userAddAbout": sneaker?.userAddAbout,
       "price": sneaker?.price,
     };
-    try{
+    try {
       await FirebaseServices().productRef.doc(sneaker.id).update(data);
-    }
-    catch(e){
+    } catch (e) {
       print(e);
     }
     return sneaker;
@@ -97,17 +118,15 @@ class SneakersService {
       "userAddAbout": sneaker?.userAddAbout,
       "price": sneaker?.price,
     };
-    try{
+    try {
       await FirebaseServices().productRef.doc(sneaker.id).update(data);
-    }
-    catch(e){
+    } catch (e) {
       print(e);
     }
     return sneaker;
   }
 
-
-  Future <void> deleteProduct(SneakerModel deleteSneaker)async{
-     await FirebaseServices().productRef.doc(deleteSneaker.id).delete();
+  Future<void> deleteProduct(SneakerModel deleteSneaker) async {
+    await FirebaseServices().productRef.doc(deleteSneaker.id).delete();
   }
 }

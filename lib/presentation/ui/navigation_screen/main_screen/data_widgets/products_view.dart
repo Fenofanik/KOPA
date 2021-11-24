@@ -21,7 +21,8 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
         controller.currentSneaker = sneaker;
         print("${controller.currentSneaker.toJson()}");
         nc.isMainScreen = false;
-        Get.to(() => DetailScreen(sneakerModel: sneaker));
+       await Get.to(() => DetailScreen(sneakerModel: sneaker));
+        controller.getAllSneakers();
       },
       child: Stack(children: [
         Container(
