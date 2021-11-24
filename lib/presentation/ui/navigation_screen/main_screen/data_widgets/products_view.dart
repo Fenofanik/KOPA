@@ -27,7 +27,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
         Container(
           height: Get.height / 4.5,
           margin: const EdgeInsets.only(top: 5, left: 10, bottom: 5, right: 10),
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             borderRadius: listSneakerBorder3,
             color: containerColor,
           ),
@@ -48,7 +48,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                               if (loadingProgress == null) {
                                 return child;
                               }
-                              return  SizedBox(
+                              return SizedBox(
                                   width: 150,
                                   height: 150,
                                   child: getProgress());
@@ -71,8 +71,8 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                     children: <Widget>[
                       Text(
                           sneaker.brand == null ||
-                              sneaker.brand == AppStrings.NullString ||
-                              sneaker.brand == AppStrings.EmptyString
+                                  sneaker.brand == AppStrings.NullString ||
+                                  sneaker.brand == AppStrings.EmptyString
                               ? AppStrings.NoInfo
                               : sneaker.brand,
                           style: buildThemeData().textTheme.bodyText2),
@@ -88,8 +88,10 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                               children: [
                                 Text(
                                     sneaker.size == null ||
-                                        sneaker.size == AppStrings.NullString ||
-                                        sneaker.size == AppStrings.EmptyString
+                                            sneaker.size ==
+                                                AppStrings.NullString ||
+                                            sneaker.size ==
+                                                AppStrings.EmptyString
                                         ? AppStrings.NoInfo
                                         : sneaker.size,
                                     style:
@@ -109,8 +111,10 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                                 children: [
                                   Text(
                                     sneaker.length == null ||
-                                        sneaker.length == AppStrings.NullString ||
-                                        sneaker.length == AppStrings.EmptyString
+                                            sneaker.length ==
+                                                AppStrings.NullString ||
+                                            sneaker.length ==
+                                                AppStrings.EmptyString
                                         ? AppStrings.NoInfo
                                         : sneaker.length,
                                     style: buildThemeData().textTheme.headline6,
@@ -132,8 +136,10 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                                 children: [
                                   Text(
                                     sneaker.width == null ||
-                                        sneaker.width == AppStrings.NullString ||
-                                        sneaker.width == AppStrings.EmptyString
+                                            sneaker.width ==
+                                                AppStrings.NullString ||
+                                            sneaker.width ==
+                                                AppStrings.EmptyString
                                         ? AppStrings.NoInfo
                                         : sneaker.width,
                                     style: buildThemeData().textTheme.headline6,
@@ -142,7 +148,8 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                                     padding: const EdgeInsets.only(top: 5.0),
                                     child: Text(
                                       AppStrings.WidthOf,
-                                      style: buildThemeData().textTheme.headline2,
+                                      style:
+                                          buildThemeData().textTheme.headline2,
                                     ),
                                   ),
                                 ],
@@ -159,8 +166,9 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                                 style: buildThemeData().textTheme.overline),
                             Text(
                               sneaker.material == null ||
-                                  sneaker.material == AppStrings.NullString ||
-                                  sneaker.material == AppStrings.EmptyString
+                                      sneaker.material ==
+                                          AppStrings.NullString ||
+                                      sneaker.material == AppStrings.EmptyString
                                   ? AppStrings.NoInfo
                                   : sneaker.material,
                               style: buildThemeData().textTheme.bodyText1,
@@ -177,11 +185,9 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
         ),
         Padding(
             padding: const EdgeInsets.all(8.0),
-            child: sneaker.sold
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
+            child: sneaker.author == controller.currentUser.id
+                ? sneaker.sold == true
+                    ? Padding(
                         padding: const EdgeInsets.only(left: 10, top: 20),
                         child: Container(
                           alignment: Alignment.center,
@@ -195,57 +201,27 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                             style: buildThemeData().textTheme.subtitle1,
                           ),
                         ),
-                      ),
-                      IconButton(
-                          onPressed: () async {
-                            await controller.deleteUserProduct(sneaker);
-                          },
-                          icon: const Icon(
-                            Icons.delete_outline,
-                            color: redThings,
-                          ))
-                    ],
-                  )
-                : sneaker.author == controller.currentUser.id
-                    ?
-            IconButton(
-                icon: const Icon(Icons.create_outlined, color: green),
-                onPressed: () async{
-                  await Get.to(() => UserCreateScreen(
-                    sneaker: sneaker,
-                  ));
-                  await controller.getAllSneakers();
-                })
-            // Row(
-            //           children: [
-            //             IconButton(
-            //                 icon: const Icon(Icons.create_outlined, color: green),
-            //                 onPressed: () async{
-            //                   await Get.to(() => UserCreateScreen(
-            //                     sneaker: sneaker,
-            //                   ));
-            //                   await controller.getAllSneakers();
-            //                 }),
-            //             IconButton(
-            //                 icon: const Icon(Icons.delete_outline,color: whiteThings),
-            //                 onPressed: () async{
-            //                   await controller.deleteUserProduct(sneaker);
-            //                   await controller.getAllSneakers();
-            //                 }),
-            //           ],
-            //         )
+                      )
                     : IconButton(
-                        splashColor: transparent,
-                        icon: Icon(Icons.favorite,
-                            color: controller.currentUser.favorite.any(
-                                    (element) => element == sneaker.id.trim())
-                                ? redThings
-                                : whiteThings),
+                        icon: const Icon(Icons.create_outlined, color: green),
                         onPressed: () async {
-                          controller.updateUserFavorites(sneaker);
-                          ufc.getCurrentUserById();
-                          ufc.getFavoriteSneakers();
-                        })),
+                          await Get.to(() => UserCreateScreen(
+                                sneaker: sneaker,
+                              ));
+                          await controller.getAllSneakers();
+                        })
+                : IconButton(
+                    splashColor: transparent,
+                    icon: Icon(Icons.favorite,
+                        color: controller.currentUser.favorite
+                                .any((element) => element == sneaker.id.trim())
+                            ? redThings
+                            : whiteThings),
+                    onPressed: () async {
+                      controller.updateUserFavorites(sneaker);
+                      ufc.getCurrentUserById();
+                      ufc.getFavoriteSneakers();
+                    })),
         Row(mainAxisAlignment: MainAxisAlignment.end, children: [
           Padding(
               padding: EdgeInsets.only(top: 15, right: 5),
@@ -257,10 +233,10 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                 child: Center(
                   child: Text(
                       sneaker.price == null ||
-                          sneaker.price == AppStrings.NullString ||
-                          sneaker.price == AppStrings.EmptyString
+                              sneaker.price == AppStrings.NullString ||
+                              sneaker.price == AppStrings.EmptyString
                           ? AppStrings.NoInfo
-                          : sneaker.price,
+                          : sneaker.price + '\$',
                       textAlign: TextAlign.center,
                       style: buildThemeData().textTheme.subtitle2),
                 ),

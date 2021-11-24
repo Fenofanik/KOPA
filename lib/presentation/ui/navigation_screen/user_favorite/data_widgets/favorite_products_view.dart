@@ -232,7 +232,7 @@ Widget favoriteProductsView(
                               sneaker.price == AppStrings.NullString ||
                               sneaker.price == AppStrings.EmptyString
                           ? AppStrings.NoInfo
-                          : sneaker.price,
+                          : sneaker.price + '\$',
                       textAlign: TextAlign.center,
                       style: buildThemeData().textTheme.subtitle2),
                 ),

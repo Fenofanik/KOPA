@@ -42,14 +42,14 @@
       <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/profile_screen/data_widgets/user_profile_image_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/profile_screen/data_widgets/user_profile_image_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/services/sneakers_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/services/sneakers_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/detail_screen_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/detail_screen_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/view/detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/view/detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/data_widgets/products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/data_widgets/products_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/user_create_screen_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/user_create_screen_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/data_widgets/favorite_products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/data_widgets/favorite_products_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_products/data_widgets/user_products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_products/data_widgets/user_products_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637679022374</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="updated">
+      <created>1637680534791</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637680534791</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,7 +227,8 @@
     <MESSAGE value="Refactor" />
     <MESSAGE value="refactor all project" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

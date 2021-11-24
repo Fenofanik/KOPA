@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kopamain/core/constant/colors.dart';
 import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
@@ -52,6 +53,22 @@ class DetailScreenController extends GetxController{
     }
   }
 
+  Future <void> addProductToArchive(SneakerModel sneaker)async{
+    sneaker.sold = true;
+    try{
+      loading = true;
+      await SneakersService().moveProductToArchive(sneaker).then((value) async{
+        detailSneaker = value;
+        await upc.getUsersArchive();
+        await upc.getUsersProducts();
+        await mcs.getAllSneakers();
+      });
+      Get.snackbar('Product', 'moved to archive',snackPosition: SnackPosition.BOTTOM);
+    }catch(e){
+      Get.snackbar('Error move product to archive ', '$e',backgroundColor: redThings);
+    }
+  }
+
   Future<void> deleteUserProduct(SneakerModel sneaker) async {
     loading = true;
     if (sneaker != null) {
@@ -60,6 +77,7 @@ class DetailScreenController extends GetxController{
           mcs.sneakers.remove(sneaker);
           await mcs.getAllSneakers();
           await upc.getUsersProducts();
+          await upc.getUsersArchive();
           loading = false;
           Get.back();
           Get.snackbar('Product', 'Deleted',snackPosition: SnackPosition.BOTTOM);
@@ -71,6 +89,7 @@ class DetailScreenController extends GetxController{
       print('ERROR DELETE SNEAKER');
     }
   }
+
 
   @override
   void onInit() async{

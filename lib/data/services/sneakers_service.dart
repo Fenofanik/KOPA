@@ -57,6 +57,56 @@ class SneakersService {
     return sneaker;
   }
 
+  Future<SneakerModel> createProduct (SneakerModel sneaker)async{
+
+    return sneaker;
+  }
+
+  Future<SneakerModel> updateProduct(SneakerModel sneaker) async {
+    final data = {
+      "author": sneaker?.author,
+      "sold": sneaker?.sold,
+      "image": sneaker?.image,
+      "size": sneaker?.size,
+      "length": sneaker?.length,
+      "width": sneaker?.width,
+      "brand": sneaker?.brand,
+      "material": sneaker?.material,
+      "userAddAbout": sneaker?.userAddAbout,
+      "price": sneaker?.price,
+    };
+    try{
+      await FirebaseServices().productRef.doc(sneaker.id).update(data);
+    }
+    catch(e){
+      print(e);
+    }
+    return sneaker;
+  }
+
+  Future<SneakerModel> moveProductToArchive(SneakerModel sneaker) async {
+    final data = {
+      "author": sneaker?.author,
+      "sold": sneaker?.sold,
+      "image": sneaker?.image,
+      "size": sneaker?.size,
+      "length": sneaker?.length,
+      "width": sneaker?.width,
+      "brand": sneaker?.brand,
+      "material": sneaker?.material,
+      "userAddAbout": sneaker?.userAddAbout,
+      "price": sneaker?.price,
+    };
+    try{
+      await FirebaseServices().productRef.doc(sneaker.id).update(data);
+    }
+    catch(e){
+      print(e);
+    }
+    return sneaker;
+  }
+
+
   Future <void> deleteProduct(SneakerModel deleteSneaker)async{
      await FirebaseServices().productRef.doc(deleteSneaker.id).delete();
   }

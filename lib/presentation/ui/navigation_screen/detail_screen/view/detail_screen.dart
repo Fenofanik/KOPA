@@ -67,7 +67,12 @@ class DetailScreen extends StatelessWidget {
                                     width: Get.width / 4.5,
                                     margin: const EdgeInsets.only(
                                         top: 10, left: 10),
-                                    child: Text(sneakerModel.price,
+                                    child: Text(
+                                        sneakerModel.price == null||
+                                        sneakerModel.price == AppStrings.NullString||
+                                            sneakerModel.price == AppStrings.EmptyString?
+                                            AppStrings.NoInfo:
+                                        sneakerModel.price + '\$',
                                             textAlign: TextAlign.center,
                                             style: buildThemeData()
                                                 .textTheme
@@ -78,14 +83,26 @@ class DetailScreen extends StatelessWidget {
                                     alignment: Alignment.topRight,
                                     margin: const EdgeInsets.only(
                                         top: 10, right: 10),
-                                    child: controller.detailSneaker.author ==
+                                    child:
+                                    controller.detailSneaker.author ==
                                             controller.currentUser.id
-                                        ? Row(
+                                        ?
+                                    controller.detailSneaker.sold == true?
+                                    IconButton(
+                                        icon: const Icon(
+                                            Icons.delete_outline,
+                                            color: whiteThings),
+                                        onPressed: () async {
+                                          await controller
+                                              .deleteUserProduct(
+                                              controller
+                                                  .detailSneaker);
+                                        }):
+                                    Row(
                                             children: [
                                               IconButton(
                                                   icon: const Icon(
                                                       Icons.create_outlined,
-                                                      // size: 42,
                                                       color: whiteThings),
                                                   onPressed: () async {
                                                     var res = await Get.to(() =>
@@ -96,6 +113,10 @@ class DetailScreen extends StatelessWidget {
                                                         res;
                                                     controller.update();
                                                   }),
+                                              IconButton(onPressed: ()async{
+                                                controller.addProductToArchive(controller.detailSneaker);
+                                              },
+                                                  icon: Icon(Icons.archive_outlined,color: whiteThings,)),
                                               IconButton(
                                                   icon: const Icon(
                                                       Icons.delete_outline,
@@ -105,23 +126,15 @@ class DetailScreen extends StatelessWidget {
                                                         .deleteUserProduct(
                                                             controller
                                                                 .detailSneaker);
-                                                  }),
+                                                  })
                                             ],
-                                          )
-                                        : IconButton(
+                                          ):
+                                         IconButton(
                                             icon: Icon(Icons.favorite,
                                                 size: 42,
-                                                color: controller.currentUser
-                                                            .favorite !=
-                                                        null
-                                                    ? controller.currentUser
-                                                            .favorite
-                                                            .any((element) =>
-                                                                element ==
-                                                                controller
-                                                                    .detailSneaker
-                                                                    .id
-                                                                    .trim())
+                                                color: controller.currentUser.favorite != null
+                                                    ? controller.currentUser.favorite.any((element) =>
+                                                                element == controller.detailSneaker.id.trim())
                                                         ? redThings
                                                         : whiteThings
                                                     : whiteThings),

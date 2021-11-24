@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:kopamain/core/constant/colors.dart';
 import 'package:kopamain/core/constant/constant.dart';
 import 'package:kopamain/data/services/firebase_service.dart';
+import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
 import 'package:kopamain/domain/models/user_model.dart';
@@ -136,27 +137,32 @@ class UserCreateScreenController extends GetxController {
     updateSneaker.price = priceUpdate.text;
     updateSneaker.image = imgUrls.where((x) => x != "").toList();
     try {
-      final data = {
-        "author": currentUser?.id,
-        "sold": updateSneaker?.sold,
-        "image": updateSneaker?.image,
-        "size": updateSneaker?.size,
-        "length": updateSneaker?.length,
-        "width": updateSneaker?.width,
-        "brand": updateSneaker?.brand,
-        "material": updateSneaker?.material,
-        "userAddAbout": updateSneaker?.userAddAbout,
-        "price": "${updateSneaker?.price}\$",
-      };
-      await FirebaseServices()
-          .productRef
-          .doc(updateSneaker?.id)
-          .update(data)
-          .then((value) async {
+      // final data = {
+      //   "author": currentUser?.id,
+      //   "sold": updateSneaker?.sold,
+      //   "image": updateSneaker?.image,
+      //   "size": updateSneaker?.size,
+      //   "length": updateSneaker?.length,
+      //   "width": updateSneaker?.width,
+      //   "brand": updateSneaker?.brand,
+      //   "material": updateSneaker?.material,
+      //   "userAddAbout": updateSneaker?.userAddAbout,
+      //   "price": "${updateSneaker?.price}\$",
+      // };
+      await SneakersService().updateProduct(updateSneaker).then((value) async {
         Get.back(result: updateSneaker);
         await upc.getUsersProducts();
         Get.snackbar('Product', 'Updated', snackPosition: SnackPosition.BOTTOM);
       });
+      // await FirebaseServices()
+      //     .productRef
+      //     .doc(updateSneaker?.id)
+      //     .update(data)
+      //     .then((value) async {
+      //   Get.back(result: updateSneaker);
+      //   await upc.getUsersProducts();
+      //   Get.snackbar('Product', 'Updated', snackPosition: SnackPosition.BOTTOM);
+      // });
     } catch (e) {
       Get.snackbar('Error to update product', e.toString());
     }
@@ -184,7 +190,7 @@ class UserCreateScreenController extends GetxController {
       "brand": createSneaker.brand,
       "material": createSneaker.material,
       "userAddAbout": createSneaker.userAddAbout,
-      "price": "${createSneaker.price}\$",
+      "price": createSneaker.price,
     };
     currentSneaker = createSneaker;
 
