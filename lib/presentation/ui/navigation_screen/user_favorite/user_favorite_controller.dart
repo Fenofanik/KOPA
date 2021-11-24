@@ -1,13 +1,12 @@
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
 import 'package:kopamain/domain/models/user_model.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 
-class UserFavoriteController extends GetxController{
-
+class UserFavoriteController extends GetxController {
   bool _loading = true;
 
   bool get loading => _loading;
@@ -19,16 +18,19 @@ class UserFavoriteController extends GetxController{
 
   final favorite = GlobalKey<RefreshIndicatorState>();
 
-
   UserModel currentUser = UserModel();
 
   Future<void> getCurrentUserById() async {
-    await UserService().getUserById().then((value) {
-      loading = false;
-      currentUser = value;
-      print("${currentUser.toString()}");
-      update();
-    });
+    try {
+      await UserService().getUserById().then((value) {
+        loading = false;
+        currentUser = value;
+        print("${currentUser.toString()}");
+        update();
+      });
+    } catch (e) {
+      errorSnack('Error get current user', '$e');
+    }
   }
 
   SneakerModel currentSneaker = SneakerModel();
@@ -42,49 +44,54 @@ class UserFavoriteController extends GetxController{
     update();
   }
 
-  Future <void> getFavoriteSneakers()async{
+  Future<void> getFavoriteSneakers() async {
     sneakers.clear();
-    try{
+    try {
       loading = true;
       await SneakersService().getFavorites().then((e) {
-        sneakers.addAll(e.toList());
+        if (e == null) {
+          sneakers.clear();
+        } else {
+          sneakers.addAll(e.toList());
+        }
       });
-    }catch(e) {
+    } catch (e) {
+      // errorSnack('Test','$e');
       print(e.toString());
     }
-      loading = false;
-      update();
+    loading = false;
+    update();
   }
 
-  Future <void> updateUserFavorites (SneakerModel sneaker)async{
+  Future<void> updateUserFavorites(SneakerModel sneaker) async {
     try {
-      if(currentUser.favorite.any((element) => element == sneaker.id.trim())){
+      if (currentUser.favorite.any((element) => element == sneaker.id.trim())) {
         currentUser.favorite.remove(sneaker.id.trim());
-        await UserService().updateUserFavorite(currentUser).then((value) => currentUser = value);
+        await UserService()
+            .updateUserFavorite(currentUser)
+            .then((value) => currentUser = value);
         sneakers.remove(sneaker);
         print("TEST USER REMOVE FAVORITE ${currentUser.favorite.toList()}");
         update();
-      }
-      else{
+      } else {
         currentUser.favorite.add(sneaker.id.trim());
-        await UserService().updateUserFavorite(currentUser).then((value) => currentUser = value);
+        await UserService()
+            .updateUserFavorite(currentUser)
+            .then((value) => currentUser = value);
         sneakers.add(sneaker);
         print("TEST USER ADD FAVORITE ${currentUser.favorite.toList()}");
         update();
       }
-    }
-    catch(e){
-      Get.snackbar('Error to update', '$e');
+    } catch (e) {
+      errorSnack('Error to update favorites', '$e');
     }
   }
 
   @override
-  void onInit() async{
+  void onInit() async {
     loading = true;
     await getCurrentUserById();
     await getFavoriteSneakers();
     super.onInit();
   }
-
 }
-

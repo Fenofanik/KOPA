@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
@@ -6,11 +5,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 import 'package:kopamain/presentation/routes/app_pages.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
 
 class ProfileController extends GetxController {
-
   bool _loading = true;
 
   bool get loading => _loading;
@@ -19,7 +18,6 @@ class ProfileController extends GetxController {
     _loading = loading;
     update();
   }
-
 
   FirebaseAuth _auth;
 
@@ -34,16 +32,17 @@ class ProfileController extends GetxController {
       await UserService().getUserById().then((value) {
         if (value != null) {
           print(value.toString());
-          currentUser= value;
+          currentUser = value;
           loading = false;
         } else {
           print(value.toString());
-          Get.snackbar('Error get user', '${value.toString()}');
+          errorSnack('Error get user', '${value.toString()}');
         }
       });
       update();
     } catch (e) {
       print("ERROR GET USER: ${e.toString()}");
+      errorSnack("ERROR GET USER", " ${e.toString()}");
     }
   }
 
@@ -59,8 +58,7 @@ class ProfileController extends GetxController {
       var file = File(_imageFile.path);
 
       if (_imageFile != null) {
-        var snapshot = await _storage
-            .ref()
+        var snapshot = await _storage.ref()
             .child('folderName/usersImage${DateTime.now().millisecondsSinceEpoch}')
             .putFile(file);
 
@@ -68,27 +66,26 @@ class ProfileController extends GetxController {
 
         imageUrl = downloadUrl;
         currentUser.image = downloadUrl;
-        try{
-          await UserService().updateUserImage(currentUser)
-              .then((value) {
-                if(value!=null){
-                  currentUser = value;
-                }
+        try {
+          await UserService().updateUserImage(currentUser).then((value) {
+            if (value != null) {
+              currentUser = value;
+            }
           });
           update();
-        }catch(e){
+        } catch (e) {
           print(e.toString());
         }
         update();
       } else {
-        Get.snackbar('Error to upload file', 'No path received');
+        errorSnack('Error to upload file', 'No path received');
       }
     } else {
       print('${permissionStatus.toString()}');
     }
   }
 
-  signOut() async{
+  signOut() async {
     Get.offAllNamed(Routes.LogIn);
     _auth.signOut();
   }

@@ -48,5 +48,7 @@ class AppStrings {
   static const String SimpleEmail = "Email";
   static const String Cancel = "Cancel";
   static const String Update = "Update";
+  static const String UpdateProduct = 'Update product';
+  static const String CreateProduct = 'Create product';
 }
 

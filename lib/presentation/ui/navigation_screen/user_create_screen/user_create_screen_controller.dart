@@ -9,6 +9,7 @@ import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/user_products/user_products_controller.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
 
@@ -110,10 +111,11 @@ class UserCreateScreenController extends GetxController {
         stamp++;
         update();
       } else {
-        print('No path received');
+        errorSnack('No path','received');
       }
     } else {
       print('ERROR upload image');
+      errorSnack('Error','to upload image');
     }
   }
 
@@ -139,12 +141,11 @@ class UserCreateScreenController extends GetxController {
     try {
       await SneakersService().updateProduct(updateSneaker).then((value) async {
         Get.back(result: value);
-        Get.snackbar('Product', 'Updated', snackPosition: SnackPosition.TOP);
+        messageSnack('Product', 'Updated');
       });
       await upc.getUsersProducts();
     } catch (e) {
-      Get.snackbar('Error to update product', e.toString(),
-          backgroundColor: redThings, snackPosition: SnackPosition.BOTTOM);
+      errorSnack('Error to update product', e.toString());
     }
   }
 
@@ -164,14 +165,14 @@ class UserCreateScreenController extends GetxController {
 
     try {
       await SneakersService().createProduct(createSneaker).then((value) async {
-        loading = false;
         await upc.getUsersProducts();
+        loading = false;
         Get.back();
-        Get.snackbar('Product', 'created!', snackPosition: SnackPosition.TOP);
+        messageSnack('Product','created');
       });
+
     } catch (e) {
-      Get.snackbar('Error create product', '$e',
-          backgroundColor: redThings, snackPosition: SnackPosition.BOTTOM);
+      errorSnack('Error create product', '$e');
     }
   }
 

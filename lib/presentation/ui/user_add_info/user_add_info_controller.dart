@@ -52,6 +52,7 @@ class UserAddInfoController extends GetxController {
   }
 
   Future<void> updateUserInfo() async {
+    loading = true;
     currentUser.firstName = nameController.text;
     currentUser.secondName = surNameController.text;
     currentUser.city = cityController.text;
@@ -61,7 +62,6 @@ class UserAddInfoController extends GetxController {
           currentUser = value;
           update();
           Get.offAndToNamed(Routes.NavigationScreen);
-          //toNamed(Routes.NavigationScreen)
           loading = false;
         }
       });

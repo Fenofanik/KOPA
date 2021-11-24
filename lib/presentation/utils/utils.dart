@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:kopamain/core/constant/colors.dart';
-
-
+import 'package:get/get.dart';
 
 Widget getProgress({bool wrap = false, bool background = false}) {
   return Center(
@@ -14,11 +13,10 @@ Widget getProgress({bool wrap = false, bool background = false}) {
 
 Widget getLinearProgress({bool wrap = false, bool background = false}) {
   return Center(
-    child: LinearProgressIndicator(
-      valueColor: const AlwaysStoppedAnimation<Color>(boxPriceColor),
-      minHeight: 3,
-    )
-  );
+      child: LinearProgressIndicator(
+    valueColor: const AlwaysStoppedAnimation<Color>(boxPriceColor),
+    minHeight: 3,
+  ));
 }
 
 Widget buildDivider() {
@@ -29,20 +27,20 @@ Widget buildDivider() {
   );
 }
 
-Widget buildCircleIcon (){
-  return  const Icon(
-     Icons.circle,
+Widget buildCircleIcon() {
+  return const Icon(
+    Icons.circle,
     size: 9,
     color: forButtons,
   );
 }
 
-Widget buildBackIosButton (){
+Widget buildBackIosButton() {
   return const Icon(Icons.arrow_back_ios);
 }
 
 void showWebColoredToast(String msg,
-    {String bgrColor = "#E60023", Color textColor = whiteThings}) {
+    {String bgrColor, Color textColor = whiteThings}) {
   Fluttertoast.showToast(
     msg: msg,
     toastLength: Toast.LENGTH_LONG,
@@ -55,9 +53,16 @@ void showWebColoredToast(String msg,
   );
 }
 
+void messageSnack(String title, String message) {
+  Get.snackbar(title, message,
+      backgroundColor: forButtons,
+      colorText: whiteThings,
+      snackPosition: SnackPosition.TOP);
+}
 
-
-
-
-
-
+void errorSnack(String title, String message){
+  Get.snackbar(title, message,
+      backgroundColor: redThings,
+      colorText: blackThings,
+  snackPosition: SnackPosition.BOTTOM);
+}

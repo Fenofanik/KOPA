@@ -21,14 +21,20 @@ class UserCreateScreen extends StatelessWidget {
     return GetBuilder<UserCreateScreenController>(
       builder: (controller) {
         controller.updateSneaker = sneaker;
-        controller.theSizeUpdate = TextEditingController(text:  controller.updateSneaker?.size);
-        controller.sizeLengthUpdate = TextEditingController(text:  controller.updateSneaker?.length);
-        controller.sizeWidthUpdate = TextEditingController(text:  controller.updateSneaker?.width);
-        controller.modelUpdate = TextEditingController(text:  controller.updateSneaker?.brand);
-        controller.materialUpdate = TextEditingController(text:  controller.updateSneaker?.material);
-        controller.aboutSneakerUpdate = TextEditingController(text:  controller.updateSneaker?.userAddAbout);
-        controller.priceUpdate = TextEditingController(text:  controller.updateSneaker?.price);
-        // controller.init(sneaker);
+        controller.theSizeUpdate =
+            TextEditingController(text: controller.updateSneaker?.size);
+        controller.sizeLengthUpdate =
+            TextEditingController(text: controller.updateSneaker?.length);
+        controller.sizeWidthUpdate =
+            TextEditingController(text: controller.updateSneaker?.width);
+        controller.modelUpdate =
+            TextEditingController(text: controller.updateSneaker?.brand);
+        controller.materialUpdate =
+            TextEditingController(text: controller.updateSneaker?.material);
+        controller.aboutSneakerUpdate =
+            TextEditingController(text: controller.updateSneaker?.userAddAbout);
+        controller.priceUpdate =
+            TextEditingController(text: controller.updateSneaker?.price);
         return Scaffold(
           backgroundColor: background,
           body: SafeArea(
@@ -61,15 +67,12 @@ class UserCreateScreen extends StatelessWidget {
                   : TextButton(
                       onPressed: () async {
                         await controller.addToCollection();
-                        if (controller.currentSneaker != null) {
-                          Get.back();
-                        }
                       },
                       child: Text(AppStrings.Save))
             ],
             title: sneaker != null
-                ? Text('Update Product')
-                : Text('User Create Product'),
+                ? Text(AppStrings.UpdateProduct)
+                : Text(AppStrings.CreateProduct),
           ),
         );
       },

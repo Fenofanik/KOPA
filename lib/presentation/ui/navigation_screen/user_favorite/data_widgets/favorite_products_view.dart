@@ -19,7 +19,7 @@ Widget favoriteProductsView(
     MainScreenController msc) {
   return InkWell(
       borderRadius: listSneakerBorder3,
-      splashColor: boxPriceColor,
+      splashColor: forButtons,
       onTap: () {
         controller.currentSneaker = sneaker;
         nc.isMainScreen = false;
@@ -208,6 +208,7 @@ Widget favoriteProductsView(
                   )
                 : IconButton(
                 splashColor: transparent,
+                splashRadius: 8,
                     icon: Icon(Icons.favorite,
                         color: controller.currentUser.favorite
                                 .any((element) => element == sneaker.id.trim())

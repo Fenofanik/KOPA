@@ -102,14 +102,7 @@ class UserAddInfoScreen extends StatelessWidget {
                                 style: buildThemeData().textTheme.headline4,
                               ),
                               onPressed: () async {
-
                                 await controller.updateUserInfo();
-                                controller.loading = true;
-                                // if (controller.infoFormKey.currentState
-                                //     .validate()) {
-                                //   controller.loading = true;
-                                //   await controller.updateUserInfo();
-                                // }
                               }),
                         )
                       ])),

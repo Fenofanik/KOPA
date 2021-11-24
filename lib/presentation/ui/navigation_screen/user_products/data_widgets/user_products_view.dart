@@ -17,14 +17,16 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
     NavigationController nc, MainScreenController msc) {
   return InkWell(
       borderRadius: listSneakerBorder3,
-      splashColor: boxPriceColor,
-      onTap: () {
+      splashColor: forButtons,
+      onTap: () async{
         msc.currentSneaker = sneaker;
         nc.isMainScreen = false;
         nc.isFavoriteScreen = false;
         nc.isUserProductScreen = false;
         nc.isProfileScreen = false;
-        Get.to(() => DetailScreen(sneakerModel: sneaker));
+        await Get.to(() => DetailScreen(sneakerModel: sneaker));
+        await controller.getUsersProducts();
+        await controller.getUsersArchive();
       },
       child: Stack(children: <Widget>[
         Container(

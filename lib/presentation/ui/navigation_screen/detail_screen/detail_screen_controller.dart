@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
-import 'package:kopamain/core/constant/colors.dart';
 import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/user_products/user_products_controller.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 
-class DetailScreenController extends GetxController{
+class DetailScreenController extends GetxController {
   MainScreenController mcs = Get.find();
   UserProductsController upc = Get.find();
 
@@ -33,39 +33,41 @@ class DetailScreenController extends GetxController{
     });
   }
 
-  Future <void> updateUserFavorites (SneakerModel sneaker)async{
+  Future<void> updateUserFavorites(SneakerModel sneaker) async {
     try {
-      if(currentUser.favorite.any((element) => element == sneaker.id.trim())){
+      if (currentUser.favorite.any((element) => element == sneaker.id.trim())) {
         currentUser.favorite.remove(sneaker.id.trim());
-        await UserService().updateUserFavorite(currentUser).then((value) => currentUser = value);
+        await UserService()
+            .updateUserFavorite(currentUser)
+            .then((value) => currentUser = value);
         print("TEST USER REMOVE FAVORITE ${currentUser.favorite.toList()}");
         update();
-      }
-      else{
+      } else {
         currentUser.favorite.add(sneaker.id.trim());
-        await UserService().updateUserFavorite(currentUser).then((value) => currentUser = value);
+        await UserService()
+            .updateUserFavorite(currentUser)
+            .then((value) => currentUser = value);
         print("TEST USER ADD FAVORITE ${currentUser.favorite.toList()}");
         update();
       }
-    }
-    catch(e){
-
+    } catch (e) {
+      errorSnack('Error add to favorite', '$e');
     }
   }
 
-  Future <void> addProductToArchive(SneakerModel sneaker)async{
+  Future<void> addProductToArchive(SneakerModel sneaker) async {
     sneaker.sold = true;
-    try{
+    try {
       loading = true;
-      await SneakersService().moveProductToArchive(sneaker).then((value) async{
+      await SneakersService().moveProductToArchive(sneaker).then((value) async {
         detailSneaker = value;
         await upc.getUsersArchive();
         await upc.getUsersProducts();
         await mcs.getAllSneakers();
       });
-      Get.snackbar('Product', 'moved to archive',snackPosition: SnackPosition.BOTTOM);
-    }catch(e){
-      Get.snackbar('Error move product to archive ', '$e',backgroundColor: redThings);
+      messageSnack('Product', 'moved to archive');
+    } catch (e) {
+      errorSnack('Error move product to archive ', '$e');
     }
   }
 
@@ -73,16 +75,17 @@ class DetailScreenController extends GetxController{
     loading = true;
     if (sneaker != null) {
       try {
-        await SneakersService().deleteProduct(sneaker).then((value) async{
+        await SneakersService().deleteProduct(sneaker).then((value) async {
           mcs.sneakers.remove(sneaker);
           await mcs.getAllSneakers();
           await upc.getUsersProducts();
           await upc.getUsersArchive();
           loading = false;
           Get.back();
-          Get.snackbar('Product', 'Deleted',snackPosition: SnackPosition.BOTTOM);
+          messageSnack('Product', 'Deleted');
         });
       } catch (e) {
+        errorSnack('Error to delete product', e.toString());
         print(e);
       }
     } else {
@@ -90,15 +93,12 @@ class DetailScreenController extends GetxController{
     }
   }
 
-
   @override
-  void onInit() async{
+  void onInit() async {
     loading = true;
     await getCurrentUserById();
     detailSneaker = mcs.currentSneaker;
 
     super.onInit();
   }
-
-
 }

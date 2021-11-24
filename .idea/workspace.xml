@@ -49,9 +49,19 @@
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/services/sneakers_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/services/sneakers_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constant/constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constant/constant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/detail_screen_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/detail_screen_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/data_widgets/products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/data_widgets/products_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/profile_screen/profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/profile_screen/profile_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/user_create_screen_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/user_create_screen_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/view/user_create_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/view/user_create_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/data_widgets/favorite_products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/data_widgets/favorite_products_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/user_favorite_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/user_favorite_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_products/user_products_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_products/user_products_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/user_add_info/user_add_info_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/user_add_info/user_add_info_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/user_add_info/view/user_add_info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/user_add_info/view/user_add_info_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/utils/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/utils/utils.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637746517355</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix">
+      <created>1637749969993</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637749969993</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,7 +255,8 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="updated" />
     <MESSAGE value="fix update and add move to archive product" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix update and add move to archive product" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

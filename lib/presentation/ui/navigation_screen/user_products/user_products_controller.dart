@@ -4,6 +4,7 @@ import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
 import 'package:kopamain/domain/models/user_model.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 
 class UserProductsController extends GetxController
     with SingleGetTickerProviderMixin {
@@ -48,10 +49,14 @@ class UserProductsController extends GetxController
   UserModel currentUser = UserModel();
 
   Future<void> getCurrentUserById() async {
-    await UserService().getUserById().then((value) {
-      currentUser = value;
-      update();
-    });
+    try {
+      await UserService().getUserById().then((value) {
+        currentUser = value;
+        update();
+      });
+    } catch (e) {
+      errorSnack('Error get current user', '$e');
+    }
   }
 
   final userProducts = GlobalKey<RefreshIndicatorState>();
@@ -67,10 +72,12 @@ class UserProductsController extends GetxController
           loading = false;
           update();
         } else {
+          sneakers = [];
           print(e.toList().toString());
         }
       });
     } catch (e) {
+      errorSnack('Error get user products ', '$e');
       print(e.toString());
     }
   }
@@ -85,10 +92,12 @@ class UserProductsController extends GetxController
           loadingArchive = false;
           update();
         } else {
+          sneakersArchive = [];
           print(e.toList().toString());
         }
       });
     } catch (e) {
+      errorSnack('Error get user archive', '$e');
       print(e.toString());
     }
   }

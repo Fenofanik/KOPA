@@ -4,13 +4,9 @@ import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
 import 'package:flutter/material.dart';
 import 'package:kopamain/domain/models/user_model.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 
 class MainScreenController extends GetxController {
-  // bool isMainScreen = true;
-  // bool isFavoriteScreen = false;
-  // bool isUserProductScreen = false;
-  // bool isProfileScreen = false;
-
   String searchQuery = '';
 
   final refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
@@ -49,22 +45,30 @@ class MainScreenController extends GetxController {
     loading = true;
     try {
       await SneakersService().getSneakerList().then((e) {
-        sneakers.addAll(e.toList());
-        loading = false;
+        if (e != null) {
+          sneakers.addAll(e.toList());
+          loading = false;
+        } else {
+          sneakers = [];
+          loading = false;
+        }
         update();
       });
     } catch (e) {
-      loading = true;
-      Get.snackbar("Error", '$e');
+      errorSnack("Error", '$e');
     }
   }
 
   Future<void> getCurrentUserById() async {
-    await UserService().getUserById().then((value) {
-      currentUser = value;
-      print("${currentUser.favorite.toList()}");
-      update();
-    });
+    try {
+      await UserService().getUserById().then((value) {
+        currentUser = value;
+        print("${currentUser.favorite.toList()}");
+        update();
+      });
+    } catch (e) {
+      errorSnack('Error to get current user', '$e');
+    }
   }
 
   Future<void> updateUserFavorites(SneakerModel sneaker) async {
@@ -84,7 +88,9 @@ class MainScreenController extends GetxController {
         print("TEST USER ADD FAVORITE ${currentUser.favorite.toList()}");
         update();
       }
-    } catch (e) {}
+    } catch (e) {
+      errorSnack('Error add to favorite', '$e');
+    }
   }
 
   Future<void> deleteUserProduct(SneakerModel sneaker) async {
@@ -93,14 +99,15 @@ class MainScreenController extends GetxController {
       try {
         await SneakersService().deleteProduct(sneaker).then((value) {
           sneakers.remove(sneaker);
-          Get.snackbar('Product', 'Deleted');
+          messageSnack('Product', 'Deleted');
           loading = false;
         });
       } catch (e) {
         print(e);
+        errorSnack('Error delete product', '$e');
       }
     } else {
-      print('ERROR DELETE SNEAKER');
+      print('ERROR DELETE SNEAKER' + '${sneaker.toJson()}');
     }
   }
 
