@@ -5,13 +5,14 @@ import 'package:kopamain/core/constant/constant.dart';
 import 'package:get/get.dart';
 import 'package:kopamain/core/constant/theme_data.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/detail_screen/data_widgets/delete_alert_dialog.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/detail_screen/data_widgets/detail_image_swipe_view.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/detail_screen/data_widgets/move_to_archive_alert_dialog.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/navigation_screen_controller.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/user_create_screen/view/user_create_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/user_favorite/user_favorite_controller.dart';
 import 'package:kopamain/presentation/utils/app_bar.dart';
-import 'package:kopamain/presentation/utils/utils.dart';
 import '../detail_screen_controller.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -95,10 +96,6 @@ class DetailScreen extends StatelessWidget {
                                             color: whiteThings),
                                         onPressed: () async {
                                           getAlertDeleteDialog(controller);
-                                          // await controller
-                                          //     .deleteUserProduct(
-                                          //     controller
-                                          //         .detailSneaker);
                                         }):
                                     Row(
                                             children: [
@@ -125,10 +122,6 @@ class DetailScreen extends StatelessWidget {
                                                       color: whiteThings),
                                                   onPressed: () async {
                                                     getAlertDeleteDialog(controller);
-                                                    // await controller
-                                                    //     .deleteUserProduct(
-                                                    //         controller
-                                                    //             .detailSneaker);
                                                   })
                                             ],
                                           ):
