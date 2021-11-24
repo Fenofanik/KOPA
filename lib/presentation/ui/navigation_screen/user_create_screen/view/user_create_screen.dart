@@ -58,7 +58,7 @@ class UserCreateScreen extends StatelessWidget {
               controller.updateSneaker != null
                   ? TextButton(
                       onPressed: () async {
-                        await controller.updateProduct();
+                        updateProductDialog(controller);
                       },
                       child: Text(
                         AppStrings.Update,

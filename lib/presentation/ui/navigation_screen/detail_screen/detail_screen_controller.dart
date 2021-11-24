@@ -64,6 +64,7 @@ class DetailScreenController extends GetxController {
         await upc.getUsersArchive();
         await upc.getUsersProducts();
         await mcs.getAllSneakers();
+        Get.back();
       });
       messageSnack('Product', 'moved to archive');
     } catch (e) {
@@ -81,6 +82,7 @@ class DetailScreenController extends GetxController {
           await upc.getUsersProducts();
           await upc.getUsersArchive();
           loading = false;
+          Get.back();
           Get.back();
           messageSnack('Product', 'Deleted');
         });

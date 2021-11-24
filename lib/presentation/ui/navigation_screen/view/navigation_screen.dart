@@ -12,7 +12,8 @@ import 'package:kopamain/presentation/utils/floating_action_button.dart';
 import '../navigation_screen_controller.dart';
 
 class NavigationScreen extends StatelessWidget {
-  final NavigationController navigationController = Get.put(NavigationController());
+  final NavigationController navigationController =
+      Get.put(NavigationController());
 
   @override
   Widget build(BuildContext context) {
@@ -30,38 +31,33 @@ class NavigationScreen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          // showSelectedLabels: true,
-          // showUnselectedLabels: false,
-          // selectedLabelStyle: buildThemeData().textTheme.headline1,
           backgroundColor: bottomBarBack,
           type: BottomNavigationBarType.fixed,
           currentIndex: controller.selectedIndex,
           items: [
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(menu, color: bottomBarNotFocus),
-              label: "Menu",
-              activeIcon: SvgPicture.asset(menu, color: forButtons),
-            ),
+                icon: SvgPicture.asset(menu, color: bottomBarNotFocus)
+                    .paddingOnly(top: 4),
+                activeIcon: SvgPicture.asset(menu, color: forButtons)
+                    .paddingOnly(top: 4),
+                label: "Menu"),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset(sneaker,
-                color: bottomBarNotFocus),
+                icon: SvgPicture.asset(sneaker, color: bottomBarNotFocus),
                 activeIcon: SvgPicture.asset(sneaker, color: forButtons),
-                label: "User products"
-            ),
+                label: "User products"),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.favorite, color: bottomBarNotFocus),
-              activeIcon: const Icon(Icons.favorite, color: forButtons),
-              label: "Favorite"
-            ),
+                icon: const Icon(Icons.favorite, color: bottomBarNotFocus),
+                activeIcon: const Icon(Icons.favorite, color: forButtons),
+                label: "Favorites"),
             BottomNavigationBarItem(
-                icon: const Icon(Icons.account_circle,color: bottomBarNotFocus),
+                icon:
+                    const Icon(Icons.account_circle, color: bottomBarNotFocus),
                 activeIcon: const Icon(Icons.account_circle, color: forButtons),
-                label: "Profile"
-            )
+                label: "Profile")
           ],
           onTap: controller.onTapHandler,
         ),
-        appBar: getAppBar(context,controller),
+        appBar: getAppBar(context, controller),
         floatingActionButton: getButton(context),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       );

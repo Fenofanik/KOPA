@@ -39,28 +39,42 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/release/arm64-v8a/app.so" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/release/arm64-v8a/app.so" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/metadata_library_dependencies_report/release/dependencies.pb" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/metadata_library_dependencies_report/release/dependencies.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/release/app-release.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/mapping/release/seeds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/mapping/release/seeds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/sdk-dependencies/release/sdkDependencies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/sdk-dependencies/release/sdkDependencies.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/core/constant/constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constant/constant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constant/container_borders.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constant/container_borders.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/services/user_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/services/user_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/logIn/logIn_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/logIn/logIn_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/detail_screen_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/detail_screen_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/view/detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/detail_screen/view/detail_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/data_widgets/products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/data_widgets/products_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/main_screen/main_screen_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/profile_screen/profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/profile_screen/profile_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/user_create_screen_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/user_create_screen_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/view/user_create_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_create_screen/view/user_create_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/data_widgets/favorite_products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/data_widgets/favorite_products_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/user_favorite_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_favorite/user_favorite_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_products/data_widgets/user_products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_products/data_widgets/user_products_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_products/user_products_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/user_products/user_products_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/view/navigation_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/navigation_screen/view/navigation_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/user_add_info/user_add_info_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/user_add_info/user_add_info_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/ui/user_add_info/view/user_add_info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/user_add_info/view/user_add_info_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/verification/data_widgets/mobile_form_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/verification/data_widgets/mobile_form_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/verification/data_widgets/otp_form_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/verification/data_widgets/otp_form_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/ui/verification/verification_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/ui/verification/verification_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/utils/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/utils/utils.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +136,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../salesboxdesktop/salesboxwebadmin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../uro_genie_web" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -234,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637749969993</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix">
+      <created>1637755243632</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1637755243632</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

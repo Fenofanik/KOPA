@@ -11,8 +11,8 @@ class UserService {
       return user;
     } catch (e) {
       print(e);
-      return UserModel();
     }
+    return UserModel();
   }
 
   Future<UserModel> updateUserFavorite(UserModel user) async {
@@ -24,8 +24,8 @@ class UserService {
       return user;
     } catch (e) {
       print(e);
-      return UserModel();
     }
+    return UserModel();
   }
 
   Future<UserModel> updateUserImage(UserModel user) async {
@@ -37,8 +37,8 @@ class UserService {
       return user;
     } catch (e) {
       print(e);
-      return UserModel();
     }
+    return UserModel();
   }
 
   Future<UserModel> updateUserInfo(UserModel user) async {
@@ -51,7 +51,7 @@ class UserService {
       return user;
     } catch (e) {
       print(e);
-      return UserModel();
     }
+    return UserModel();
   }
 }

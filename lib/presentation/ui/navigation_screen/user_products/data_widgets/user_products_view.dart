@@ -18,7 +18,7 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
   return InkWell(
       borderRadius: listSneakerBorder3,
       splashColor: forButtons,
-      onTap: () async{
+      onTap: () async {
         msc.currentSneaker = sneaker;
         nc.isMainScreen = false;
         nc.isFavoriteScreen = false;
@@ -153,8 +153,7 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
                                     padding: const EdgeInsets.only(top: 5.0),
                                     child: Text(
                                       AppStrings.WidthOf,
-                                      style:
-                                          buildThemeData().textTheme.headline2,
+                                      style: buildThemeData().textTheme.headline2,
                                     ),
                                   ),
                                 ],
@@ -212,7 +211,6 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
                       await Get.to(() => UserCreateScreen(
                             sneaker: sneaker,
                           ));
-                      // controller.update();
                     })),
         Row(mainAxisAlignment: MainAxisAlignment.end, children: [
           Padding(
@@ -228,7 +226,7 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
                               sneaker.price == AppStrings.NullString ||
                               sneaker.price == AppStrings.EmptyString
                           ? AppStrings.NoInfo
-                          : sneaker.price+ '\$',
+                          : sneaker.price + '\$',
                       textAlign: TextAlign.center,
                       style: buildThemeData().textTheme.subtitle2),
                 ),

@@ -21,7 +21,6 @@ class UserAddInfoScreen extends StatelessWidget {
             ? getProgress()
             : SingleChildScrollView(
               child: Padding(
-                //key: controller.infoFormKey,
                   padding: const EdgeInsets.only(
                       top: 40, bottom: 30,left: 45, right: 45),
                   child: Column(

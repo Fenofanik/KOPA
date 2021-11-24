@@ -217,7 +217,8 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                     splashColor: transparent,
                     splashRadius: 8,
                     icon: Icon(Icons.favorite,
-                        color: controller.currentUser.favorite
+                        color:
+                        controller.currentUser.favorite
                                 .any((element) => element == sneaker.id.trim())
                             ? redThings
                             : whiteThings),

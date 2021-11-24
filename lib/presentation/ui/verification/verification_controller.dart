@@ -5,6 +5,7 @@ import 'package:kopamain/core/constant/colors.dart';
 import 'package:kopamain/data/services/firebase_service.dart';
 import 'package:kopamain/presentation/routes/app_pages.dart';
 import 'package:kopamain/presentation/ui/logIn/logIn_controller.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 
 class VerificationController extends GetxController {
   bool _currentState = true;
@@ -51,8 +52,8 @@ class VerificationController extends GetxController {
   }
 
   void validateFields() async {
-    if (otpController.text.isEmpty) {
-      Get.snackbar('Incorrect', "Sms Code", colorText: redThings);
+    if (otpController.text.isEmpty ||otpController.text.length<6){
+      errorSnack('Incorrect', "Sms Code");
     } else {
       currentState = true;
       await finalSignIn();
@@ -84,13 +85,14 @@ class VerificationController extends GetxController {
           phoneController.clear();
           otpController.clear();
         } else {
-          Get.snackbar("SignIn is ", "Failed");
+          errorSnack("SignIn is ", "failed");
           Get.offAndToNamed(Routes.LogIn);
         }
       });
       loading = true;
       update();
     } on FirebaseAuthException catch (e) {
+      errorSnack('Error', '$e');
       loading = false;
       update();
       print(e);
@@ -107,8 +109,7 @@ class VerificationController extends GetxController {
           //signInWithPhoneAuthCredential(phoneAuthCredential);
         },
         verificationFailed: (verificationFailed) async {
-          Get.snackbar('Error', '${verificationFailed.toString()}',
-              colorText: whiteThings);
+          errorSnack('Verification failed', '${verificationFailed.toString()}');
           loading = false;
           update();
         },

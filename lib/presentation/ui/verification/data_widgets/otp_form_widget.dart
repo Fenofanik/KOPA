@@ -52,16 +52,6 @@ Widget getOtpFormWidget(context,VerificationController controller){
                           style: buildThemeData().textTheme.headline4),
                       onPressed: () async{
                         controller.validateFields();
-                        // if(vc.otpController.text.isEmpty){
-                        //   Get.snackbar('Incorrect', "Sms Code",colorText: redThings);
-                        // }
-                        // else{
-                        //   vc.finalSignIn();
-                        // }
-                        // if (vc.formKey.currentState.validate()) {
-                        //   lc.showBottomTextFields = 1;
-                        //   vc.finalSignIn();
-                        // }
                       }),
                 )
               ])));

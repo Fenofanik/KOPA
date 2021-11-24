@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:kopamain/core/constant/constant.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 import 'package:kopamain/presentation/routes/app_pages.dart';
@@ -36,7 +37,7 @@ class ProfileController extends GetxController {
           loading = false;
         } else {
           print(value.toString());
-          errorSnack('Error get user', '${value.toString()}');
+          errorSnack(AppStrings.errorGetUser, '${value.toString()}');
         }
       });
       update();

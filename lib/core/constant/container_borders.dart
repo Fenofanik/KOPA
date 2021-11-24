@@ -52,6 +52,8 @@ final styleBorder4 =  Border.all(
 final listSneakerBorder =
  RoundedRectangleBorder(borderRadius:  BorderRadius.circular(44));
 
+final dialogsBorders =  RoundedRectangleBorder(borderRadius: BorderRadius.circular(30));
+
 final listSneakerBorder2 =  BorderRadius.circular(22);
 
 final listSneakerBorder3 =  BorderRadius.circular(44);

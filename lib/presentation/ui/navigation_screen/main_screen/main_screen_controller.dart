@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kopamain/core/constant/constant.dart';
 import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
@@ -49,13 +50,13 @@ class MainScreenController extends GetxController {
           sneakers.addAll(e.toList());
           loading = false;
         } else {
-          sneakers = [];
+          sneakers.clear();
           loading = false;
         }
         update();
       });
     } catch (e) {
-      errorSnack("Error", '$e');
+      errorSnack("Error get products", '$e');
     }
   }
 
@@ -67,7 +68,7 @@ class MainScreenController extends GetxController {
         update();
       });
     } catch (e) {
-      errorSnack('Error to get current user', '$e');
+      errorSnack(AppStrings.errorGetUser, '$e');
     }
   }
 
@@ -99,7 +100,7 @@ class MainScreenController extends GetxController {
       try {
         await SneakersService().deleteProduct(sneaker).then((value) {
           sneakers.remove(sneaker);
-          messageSnack('Product', 'Deleted');
+          messageSnack('Product', 'deleted');
           loading = false;
         });
       } catch (e) {
@@ -163,7 +164,6 @@ class MainScreenController extends GetxController {
     await getCurrentUserById();
     await getAllSneakers();
     listenToControllers();
-
     super.onInit();
   }
 }

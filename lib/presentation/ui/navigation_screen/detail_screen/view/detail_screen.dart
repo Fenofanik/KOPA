@@ -11,6 +11,7 @@ import 'package:kopamain/presentation/ui/navigation_screen/navigation_screen_con
 import 'package:kopamain/presentation/ui/navigation_screen/user_create_screen/view/user_create_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/user_favorite/user_favorite_controller.dart';
 import 'package:kopamain/presentation/utils/app_bar.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 import '../detail_screen_controller.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -93,10 +94,11 @@ class DetailScreen extends StatelessWidget {
                                             Icons.delete_outline,
                                             color: whiteThings),
                                         onPressed: () async {
-                                          await controller
-                                              .deleteUserProduct(
-                                              controller
-                                                  .detailSneaker);
+                                          getAlertDeleteDialog(controller);
+                                          // await controller
+                                          //     .deleteUserProduct(
+                                          //     controller
+                                          //         .detailSneaker);
                                         }):
                                     Row(
                                             children: [
@@ -113,8 +115,8 @@ class DetailScreen extends StatelessWidget {
                                                         res;
                                                     controller.update();
                                                   }),
-                                              IconButton(onPressed: ()async{
-                                                controller.addProductToArchive(controller.detailSneaker);
+                                              IconButton(onPressed: (){
+                                                getArchiveDialog(controller);
                                               },
                                                   icon: Icon(Icons.archive_outlined,color: whiteThings,)),
                                               IconButton(
@@ -122,10 +124,11 @@ class DetailScreen extends StatelessWidget {
                                                       Icons.delete_outline,
                                                       color: whiteThings),
                                                   onPressed: () async {
-                                                    await controller
-                                                        .deleteUserProduct(
-                                                            controller
-                                                                .detailSneaker);
+                                                    getAlertDeleteDialog(controller);
+                                                    // await controller
+                                                    //     .deleteUserProduct(
+                                                    //         controller
+                                                    //             .detailSneaker);
                                                   })
                                             ],
                                           ):

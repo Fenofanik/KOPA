@@ -9,6 +9,7 @@ import 'package:kopamain/data/services/facebook_service.dart';
 import 'package:kopamain/data/services/firebase_service.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 import 'package:kopamain/presentation/routes/app_pages.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 
 class LoginController extends GetxController {
   bool showText = true;
@@ -71,13 +72,14 @@ class LoginController extends GetxController {
           });
         });
         if (result == null) {
-          Get.snackbar('Error to signIn with', 'META');
+          errorSnack('Sign is ','failed');
           update();
         } else {
-          Get.toNamed(Routes.NavigationScreen);
+          Get.offAndToNamed(Routes.NavigationScreen);
         }
       });
     } catch (e) {
+      errorSnack('Sign is failed: ','$e');
       print(e);
     }
   }
@@ -141,7 +143,7 @@ class LoginController extends GetxController {
         titleText: Align(
             alignment: Alignment.center,
             child: Text(
-              "Sign In Failed",
+              "Sign is Failed",
               style: buildThemeData().textTheme.headline2,
             )),
         messageText: Align(

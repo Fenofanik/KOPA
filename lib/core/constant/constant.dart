@@ -15,7 +15,7 @@ class AppStrings {
   static const String Sold =  "Продано";
   static const String City = "Місто";
   static const String Out = "Вийти";
-  static const ContactInfo = "Контактна інформація";
+  static const String ContactInfo = "Контактна інформація";
   static const String Phone = "Phone: ";
   static const String Email = "Email: ";
   static const String PubSpecYaml = "pubspec.yaml";
@@ -50,5 +50,6 @@ class AppStrings {
   static const String Update = "Update";
   static const String UpdateProduct = 'Update product';
   static const String CreateProduct = 'Create product';
+  static const String errorGetUser = 'Error get  current user';
 }
 

@@ -4,6 +4,7 @@ import 'package:kopamain/core/constant/colors.dart';
 import 'package:kopamain/core/constant/elevated_buttons_style.dart';
 import 'package:kopamain/core/constant/textField_borders.dart';
 import 'package:kopamain/core/constant/theme_data.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 import '../verification_controller.dart';
 
 Widget getMobileFormWidget(context,VerificationController controller){
@@ -32,18 +33,13 @@ Widget getMobileFormWidget(context,VerificationController controller){
                   child: Text("Верифікувати",
                       style: buildThemeData().textTheme.headline4),
                   onPressed: () async{
-                    if(controller.phoneController.text.isEmpty){
-
-                      Get.snackbar('Incorrect', "Number",colorText: redThings);
+                    if(controller.phoneController.text.isEmpty ||
+                        controller.phoneController.text.length <13){
+                      errorSnack('Incorrect', "Number");
                     }
                     else{
                       await controller.signInWithPhone();
                     }
-                  //   if(vc.phoneFormKey.currentState.validate()){
-                  //    await vc.signInWithPhone();
-                  //    vc.loading = true;
-                  //    vc.update();
-                  // }
                   }),
             )
           ]));

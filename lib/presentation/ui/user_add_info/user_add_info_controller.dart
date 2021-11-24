@@ -1,13 +1,12 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:kopamain/core/constant/colors.dart';
+import 'package:kopamain/core/constant/constant.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/user_model.dart';
 import 'package:kopamain/presentation/routes/app_pages.dart';
+import 'package:kopamain/presentation/utils/utils.dart';
 
 class UserAddInfoController extends GetxController {
-
-  final infoFormKey = GlobalKey<FormState>();
 
   bool _loading = true;
 
@@ -35,12 +34,11 @@ class UserAddInfoController extends GetxController {
     try {
       await UserService().getUserById().then((value) {
         currentUser = value;
-        print("CURRENT USER  ID ${value.id}");
         loading = false;
       });
       update();
     } catch (e) {
-      Get.snackbar('Error get user', '$e',backgroundColor: redThings);
+      errorSnack(AppStrings.errorGetUser, '$e');
     }
   }
 
@@ -52,26 +50,30 @@ class UserAddInfoController extends GetxController {
   }
 
   Future<void> updateUserInfo() async {
-    loading = true;
     currentUser.firstName = nameController.text;
     currentUser.secondName = surNameController.text;
     currentUser.city = cityController.text;
-    try {
-      await UserService().updateUserInfo(currentUser).then((value) {
-        if(value!=null){
-          currentUser = value;
-          update();
-          Get.offAndToNamed(Routes.NavigationScreen);
-          loading = false;
-        }
-      });
-
-    } catch (e) {
-      Get.snackbar('Error to update user: ', e.toString(),backgroundColor: redThings);
-      print(e.toString());
+    if(nameController.text.isEmpty ||surNameController.text.isEmpty||
+        cityController.text.isEmpty){
+      errorSnack('Field', 'can not be empty');
+    }
+    else{
+      try {
+        loading = true;
+        await UserService().updateUserInfo(currentUser).then((value) {
+          if (value != null) {
+            currentUser = value;
+            update();
+            Get.offAndToNamed(Routes.NavigationScreen)
+                .then((value) => loading = false);
+          }
+        });
+      } catch (e) {
+        errorSnack('Error to update user', e.toString());
+        print(e.toString());
+      }
     }
   }
-
 
   @override
   void onInit() async {

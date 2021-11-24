@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:kopamain/core/constant/constant.dart';
 import 'package:kopamain/data/services/sneakers_service.dart';
 import 'package:kopamain/data/services/user_service.dart';
 import 'package:kopamain/domain/models/sneaker_model.dart';
@@ -29,7 +30,7 @@ class UserFavoriteController extends GetxController {
         update();
       });
     } catch (e) {
-      errorSnack('Error get current user', '$e');
+      errorSnack(AppStrings.errorGetUser, '$e');
     }
   }
 
