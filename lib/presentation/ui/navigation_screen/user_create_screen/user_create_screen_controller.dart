@@ -75,7 +75,20 @@ class UserCreateScreenController extends GetxController {
               ),
               color: (isPhoto || isImage) ? forButtons : whiteThings,
               child: isImage
-                  ? Image.network(value, fit: BoxFit.fill)
+                  ? Image.network(value,
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) {
+                    return child;
+                  }
+                  return SizedBox(
+                      width: 75,
+                      height: 75,
+                      child: getProgress());
+                },
+                frameBuilder: (context, child, progress, ready) {
+                  return child;
+                },
+              )
                   : isPhoto
                       ? const Icon(
                           Icons.panorama_rounded,

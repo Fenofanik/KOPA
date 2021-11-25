@@ -42,8 +42,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                   borderRadius: listSneakerBorder3,
                   child: FittedBox(
                     child: sneaker.image.isEmpty
-                        ? const Icon(Icons.camera_alt_outlined,
-                            color: forButtons)
+                        ? const Icon(Icons.panorama_rounded, color: forButtons)
                         : Image.network(
                             sneaker.image[0],
                             loadingBuilder: (context, child, loadingProgress) {
@@ -79,7 +78,8 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                               : sneaker.brand,
                           style: buildThemeData().textTheme.bodyText2),
                       Text(AppStrings.TheSizeOfTheFoot,
-                          style: buildThemeData().textTheme.headline2).paddingOnly(top:5),
+                              style: buildThemeData().textTheme.headline2)
+                          .paddingOnly(top: 5),
                       Padding(
                         padding: const EdgeInsets.only(top: 5.0, left: 5),
                         child: Row(
@@ -190,7 +190,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
             child: sneaker.author == controller.currentUser.id
                 ? sneaker.sold == true
                     ? Padding(
-                        padding: const EdgeInsets.only(left: 10, top: 20),
+                        padding: const EdgeInsets.only(top: 20),
                         child: Container(
                           alignment: Alignment.center,
                           height: Get.height / 19,

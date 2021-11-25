@@ -8,7 +8,8 @@ import 'package:kopamain/core/constant/theme_data.dart';
 import 'package:kopamain/presentation/utils/utils.dart';
 import '../user_create_screen_controller.dart';
 
-Widget userCreateProductView(BuildContext context, UserCreateScreenController controller) {
+Widget userCreateProductView(
+    BuildContext context, UserCreateScreenController controller) {
   return SingleChildScrollView(
     child: ConstrainedBox(
       constraints: BoxConstraints(maxWidth: Get.width, maxHeight: Get.height),
@@ -18,7 +19,7 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
             flex: 5,
             child: Container(
               color: containerColor,
-              margin: const EdgeInsets.only(top: 5,left: 5, right: 5),
+              margin: const EdgeInsets.only(top: 5, left: 5, right: 5),
               child: GridView.count(
                 crossAxisCount: 4,
                 mainAxisSpacing: 5,
@@ -30,17 +31,15 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
           Expanded(
             flex: 6,
             child: Container(
-              margin: const EdgeInsets.only(top: 5,left: 5, right: 5),
+              margin: const EdgeInsets.only(top: 5, left: 5, right: 5),
               color: containerColor,
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Container(
-                          height: Get.height / 4,
-                          child: Image.asset(sneakerSizesModel)),
-                    ),
+                    child: Container(
+                        margin: const EdgeInsets.all(15),
+                        height: Get.height / 4,
+                        child: Image.asset(sneakerSizesModel)),
                   ),
                   Expanded(
                     child: Column(
@@ -67,8 +66,7 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
                                           ),
                                           Padding(
                                             padding:
-                                            const EdgeInsets.only(
-                                                left: 15),
+                                                const EdgeInsets.only(left: 15),
                                             child: Text(
                                               AppStrings.EU,
                                               style: buildThemeData()
@@ -82,31 +80,26 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
                                   ),
                                   Expanded(
                                     child: TextFormField(
-                                      keyboardType:
-                                      TextInputType.phone,
-                                      controller: controller
-                                          .updateSneaker !=
-                                          null
-                                          ? controller.theSizeUpdate
-                                          : controller.theSize,
+                                      keyboardType: TextInputType.phone,
+                                      controller:
+                                          controller.updateSneaker != null
+                                              ? controller.theSizeUpdate
+                                              : controller.theSize,
                                       validator:
-                                      controller.validationEmptyField,
+                                          controller.validationEmptyField,
                                       maxLength: 3,
                                       decoration: InputDecoration(
                                         counterText: '',
                                         contentPadding:
-                                        paddingForCreateScreenTextFields,
-                                        enabledBorder:
-                                        InputBorder.none,
-                                        hintText:
-                                        AppStrings.someThinks,
+                                            paddingForCreateScreenTextFields,
+                                        enabledBorder: InputBorder.none,
+                                        hintText: AppStrings.someThinks,
                                         hintStyle: buildThemeData()
                                             .textTheme
                                             .headline5,
                                       ),
-                                      style: buildThemeData()
-                                          .textTheme
-                                          .headline5,
+                                      style:
+                                          buildThemeData().textTheme.headline5,
                                     ),
                                   ),
                                 ],
@@ -134,30 +127,24 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
                                   Expanded(
                                     child: TextFormField(
                                       maxLength: 4,
-                                      keyboardType:
-                                      TextInputType.phone,
+                                      keyboardType: TextInputType.phone,
                                       controller:
-                                      controller.updateSneaker !=
-                                          null
-                                          ? controller
-                                          .sizeLengthUpdate
-                                          : controller.sizeLength,
+                                          controller.updateSneaker != null
+                                              ? controller.sizeLengthUpdate
+                                              : controller.sizeLength,
                                       validator:
-                                      controller.validationEmptyField,
+                                          controller.validationEmptyField,
                                       decoration: InputDecoration(
                                           counterText: '',
                                           contentPadding:
-                                          paddingForCreateScreenTextFields,
-                                          enabledBorder:
-                                          InputBorder.none,
-                                          hintText:
-                                          AppStrings.someThinks,
+                                              paddingForCreateScreenTextFields,
+                                          enabledBorder: InputBorder.none,
+                                          hintText: AppStrings.someThinks,
                                           hintStyle: buildThemeData()
                                               .textTheme
                                               .headline5),
-                                      style: buildThemeData()
-                                          .textTheme
-                                          .headline5,
+                                      style:
+                                          buildThemeData().textTheme.headline5,
                                     ),
                                   ),
                                 ],
@@ -165,8 +152,7 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
                         ),
                         Expanded(
                           child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               Expanded(
                                 child: Container(
@@ -178,8 +164,7 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
                                           flex: 2,
                                           child: Container(
                                             margin: allPadding2,
-                                            decoration:
-                                            forUserCreateRight,
+                                            decoration: forUserCreateRight,
                                             child: Text(
                                               AppStrings.WidthOf,
                                               style: buildThemeData()
@@ -191,28 +176,20 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
                                         Expanded(
                                           child: TextFormField(
                                             maxLength: 4,
-                                            keyboardType:
-                                            TextInputType.phone,
-                                            controller: controller
-                                                .updateSneaker !=
-                                                null
-                                                ? controller
-                                                .sizeWidthUpdate
-                                                : controller
-                                                .sizeWidth,
-                                            validator: controller
-                                                .validationEmptyField,
-                                            decoration:
-                                            InputDecoration(
+                                            keyboardType: TextInputType.phone,
+                                            controller:
+                                                controller.updateSneaker != null
+                                                    ? controller.sizeWidthUpdate
+                                                    : controller.sizeWidth,
+                                            validator:
+                                                controller.validationEmptyField,
+                                            decoration: InputDecoration(
                                               counterText: '',
                                               contentPadding:
-                                              paddingForCreateScreenTextFields,
-                                              enabledBorder:
-                                              InputBorder.none,
-                                              hintText: AppStrings
-                                                  .someThinks,
-                                              hintStyle:
-                                              buildThemeData()
+                                                  paddingForCreateScreenTextFields,
+                                              enabledBorder: InputBorder.none,
+                                              hintText: AppStrings.someThinks,
+                                              hintStyle: buildThemeData()
                                                   .textTheme
                                                   .headline5,
                                             ),
@@ -234,66 +211,58 @@ Widget userCreateProductView(BuildContext context, UserCreateScreenController co
               ),
             ),
           ),
-          Container(
-            color: background,
-            child: TextFormField(
-                controller: controller.updateSneaker != null
-                    ? controller.modelUpdate
-                    : controller.model,
-                maxLength: 60,
-                validator: controller.validationEmptyField,
-                decoration: InputDecoration(
-                    counterText: '',
-                    labelText: AppStrings.Model,
-                    labelStyle: buildThemeData().textTheme.headline2,
-                    prefixIcon: buildCircleIcon()),
-                style: buildThemeData().textTheme.headline6),
-          ),
-          Container(
-            color: background,
-            child: TextFormField(
-            maxLength: 50,
-            controller: controller.updateSneaker != null
-                ? controller.materialUpdate
-                : controller.material,
-            validator: controller.validationEmptyField,
-            decoration: InputDecoration(
-                counterText: '',
-                labelText: AppStrings.Material,
-                labelStyle: buildThemeData().textTheme.headline2,
-                prefixIcon: buildCircleIcon()),
-            style: buildThemeData().textTheme.headline6),
-          ),
-          Container(
-            color: background,
-            child: TextFormField(
-            maxLength: 200,
-            controller: controller.updateSneaker != null
-                ? controller.aboutSneakerUpdate
-                : controller.aboutSneaker,
-            validator: controller.validationEmptyField,
-            decoration: InputDecoration(
-                counterText: '',
-                labelText: AppStrings.About,
-                labelStyle: buildThemeData().textTheme.headline2,
-                prefixIcon: buildCircleIcon()),
-            style: buildThemeData().textTheme.headline6),
-          ),
+          TextFormField(
+              controller: controller.updateSneaker != null
+                  ? controller.modelUpdate
+                  : controller.model,
+              maxLength: 60,
+              validator: controller.validationEmptyField,
+              decoration: InputDecoration(
+                  counterText: '',
+                  labelText: AppStrings.Model,
+                  labelStyle: buildThemeData().textTheme.headline2,
+                  prefixIcon: buildCircleIcon()),
+              style: buildThemeData().textTheme.headline6),
+          TextFormField(
+              maxLength: 50,
+              controller: controller.updateSneaker != null
+                  ? controller.materialUpdate
+                  : controller.material,
+              validator: controller.validationEmptyField,
+              decoration: InputDecoration(
+                focusColor: whiteThings,
+                  counterText: '',
+                  labelText: AppStrings.Material,
+                  labelStyle: buildThemeData().textTheme.headline2,
+                  prefixIcon: buildCircleIcon()),
+              style: buildThemeData().textTheme.headline6),
+          TextFormField(
+              maxLength: 200,
+              controller: controller.updateSneaker != null
+                  ? controller.aboutSneakerUpdate
+                  : controller.aboutSneaker,
+              validator: controller.validationEmptyField,
+              decoration: InputDecoration(
+                  counterText: '',
+                  labelText: AppStrings.About,
+                  labelStyle: buildThemeData().textTheme.headline2,
+                  prefixIcon: buildCircleIcon()),
+              style: buildThemeData().textTheme.headline6),
           Container(
             color: containerColor,
             child: TextFormField(
-            maxLength: 10,
-            keyboardType: TextInputType.phone,
-            controller: controller.updateSneaker != null
-                ? controller.priceUpdate
-                : controller.price,
-            validator: controller.validationEmptyField,
-            decoration: InputDecoration(
-              counterText: '',
-                labelText: AppStrings.Price,
-                labelStyle: buildThemeData().textTheme.headline2,
-                prefixIcon: buildCircleIcon()),
-            style: buildThemeData().textTheme.headline6),
+                maxLength: 10,
+                keyboardType: TextInputType.phone,
+                controller: controller.updateSneaker != null
+                    ? controller.priceUpdate
+                    : controller.price,
+                validator: controller.validationEmptyField,
+                decoration: InputDecoration(
+                    counterText: '',
+                    labelText: AppStrings.Price,
+                    labelStyle: buildThemeData().textTheme.headline2,
+                    prefixIcon: buildCircleIcon()),
+                style: buildThemeData().textTheme.headline6),
           ),
         ],
       ),

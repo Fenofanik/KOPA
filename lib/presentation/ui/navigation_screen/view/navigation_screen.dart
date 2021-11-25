@@ -42,23 +42,30 @@ class NavigationScreen extends StatelessWidget {
                 //     .paddingOnly(top: 4),
                 // activeIcon: SvgPicture.asset(menu, color: forButtons)
                 //     .paddingOnly(top: 4),
-              icon: const Icon(Icons.home_outlined,color: bottomBarNotFocus,),
-                activeIcon: const Icon(Icons.home,color: forButtons),
+                icon: const Icon(
+                  Icons.home_outlined,
+                  color: bottomBarNotFocus,
+                ),
+                activeIcon: const Icon(Icons.home, color: forButtons),
                 label: "Home"),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.create_outlined,color: bottomBarNotFocus,),
-                activeIcon: const Icon(Icons.create,color: forButtons),
+                icon: const Icon(
+                  Icons.create_outlined,
+                  color: bottomBarNotFocus,
+                ),
+                activeIcon: const Icon(Icons.create, color: forButtons),
                 // icon:
                 // SvgPicture.asset(sneaker, color: bottomBarNotFocus),
                 // activeIcon: SvgPicture.asset(sneaker, color: forButtons),
                 label: "User products"),
             BottomNavigationBarItem(
-                icon: const Icon(Icons.favorite_outline, color: bottomBarNotFocus),
+                icon: const Icon(Icons.favorite_outline,
+                    color: bottomBarNotFocus),
                 activeIcon: const Icon(Icons.favorite, color: forButtons),
                 label: "Favorites"),
             BottomNavigationBarItem(
-                icon:
-                    const Icon(Icons.account_circle_outlined, color: bottomBarNotFocus),
+                icon: const Icon(Icons.account_circle_outlined,
+                    color: bottomBarNotFocus),
                 activeIcon: const Icon(Icons.account_circle, color: forButtons),
                 label: "Profile")
           ],
