@@ -14,7 +14,7 @@ ThemeData buildThemeData() {
     appBarTheme: AppBarTheme(
         color: bottomBarBack,
         titleSpacing: 0,
-        titleTextStyle: GoogleFonts.roboto(
+        titleTextStyle:  GoogleFonts.roboto(
           fontSize: 14,
           color: whiteThings,
           fontStyle: FontStyle.normal,
@@ -50,9 +50,9 @@ ThemeData buildThemeData() {
           bodyText1:
           const TextStyle(fontSize: 10, color: textMaterial),
           bodyText2: const TextStyle(
-              fontSize: 22,
+              fontSize: 18,
               color: whiteThings,
-              fontWeight: FontWeight.w300),
+              fontWeight: FontWeight.w500),
           button: GoogleFonts.roboto(
               fontSize: 14,
               color: whiteThings,

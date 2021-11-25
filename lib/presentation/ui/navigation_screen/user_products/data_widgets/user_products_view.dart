@@ -67,7 +67,7 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
                 ),
               ),
               Expanded(
-                flex: 3,
+                flex: 4,
                 child: Padding(
                   padding:
                       const EdgeInsets.only(top: 10.0, right: 10, left: 15),
@@ -84,7 +84,7 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
                       Text(AppStrings.TheSizeOfTheFoot,
                           style: buildThemeData().textTheme.headline2),
                       Padding(
-                        padding: const EdgeInsets.only(top: 10.0, left: 5),
+                        padding: const EdgeInsets.only(top: 5.0, left: 5),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -111,7 +111,7 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10.0),
+                              padding: const EdgeInsets.only(left: 30.0),
                               child: Column(
                                 children: [
                                   Text(
@@ -136,7 +136,7 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10.0),
+                              padding: const EdgeInsets.only(left: 30.0),
                               child: Column(
                                 children: [
                                   Text(
@@ -199,7 +199,7 @@ Widget userProductsView(SneakerModel sneaker, UserProductsController controller,
                       decoration: BoxDecoration(
                           borderRadius: forSoldContainer, color: forSold),
                       child: Text(
-                        AppStrings.Sold,
+                        AppStrings.Archived,
                         textAlign: TextAlign.center,
                         style: buildThemeData().textTheme.subtitle1,
                       ),

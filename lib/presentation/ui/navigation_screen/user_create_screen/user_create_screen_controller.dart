@@ -36,7 +36,7 @@ class UserCreateScreenController extends GetxController {
 
   String validationEmptyField(String value) {
     if (value.isEmpty) {
-      return AppStrings.EmptyField;
+      return AppStrings.ErrorSnackBarText;
     }
     return null;
   }
@@ -78,7 +78,7 @@ class UserCreateScreenController extends GetxController {
                   ? Image.network(value, fit: BoxFit.fill)
                   : isPhoto
                       ? const Icon(
-                          Icons.camera_alt_outlined,
+                          Icons.panorama_rounded,
                           color: whiteThings,
                           size: 30,
                         )
@@ -104,9 +104,7 @@ class UserCreateScreenController extends GetxController {
             .ref()
             .child('UserAdd/filename-${DateTime.now().millisecondsSinceEpoch}')
             .putFile(file);
-
         var downloadUrl = await snapshot.ref.getDownloadURL();
-        print("sd $downloadUrl");
         imgUrls[key] = downloadUrl;
         stamp++;
         update();
@@ -138,19 +136,31 @@ class UserCreateScreenController extends GetxController {
     updateSneaker.price = priceUpdate.text;
     updateSneaker.author = currentUser?.id;
     updateSneaker.image = imgUrls.where((x) => x != "").toList();
-    try {
-      await SneakersService().updateProduct(updateSneaker).then((value) async {
-        Get.back(result: value);
-        messageSnack('Product', 'Updated');
-      });
-      await upc.getUsersProducts();
-    } catch (e) {
-      errorSnack('Error to update product', e.toString());
+
+    if(theSizeUpdate.text.isEmpty|| sizeLengthUpdate.text.isEmpty||sizeWidthUpdate.text.isEmpty||
+        modelUpdate.text.isEmpty||materialUpdate.text.isEmpty||aboutSneakerUpdate.text.isEmpty||
+        priceUpdate.text.isEmpty){
+      errorSnack('Error', AppStrings.ErrorSnackBarText);
     }
+    else if (updateSneaker.image.isEmpty){
+      errorSnack('Error', 'Add at least one image');
+    }
+    else{
+      try {
+        await SneakersService().updateProduct(updateSneaker).then((value) async {
+          Get.back(result: value);
+          messageSnack('Product', 'Updated');
+        });
+        await upc.getUsersProducts();
+      } catch (e) {
+        errorSnack('Error to update product', e.toString());
+      }
+    }
+
   }
 
   Future<void> addToCollection() async {
-    loading = true;
+
     SneakerModel createSneaker = SneakerModel();
     createSneaker.size = theSize.text;
     createSneaker.length = sizeLength.text;
@@ -163,17 +173,29 @@ class UserCreateScreenController extends GetxController {
     createSneaker.image = imgUrls.where((x) => x != "").toList();
     currentSneaker = createSneaker;
 
-    try {
-      await SneakersService().createProduct(createSneaker).then((value) async {
-        await upc.getUsersProducts();
-        loading = false;
-        Get.back();
-        messageSnack('Product','created');
-      });
-
-    } catch (e) {
-      errorSnack('Error create product', '$e');
+    if(theSize.text.isEmpty|| sizeLength.text.isEmpty||sizeWidth.text.isEmpty||
+        model.text.isEmpty||material.text.isEmpty||aboutSneaker.text.isEmpty||
+        price.text.isEmpty){
+      errorSnack('Error', AppStrings.ErrorSnackBarText);
     }
+    else if (createSneaker.image.isEmpty){
+      errorSnack('Error', 'Add at least one image');
+    }
+    else{
+      try {
+        loading = true;
+        await SneakersService().createProduct(createSneaker).then((value) async {
+          await upc.getUsersProducts();
+          loading = false;
+          Get.back();
+          messageSnack('Product','created');
+        });
+
+      } catch (e) {
+        errorSnack('Error create product', '$e');
+      }
+    }
+
   }
 
   void onInit() async {

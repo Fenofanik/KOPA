@@ -63,13 +63,13 @@ class UserCreateScreen extends StatelessWidget {
                       },
                       child: Text(
                         AppStrings.Update,
-                        style: buildThemeData().textTheme.headline2,
+                        style: buildThemeData().textTheme.headline6
                       ))
                   : TextButton(
                       onPressed: () async {
                         await controller.addToCollection();
                       },
-                      child: Text(AppStrings.Save))
+                      child: Text(AppStrings.Save,style: buildThemeData().textTheme.headline6))
             ],
             title: sneaker != null
                 ? Text(AppStrings.UpdateProduct)

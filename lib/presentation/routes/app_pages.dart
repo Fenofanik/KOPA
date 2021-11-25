@@ -8,7 +8,7 @@ import 'package:kopamain/presentation/ui/navigation_screen/detail_screen/view/de
 import 'package:kopamain/presentation/ui/navigation_screen/main_screen/view/main_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/profile_screen/view/profile_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/user_favorite/view/user_favorite_screen.dart';
-import 'package:kopamain/presentation/ui/navigation_screen/user_products/view/user_products_view.dart';
+import 'package:kopamain/presentation/ui/navigation_screen/user_products/view/user_products_screen.dart';
 import 'package:kopamain/presentation/ui/navigation_screen/view/navigation_screen.dart';
 import 'package:kopamain/presentation/ui/splash/view/splash_screen.dart';
 import 'package:kopamain/presentation/ui/user_add_info/view/user_add_info_screen.dart';

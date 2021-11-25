@@ -330,7 +330,7 @@ class DetailScreen extends StatelessWidget {
                                             controller.detailSneaker
                                                     .userAddAbout ==
                                                 AppStrings.EmptyString
-                                        ? Text("Опис про товар і як довго носив кросівки чи специфічні деталі взуття. натирало чи ні. чи дуло задувало. на широку ногу чи сайз не відповідає зязвленому. хвалиш взуття щоб точно купили. бо подарували дві пари, а ти за літо ще ні одної не зносив.",
+                                        ? Text(AppStrings.NoInfo,
                                                 style: buildThemeData()
                                                     .textTheme
                                                     .headline1)

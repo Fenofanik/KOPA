@@ -131,7 +131,7 @@ void filterAddButtonSheet(context, MainScreenController controller) {
                           controller.clearControllers();
                         },
                         child: Text(
-                          AppStrings.overthrow,
+                          AppStrings.Cancel,
                           style: buildThemeData().textTheme.headline1,
                         ).paddingOnly(top: 30, left: 20)),
                     TextButton(

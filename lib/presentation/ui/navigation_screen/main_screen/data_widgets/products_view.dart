@@ -64,7 +64,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                 ),
               ),
               Expanded(
-                flex: 3,
+                flex: 4,
                 child: Padding(
                   padding:
                       const EdgeInsets.only(top: 10.0, right: 10, left: 15),
@@ -79,9 +79,9 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                               : sneaker.brand,
                           style: buildThemeData().textTheme.bodyText2),
                       Text(AppStrings.TheSizeOfTheFoot,
-                          style: buildThemeData().textTheme.headline2),
+                          style: buildThemeData().textTheme.headline2).paddingOnly(top:5),
                       Padding(
-                        padding: const EdgeInsets.only(top: 10.0, left: 5),
+                        padding: const EdgeInsets.only(top: 5.0, left: 5),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -108,7 +108,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10.0),
+                              padding: const EdgeInsets.only(left: 30.0),
                               child: Column(
                                 children: [
                                   Text(
@@ -133,7 +133,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10.0),
+                              padding: const EdgeInsets.only(left: 30.0),
                               child: Column(
                                 children: [
                                   Text(
@@ -161,7 +161,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 15.0, left: 5),
+                        padding: const EdgeInsets.only(top: 5.0, left: 5),
                         child: Row(
                           children: [
                             Text(AppStrings.Material + ': ',
@@ -198,7 +198,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                           decoration: BoxDecoration(
                               borderRadius: forSoldContainer, color: forSold),
                           child: Text(
-                            AppStrings.Sold,
+                            AppStrings.Archived,
                             textAlign: TextAlign.center,
                             style: buildThemeData().textTheme.subtitle1,
                           ),
@@ -217,8 +217,7 @@ Widget productsView(SneakerModel sneaker, MainScreenController controller,
                     splashColor: transparent,
                     splashRadius: 8,
                     icon: Icon(Icons.favorite,
-                        color:
-                        controller.currentUser.favorite
+                        color: controller.currentUser.favorite
                                 .any((element) => element == sneaker.id.trim())
                             ? redThings
                             : whiteThings),

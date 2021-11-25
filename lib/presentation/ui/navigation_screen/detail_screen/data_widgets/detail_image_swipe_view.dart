@@ -19,7 +19,7 @@ Widget detailImageSwipeView(List imageList, DetailScreenController controller) {
             ClipRRect(
               borderRadius: BorderRadius.circular(22),
               child: FittedBox(
-                child: Image.network("${imageList[i]}",
+                child: Image.network(imageList[i],
                   loadingBuilder: (context, child, loadingProgress) {
                     if (loadingProgress == null) {
                       return child;
@@ -50,7 +50,7 @@ Widget detailImageSwipeView(List imageList, DetailScreenController controller) {
                 decoration: BoxDecoration(
                     shape:  BoxShape.circle,
                     color: controller.selectedImage == i
-                        ? whiteThings
+                        ? forButtons
                         : foreImgSwipe),
                 height: 8,
                 width: 8,
